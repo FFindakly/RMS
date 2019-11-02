@@ -25,23 +25,23 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Inventory">
             <items>
-              <MenuItem mnemonicParsing="false" text="Create inventory" />
-                  <MenuItem mnemonicParsing="false" text="Update inventory" />
-                  <MenuItem mnemonicParsing="false" text="Track inventory" />
+              <MenuItem mnemonicParsing="false" onAction="#switchToCreateInventory" text="Create inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateInventory" text="Update inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToTrackInventory" text="Track inventory" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Menu">
               <items>
-                <MenuItem mnemonicParsing="false" text="Create menu" />
-                  <MenuItem mnemonicParsing="false" text="Build menu items" />
-                  <MenuItem mnemonicParsing="false" text="Update menu" />
+                <MenuItem mnemonicParsing="false" onAction="#switchToCreateMenu" text="Create menu" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToMenuItems" text="Build menu items" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMenu" text="Update menu" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Orders">
               <items>
-                <MenuItem mnemonicParsing="false" text="Tables " />
-                  <MenuItem mnemonicParsing="false" text="Place orders" />
-                  <MenuItem mnemonicParsing="false" text="Orders details" />
+                <MenuItem mnemonicParsing="false" onAction="#switchToTables" text="Tables " />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToPlaceOrders" text="Place orders" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToOrdersDetails" text="Orders details" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Stats">
