@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Login" />
+                  <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem fx:id="exitMi" mnemonicParsing="false" onAction="#close" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Settings">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#switchToAcctSettings" text="Accout settings" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToShopSettings" text="Shop settings" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Inventory">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#switchToCreateInventory" text="Create inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateInventory" text="Update inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToTrackInventory" text="Track inventory" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Menu">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#switchToCreateMenu" text="Create menu" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToMenuItems" text="Build menu items" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMenu" text="Update menu" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Orders">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#switchToTables" text="Tables " />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToPlaceOrders" text="Place orders" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToOrdersDetails" text="Orders details" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Stats">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Sales" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Credits">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Credits" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <Label text="Login" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
