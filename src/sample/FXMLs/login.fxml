@@ -19,8 +19,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Settings">
             <items>
-              <MenuItem fx:id="acctSettingsMi" mnemonicParsing="false" onAction="#switchToAcctSettings" text="Accout settings" />
-                  <MenuItem mnemonicParsing="false" text="Shop settings" />
+              <MenuItem mnemonicParsing="false" onAction="#switchToAcctSettings" text="Accout settings" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToShopSettings" text="Shop settings" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Inventory">

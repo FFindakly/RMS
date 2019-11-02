@@ -27,5 +27,14 @@ public class Login {
             Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
     }
 
+    /**
+     * function to switch to shop settings screen
+     * @autor Fadi Findakly
+     * @return void
+     */
+    public void switchToShopSettings() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/restaurant_settings.fxml")));
+    }
+
 
 }
