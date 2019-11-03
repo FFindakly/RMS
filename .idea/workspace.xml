@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMS/sample/FXMLs/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMS/sample/FXMLs/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RMS/sample/controllers/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RMS/sample/controllers/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/FXMLs/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXMLs/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controllers/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RMS/META-INF/RMS.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FXMLs/account_settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXMLs/account_settings.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +91,15 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jfoenix-8.0.8.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -205,11 +211,12 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1572744384641" duration="8250000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1302000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

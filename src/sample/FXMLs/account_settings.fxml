@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1">
+
+
    <center>
-      <Label text="Account settings" BorderPane.alignment="CENTER" />
+   <VBox fx:id="wrapper" alignment="TOP_CENTER">
+
+      <HBox fx:id="title" alignment="CENTER">
+         <Label text="Account settings" />
+            <padding>
+               <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+            </padding>
+      </HBox>
+
+      <HBox fx:id="item1" alignment="CENTER" spacing="20">
+         <Label text="Address" />
+         <JFXTextField fx:id="addressText" prefWidth="230" promptText="Street and Number" />
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+      </HBox>
+
+      <HBox fx:id="item2" alignment="CENTER" spacing="20">
+         <JFXTextField fx:id="postcodeText" maxWidth="100" promptText="Postal Code" />
+         <JFXComboBox fx:id="provinceId" prefWidth="180.0" promptText="Province"> </JFXComboBox>
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+      </HBox>
+
+      <HBox fx:id="item3" alignment="CENTER" spacing="20">
+         <Label text="Phone" />
+         <JFXTextField fx:id="phoneId" prefWidth="230" promptText="enter your Phone Number" />
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+      </HBox>
+
+      <HBox fx:id="item4" alignment="CENTER" spacing="20">
+         <Label text="Email" />
+         <JFXTextField fx:id="emailId" prefWidth="230" promptText="enter your email" />
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+
+      <HBox fx:id="item5" alignment="CENTER" spacing="100">
+         <JFXButton fx:id="saveBtn" buttonType="RAISED" text="Save" />
+         <JFXButton fx:id="nextBtn" buttonType="RAISED" text="Next" />
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </VBox>
+
    </center>
 </BorderPane>
