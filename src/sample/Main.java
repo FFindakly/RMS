@@ -32,6 +32,15 @@ public class Main extends Application {
         root.setCenter(pane);
     }
 
+    /**
+     * Method to switch panes of the scene of the primary stage
+     * @param pane
+     * @author Fadi Findakly
+     */
+    public static void toLogin(BorderPane pane) {
+        root.setCenter(pane.getCenter());
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
