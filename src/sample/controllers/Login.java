@@ -20,6 +20,14 @@ public class Login {
 
     /**
      * function to switch to account settings screen
+     * @autor Ugur Demir
+     * @return void
+     */
+    public void switchToLogin() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
+    }
+    /**
+     * function to switch to account settings screen
      * @autor Fadi Findakly
      * @return void
      */
