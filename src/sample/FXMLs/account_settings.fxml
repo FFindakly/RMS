@@ -13,7 +13,7 @@
    <center>
      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="595.0" BorderPane.alignment="CENTER">
         <Label layoutX="245.0" layoutY="42.0" text="Account Settings" />
-        <Label layoutX="170.0" layoutY="115.0" text="Address" />
+        <Label layoutX="170.0" layoutY="110.0" text="Address" />
         <JFXTextField fx:id="addressText" layoutX="300.0" layoutY="110.0" prefWidth="230" promptText="Street and Number" />
          <JFXTextField fx:id="postcodeText" layoutX="170.0" layoutY="160.0" maxWidth="100" promptText="Postal Code" />
          <JFXComboBox fx:id="provinceId" layoutX="300" layoutY="160.0" prefWidth="180.0" promptText="Province">
