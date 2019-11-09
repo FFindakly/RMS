@@ -39,6 +39,7 @@
             <Menu mnemonicParsing="false" text="Menu">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#switchToCreateMenu" text="Create menu" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToShowMenu" text="Show menu" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToMenuItems" text="Build menu items" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMenu" text="Update menu" />
               </items>

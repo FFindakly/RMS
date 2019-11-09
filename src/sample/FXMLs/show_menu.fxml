@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="595.0" BorderPane.alignment="CENTER">
+           <Label layoutX="259.0" layoutY="57.0" text="Show Menu" />
+
+         <TableView layoutX="71.0" layoutY="98.0" prefHeight="260.0" prefWidth="455.0">
+           <columns>
+             <TableColumn prefWidth="454.0" sortable="false" text="Name" />
+           </columns>
+         </TableView>
+           <JFXButton fx:id="updateBtn" buttonType="RAISED" layoutX="451.0" layoutY="358.0" prefHeight="31.0" prefWidth="75.0" text="Update" />
+           <JFXButton fx:id="deleteBtn" buttonType="RAISED" layoutX="387.0" layoutY="358.0" prefHeight="31.0" prefWidth="64.0" text="Delete" />
+       </Pane>
+   </top>
+</BorderPane>

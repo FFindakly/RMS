@@ -13,8 +13,8 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="595.0" BorderPane.alignment="CENTER">
-         <Label layoutX="224.0" layoutY="31.0" text="Create Your Menu Item" />
-         <JFXTextField fx:id="itemNameId" layoutX="132.0" layoutY="90.0" prefHeight="31.0" prefWidth="339.0" promptText="Enter Your Item's Name" />
+         <Label layoutX="237.0" layoutY="29.0" text="Create Your Menu" />
+         <JFXTextField fx:id="itemNameId" layoutX="132.0" layoutY="89.0" prefHeight="31.0" prefWidth="339.0" promptText="Enter Your menu Item's Name" />
          <JFXTextArea fx:id="descriptionId" layoutX="132.0" layoutY="146.0" prefHeight="148.0" prefWidth="338.0" promptText="Add Description">
          </JFXTextArea>
          <JFXComboBox fx:id="assignCategory" layoutX="132.0" layoutY="309.0" prefHeight="31.0" prefWidth="141.0" promptText="Assign Category">

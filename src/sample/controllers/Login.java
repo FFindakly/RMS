@@ -126,5 +126,9 @@ public class Login {
         Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/order_details.fxml")));
     }
 
+  public void switchToShowMenu() throws IOException{
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/show_menu.fxml")));
+  }
+
 
 }
