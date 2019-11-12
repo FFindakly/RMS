@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Label text="Update inventory" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <children>
+          <TableView layoutX="7.0" layoutY="7.0" prefHeight="256.0" prefWidth="587.0">
+              <columns>
+                  <TableColumn prefWidth="130.0" text="Category Name" />
+                  <TableColumn prefWidth="95.0" text="Item Name" />
+                  <TableColumn minWidth="0.0" prefWidth="164.0" text="Description" />
+                  <TableColumn minWidth="0.0" prefWidth="63.0" text="Unit" />
+                  <TableColumn prefWidth="134.0" text="Critical Unit" />
+              </columns>
+          </TableView>
+            <JFXButton layoutX="8.0" layoutY="279.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-color: #cccccc;" text="Remove Item" />
+            <JFXButton layoutX="379.0" layoutY="279.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-color: #cccccc;" text="Update Item" />
+      </children>
+      </Pane>
    </center>
 </BorderPane>

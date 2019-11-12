@@ -1,8 +1,6 @@
 package sample.controllers;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.MenuItem;
 import sample.Main;
 
 import java.io.IOException;
@@ -60,7 +58,7 @@ public class Login {
      * @return void
      */
     public void switchToUpdateInventory() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/update_inventory.fxml")));
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/update_inventory1.fxml")));
     }
 
     /**
