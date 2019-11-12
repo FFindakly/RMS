@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         root = FXMLLoader.load(getClass().getResource("FXMLs/login.fxml"));
-        scene = new Scene(root, 1300, 768);
+        scene = new Scene(root, 900, 600);
         primaryStage.setScene(scene);
         primaryStage.setTitle("RMS - Restaurant Management System");
         primaryStage.show();

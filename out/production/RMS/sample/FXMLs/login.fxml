@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Login" onAction="#switchToLogin" />
+              <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Login" />
                   <MenuItem mnemonicParsing="false" text="About" />
                   <MenuItem fx:id="exitMi" mnemonicParsing="false" onAction="#close" text="Exit" />
             </items>
@@ -71,7 +71,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="2.0" layoutY="20.0" prefHeight="30.0" prefWidth="230.0" />
+            <JFXTextField alignment="TOP_CENTER" layoutX="2.0" layoutY="20.0" prefHeight="30.0" prefWidth="230.0" />
             <Label layoutX="2.0" layoutY="76.0" text="Password:">
                <font>
                   <Font name="Arial Bold" size="14.0" />
