@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Label text="Create inventory" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextField layoutX="14.0" layoutY="185.0" prefHeight="30.0" prefWidth="200.0" promptText="meats, vegetable etc" />
+            <TableView layoutX="7.0" layoutY="7.0" prefHeight="168.0" prefWidth="587.0">
+              <columns>
+                <TableColumn prefWidth="130.0" text="Category Name" />
+                <TableColumn prefWidth="95.0" text="Item Name" />
+                  <TableColumn minWidth="0.0" prefWidth="164.0" text="Description" />
+                  <TableColumn minWidth="0.0" prefWidth="63.0" text="Unit" />
+                  <TableColumn prefWidth="134.0" text="Critical Unit" />
+              </columns>
+            </TableView>
+            <JFXButton layoutX="120.0" layoutY="223.0" style="-fx-background-color: #cccccc;" text="Add Category" />
+            <JFXTextField layoutX="14.0" layoutY="265.0" prefHeight="30.0" prefWidth="200.0" promptText="Enter inventory item name" />
+            <JFXTextArea layoutX="14.0" layoutY="304.0" prefHeight="62.0" prefWidth="203.0" promptText="Description" />
+            <JFXComboBox layoutX="315.0" layoutY="217.0" prefHeight="27.0" prefWidth="238.0" promptText="Assign to a category" />
+            <JFXComboBox layoutX="315.0" layoutY="257.0" prefHeight="27.0" prefWidth="238.0" promptText="Measurement unit" />
+            <JFXComboBox layoutX="315.0" layoutY="297.0" prefHeight="27.0" prefWidth="238.0" promptText="Critical quantity" />
+            <JFXButton layoutX="427.0" layoutY="339.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: #cccccc;" text="Add Inventory" />
+         </children>
+      </Pane>
    </center>
 </BorderPane>
