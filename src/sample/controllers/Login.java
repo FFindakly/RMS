@@ -58,7 +58,7 @@ public class Login {
      * @return void
      */
     public void switchToUpdateInventory() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/update_inventory1.fxml")));
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/update_inventory.fxml")));
     }
 
     /**
