@@ -15,7 +15,7 @@
          <JFXTextArea fx:id="descriptionId" layoutX="16.0" layoutY="67.0" prefHeight="164.0" prefWidth="407.0" promptText="Add Description">
          </JFXTextArea>
          <JFXTextField fx:id="addCatId" layoutX="473.0" layoutY="14.0" prefHeight="34.0" prefWidth="409.0" promptText="Assign to a category" />
-         <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="474.0" layoutY="211.0" prefHeight="40.0" prefWidth="408.0" style="-fx-background-color: #cccccc;" text="Add to Menu" />
+         <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="474.0" layoutY="191.0" prefHeight="40.0" prefWidth="408.0" style="-fx-background-color: #cccccc;" text="Add to Menu" />
          <TableView layoutX="25.0" layoutY="278.0" prefHeight="269.0" prefWidth="846.0">
            <columns>
              <TableColumn prefWidth="286.0" text="Category Name" />
