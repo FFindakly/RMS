@@ -12,15 +12,16 @@
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="896.0" BorderPane.alignment="CENTER">
          <JFXTextField fx:id="itemNameId" layoutX="14.0" layoutY="14.0" prefHeight="34.0" prefWidth="409.0" promptText="Enter Your menu Item's Name" />
-         <JFXTextArea fx:id="descriptionId" layoutX="16.0" layoutY="67.0" prefHeight="164.0" prefWidth="407.0" promptText="Add Description">
+         <JFXTextArea fx:id="descriptionId" labelFloat="true" layoutX="16.0" layoutY="67.0" prefHeight="164.0" prefWidth="407.0" promptText="Add Description" style="-fx-background-color: grey;" unFocusColor="#cccccc">
          </JFXTextArea>
          <JFXTextField fx:id="addCatId" layoutX="473.0" layoutY="14.0" prefHeight="34.0" prefWidth="409.0" promptText="Assign to a category" />
          <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="474.0" layoutY="191.0" prefHeight="40.0" prefWidth="408.0" style="-fx-background-color: #cccccc;" text="Add to Menu" />
          <TableView layoutX="25.0" layoutY="278.0" prefHeight="269.0" prefWidth="846.0">
            <columns>
-             <TableColumn prefWidth="286.0" text="Category Name" />
-               <TableColumn prefWidth="286.0" text="Description" />
-               <TableColumn prefWidth="285.0" text="Menu item name" />
+             <TableColumn prefWidth="290.99998474121094" text="Category Name" />
+               <TableColumn prefWidth="276.0" text="Menu item name" />
+               <TableColumn prefWidth="290.0" text="Description" />
+
            </columns>
          </TableView>
       </Pane>
