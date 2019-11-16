@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1">
+      <center>
+         <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <TableView layoutX="11.0" layoutY="6.0" prefHeight="499.0" prefWidth="875.0">
+                  <columns>
+                     <TableColumn prefWidth="288.0" text="Category Name" />
+                     <TableColumn minWidth="0.0" prefWidth="300.0" text="Menu item name" />
+                     <TableColumn prefWidth="286.0" text="Description" />
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <Label text="Update menu" BorderPane.alignment="CENTER" />
-   </center>
+                  </columns>
+               </TableView>
+               <JFXButton layoutX="673.0" layoutY="514.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-color: #cccccc;" text="Remove Item" />
+         </Pane>
+      </center>
+
 </BorderPane>
