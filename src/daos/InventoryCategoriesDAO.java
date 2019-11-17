@@ -1,5 +1,6 @@
 package daos;
 
+import javabeans.InventoryCategory;
 import java.util.ArrayList;
 
 /**
@@ -7,8 +8,8 @@ import java.util.ArrayList;
  */
 public interface InventoryCategoriesDAO {
 
-    public ArrayList<String> getAllCategories();
-    public void createCategory();
+    public ArrayList<InventoryCategory> getAllCategories();
+    public void createCategory(InventoryCategory category);
     public void deleteCategory();
     public void updateCategory();
     public String getCategory();
