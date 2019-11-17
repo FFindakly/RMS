@@ -1,10 +1,18 @@
 package tables;
 
 import daos.InventoryCategoriesDAO;
+import database.Database;
 
 import java.util.ArrayList;
 
+/**
+ * @author Fadi Findakly
+ */
+
 public class InventoryCategoryTable implements InventoryCategoriesDAO {
+
+    Database db = Database.getInstance();
+    ArrayList<String> categories;
 
     @Override
     public ArrayList<String> getAllCategories() {
