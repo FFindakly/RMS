@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <Label text="Build menu items" BorderPane.alignment="CENTER" />
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="896.0" BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" layoutX="304.0" layoutY="24.0" prefHeight="49.0" prefWidth="288.0" text="Build Menu Item">
+            <font>
+               <Font size="30.0" />
+            </font></Label>
+         <JFXListView layoutX="430.0" layoutY="117.0" prefHeight="309.0" prefWidth="368.0" />
+         <JFXComboBox layoutX="43.0" layoutY="241.0" prefHeight="31.0" prefWidth="300.0" promptText="Choose Item From Menu">
+         </JFXComboBox>
+         <JFXComboBox layoutX="43.0" layoutY="139.0" prefHeight="31.0" prefWidth="300.0" promptText="Choose Ingredient Item">
+         </JFXComboBox>
+         <JFXTextField layoutX="43.0" layoutY="329.0" prefHeight="31.0" prefWidth="300.0" promptText="Quantity for Unit of Measurements" />
+         <JFXButton buttonType="RAISED" layoutX="587.0" layoutY="441.0" prefHeight="31.0" prefWidth="211.0" style="-fx-background-color: #cccccc;" text="Save" />
+         <JFXButton buttonType="RAISED" layoutX="43.0" layoutY="387.0" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #cccccc;" text="add Ingredients" />
+      </Pane>
+   </left>
 </BorderPane>
