@@ -38,5 +38,6 @@ public class CreateInventory implements Initializable {
     public void addNewInventoryCategory() {
         InventoryCategory inventoryCategory = new InventoryCategory(category_TextField.getText());
         inventoryCategoriesTable.createCategory(inventoryCategory);
+        System.out.println(category_TextField.getText());
     }
 }

@@ -29,7 +29,7 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
             ResultSet data = getCategories.executeQuery(query);
             while(data.next()) {
                 categories.add(new InventoryCategory(data.getInt(Const.CATEGORY_ID),
-                                Const.CATEGORY_NAME));
+                                data.getString(Const.CATEGORY_NAME)));
             }
 
         } catch (SQLException e) {
@@ -45,7 +45,7 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
                         category.getName() + "')";
         try {
             Statement addCategory = db.getConnection().createStatement();
-            ResultSet data = addCategory.executeQuery(query);
+            addCategory.execute(query);
             System.out.println("A new category is inserted");
 
         } catch (SQLException e) {
