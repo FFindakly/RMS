@@ -21,7 +21,6 @@
              <TableColumn prefWidth="290.99998474121094" text="Category Name" />
                <TableColumn prefWidth="276.0" text="Menu item name" />
                <TableColumn prefWidth="290.0" text="Description" />
-
            </columns>
          </TableView>
       </Pane>
