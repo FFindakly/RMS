@@ -3,6 +3,7 @@ package sample.controllers;
 import javafx.fxml.FXMLLoader;
 import sample.Main;
 
+
 import java.io.IOException;
 
 public class Login {
@@ -103,7 +104,7 @@ public class Login {
      * @return void
      */
     public void switchToTables() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/receipt.fxml")));
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/tables.fxml")));
     }
 
     /**
