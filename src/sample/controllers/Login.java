@@ -1,13 +1,33 @@
 package sample.controllers;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
 import sample.Main;
 
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
-public class Login {
+public class Login implements Initializable {
 
+    @FXML private Checkbox rememberMe;
+    @FXML private TextField username;
+    @FXML private PasswordField password;
+
+    Preferences preferences;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public void logon() throws IOException{
+
+    }
     /**
      * function to exit from application
      * @autor Fadi Findakly
