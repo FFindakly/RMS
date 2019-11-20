@@ -10,13 +10,12 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MenuItems" >
-   <left>
+   <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="896.0" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" layoutX="304.0" layoutY="24.0" prefHeight="49.0" prefWidth="288.0" text="Build Menu Item">
             <font>
                <Font size="30.0" />
             </font></Label>
-         
          <JFXComboBox layoutX="43.0" layoutY="241.0" prefHeight="31.0" prefWidth="300.0" promptText="Choose Item From Menu">
          </JFXComboBox>
          <JFXComboBox layoutX="43.0" layoutY="139.0" prefHeight="31.0" prefWidth="300.0" promptText="Choose Ingredient Item">
@@ -26,5 +25,5 @@
          <JFXButton buttonType="RAISED" layoutX="43.0" layoutY="387.0" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #cccccc;" text="add Ingredients" />
          <ListView fx:id="lister" layoutX="474.0" layoutY="113.0" prefHeight="327.0" prefWidth="366.0"/>
       </Pane>
-   </left>
+   </center>
 </BorderPane>
