@@ -32,7 +32,7 @@
             <JFXButton fx:id="add_to_inventory_button" layoutX="250.0" layoutY="458.0" onAction="#addToInventory" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Add Inventory" />
             <JFXTextField fx:id="quantity_TextField" layoutX="469.0" layoutY="288.0" prefHeight="25.0" prefWidth="402.0" promptText="Quantity" />
             <JFXTextField fx:id="critical_quantity_TextField" layoutX="469.0" layoutY="381.0" prefHeight="25.0" prefWidth="402.0" promptText="Critical quantity" />
-            <Text fx:id="message_Text" fill="#96d311" layoutX="333.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item has been added to inventory successfully!" />
+            <Text fx:id="message_Text" fill="#96d311" layoutX="442.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text" textAlignment="CENTER" visible="false" />
          </children>
       </Pane>
    </center>

@@ -18,6 +18,7 @@ public class Main extends Application {
 
         root = FXMLLoader.load(getClass().getResource("FXMLs/login.fxml"));
         scene = new Scene(root, 900, 600);
+        scene.getStylesheets().add("/styling/rms.css");
         primaryStage.setScene(scene);
         primaryStage.setTitle("RMS - Restaurant Management System");
         primaryStage.show();

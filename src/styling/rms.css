@@ -1,0 +1,7 @@
+.empty_data_fields {
+    -fx-background-color: rgba(255,0,0,0.3);
+}
+
+.valid_data_fields {
+    -fx-background-color: white;
+}
