@@ -1,13 +1,13 @@
 package sample.controllers;
 
+import javabeans.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.*;
 import sample.Main;
+import tables.LoginTable;
 
-
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,18 +15,44 @@ import java.util.prefs.Preferences;
 
 public class Login implements Initializable {
 
-    @FXML private Checkbox rememberMe;
+    @FXML private CheckBox rememberMe;
     @FXML private TextField username;
     @FXML private PasswordField password;
+    @FXML private MenuBar menu;
+    @FXML private Label warning;
 
     Preferences preferences;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        warning.setVisible(false);
+        menu.setVisible(false);
+        preferences = Preferences.userNodeForPackage(Login.class);
+        if(preferences != null){
+            if(preferences.get("username", null) != null && !preferences.get("username", null).isEmpty()){
+                username.setText(preferences.get("username", null));
+                password.setText(preferences.get("password", null));
+                rememberMe.setSelected(true);
+            }
+        }
     }
 
     public void logon() throws IOException{
-
+        LoginTable login = new LoginTable();
+        User result = login.getUser(username.getText(), password.getText());
+        if(result != null){
+            if(rememberMe.isSelected()){
+                preferences.put("username", username.getText());
+                preferences.put("password", password.getText());
+            }else{
+                preferences.put("username", "");
+                preferences.put("password", "");
+            }
+            Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
+            menu.setVisible(true);
+        }
+        else{
+            warning.setVisible(true);
+        }
     }
     /**
      * function to exit from application
