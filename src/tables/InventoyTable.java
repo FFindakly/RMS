@@ -4,8 +4,6 @@ import daos.InventoryItemsDAO;
 import database.Const;
 import database.Database;
 import javabeans.InventoryItem;
-
-import javax.swing.plaf.nimbus.State;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -68,7 +66,6 @@ public class InventoyTable implements InventoryItemsDAO {
 
 
     }
-
     @Override
     public void deleteInventoryItem(InventoryItem item) {
 
