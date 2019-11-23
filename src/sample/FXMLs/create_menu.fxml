@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateMenu">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateMenu">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="896.0" BorderPane.alignment="CENTER">
-         <JFXTextField fx:id="itemNameId" layoutX="14.0" layoutY="14.0" prefHeight="34.0" prefWidth="409.0" promptText="Enter Your menu Item's Name" />
-         <JFXTextArea fx:id="descriptionId" labelFloat="true" layoutX="16.0" layoutY="67.0" prefHeight="164.0" prefWidth="407.0" promptText="Add Description" style="-fx-background-color: grey;" unFocusColor="#cccccc">
+         <JFXTextField fx:id="itemNameId" layoutX="24.0" layoutY="44.0" prefHeight="34.0" prefWidth="347.0" promptText="Enter Your menu Item's Name" />
+         <JFXComboBox layoutX="26.0" layoutY="131.0" prefHeight="25.0" prefWidth="344.0" promptText="Assign item to category" />
+         <JFXTextArea fx:id="descriptionId" labelFloat="true" layoutX="455.0" layoutY="61.0" prefHeight="96.0" prefWidth="407.0" promptText="Add item's description" style="-fx-background-color: grey;" unFocusColor="#cccccc">
          </JFXTextArea>
-         <JFXTextField fx:id="addCatId" layoutX="473.0" layoutY="14.0" prefHeight="34.0" prefWidth="409.0" promptText="Assign to a category" />
-         <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="474.0" layoutY="191.0" prefHeight="40.0" prefWidth="408.0" style="-fx-background-color: #cccccc;" text="Add to Menu" />
-         <TableView layoutX="25.0" layoutY="278.0" prefHeight="269.0" prefWidth="846.0">
-           <columns>
-             <TableColumn prefWidth="290.99998474121094" text="Category Name" />
-               <TableColumn prefWidth="276.0" text="Menu item name" />
-               <TableColumn prefWidth="290.0" text="Description" />
-           </columns>
-         </TableView>
+         <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="697.0" layoutY="198.0" prefHeight="29.0" prefWidth="165.0" style="-fx-background-color: #cccccc;" text="Add new item to menu" />
+         <JFXComboBox layoutX="24.0" layoutY="311.0" prefHeight="25.0" prefWidth="344.0" promptText="Choose item from menu" />
+         <JFXComboBox layoutX="24.0" layoutY="384.0" prefHeight="25.0" prefWidth="344.0" promptText="Add ingredients from inventory" />
+         <JFXTextField fx:id="itemNameId1" layoutX="23.0" layoutY="445.0" prefHeight="34.0" prefWidth="347.0" promptText="Enter ingredient quantity" />
+         <JFXButton fx:id="saveBtn1" buttonType="RAISED" layoutX="221.0" layoutY="514.0" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #cccccc;" text="Add ingredient" />
+         <JFXListView layoutX="448.0" layoutY="332.0" prefHeight="151.0" prefWidth="415.0" />
+         <JFXButton fx:id="saveBtn11" buttonType="RAISED" layoutX="709.0" layoutY="514.0" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #cccccc;" text="Save ingredients" />
+         <Label alignment="CENTER" layoutX="256.0" layoutY="276.0" prefHeight="17.0" prefWidth="356.0" text="Build menu item" textAlignment="CENTER">
+            <font>
+               <Font name="Cambria" size="18.0" />
+            </font>
+         </Label>
+         <JFXButton fx:id="saveBtn2" buttonType="RAISED" layoutX="223.0" layoutY="198.0" prefHeight="29.0" prefWidth="148.0" style="-fx-background-color: #cccccc;" text="Upload image" />
       </Pane>
       
    </center>
