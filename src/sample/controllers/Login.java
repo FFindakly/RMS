@@ -81,15 +81,6 @@ public class Login {
     }
 
     /**
-     * function to switch to menu items screen
-     * @autor Fadi Findakly
-     * @return void
-     */
-    public void switchToMenuItems() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/menu_items.fxml")));
-    }
-
-    /**
      * function to switch to update menu screen
      * @autor Fadi Findakly
      * @return void

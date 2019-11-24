@@ -111,6 +111,7 @@ public class CreateInventory implements Initializable {
             message_Text.setText("Item has been added successfully!");
             message_Text.setFill(Paint.valueOf("green"));
             message_Text.setVisible(true);
+
             item_name_TextField.getStyleClass().clear();
             item_name_TextField.clear();
             measurement_unit_ComboBox.getStyleClass().clear();

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -39,7 +39,6 @@
             <Menu mnemonicParsing="false" text="Menu">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#switchToCreateMenu" text="Create menu" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToMenuItems" text="Build menu items" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMenu" text="Update menu" />
               </items>
             </Menu>
