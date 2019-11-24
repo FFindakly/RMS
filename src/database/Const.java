@@ -33,4 +33,12 @@ public class Const {
     public static final String MENU_ITEM_IMAGE = "item_image";
 
 
+    //Ingredients table
+    public static final String TABLE_INGREDIENTS = "ingredients";
+    public static final String INGREDIENT_ID = "id";
+    public static final String INGREDIENT_MENU_ITEM_ID = "menu_item_id";
+    public static final String INGREDIENT_INVENTORY_ITEM_ID = "inventory_item_id";
+    public static final String INGREDIENT_QUANTITY = "quantity";
+
+
 }

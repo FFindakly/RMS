@@ -20,9 +20,9 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
     ArrayList<InventoryCategory> categories;
 
     @Override
-    public ArrayList<InventoryCategory> getAllCategories() {
-        String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES;
-        categories = new ArrayList<>();
+        public ArrayList<InventoryCategory> getAllCategories() {
+            String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES;
+            categories = new ArrayList<>();
 
         try {
             Statement getCategories = db.getConnection().createStatement();

@@ -85,6 +85,6 @@ public class MenuItem {
 
     //Create toString method
     public String toString() {
-        return getItemCategory();
+        return getItemName();
     }
 }
