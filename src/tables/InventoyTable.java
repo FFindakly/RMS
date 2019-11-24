@@ -68,7 +68,6 @@ public class InventoyTable implements InventoryItemsDAO {
 
 
     }
-
     @Override
     public void deleteInventoryItem(InventoryItem item) {
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.sales">
+    <center>
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="896.0" BorderPane.alignment="CENTER">
+         <children>
+            <BarChart fx:id="barChart" alternativeColumnFillVisible="true" categoryGap="30.0" layoutX="14.0" layoutY="14.0" prefHeight="490.0" prefWidth="501.0" title="inventory">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <PieChart fx:id="pieGraph" layoutX="526.0" layoutY="50.0" prefHeight="437.0" prefWidth="361.0" title="inventory but pie" />
+         </children>
+        </Pane>
+    </center>
+</BorderPane>
