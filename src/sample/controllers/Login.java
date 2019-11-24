@@ -117,4 +117,7 @@ public class Login {
     }
 
 
+    public void switchToOrdersStats() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/sales.fxml")));
+    }
 }

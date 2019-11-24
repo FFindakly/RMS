@@ -47,6 +47,5 @@
          <ImageView fx:id="itemImageView" fitHeight="95.0" fitWidth="141.0" layoutX="455.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
          <JFXTextField fx:id="itemPriceTextField" layoutX="24.0" layoutY="185.0" prefHeight="34.0" prefWidth="347.0" promptText="Enter item's price" />
       </Pane>
-      
    </center>
 </BorderPane>
