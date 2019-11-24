@@ -1,6 +1,8 @@
 package sample.controllers;
 
-import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.*;
+import javabeans.InventoryItem;
+import javabeans.MenuItem;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -8,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import tables.MenuItemsTable;
 
 import java.awt.*;
 import java.io.File;
@@ -17,10 +20,28 @@ import java.util.ResourceBundle;
 
 public class CreateMenu implements Initializable {
 
+    @FXML private JFXTextField itemNameTextField;
+    @FXML private JFXComboBox<String> itemCategoryComboBox;
+    @FXML private JFXTextField itemPriceTextField;
+    @FXML private JFXTextArea itemDiscTextArea;
+    @FXML private JFXButton addItemButton;
+    @FXML private JFXComboBox<MenuItem> menuItemsComboBox;
+    @FXML private JFXComboBox<InventoryItem> ingredientComboBox;
+    @FXML private JFXTextField quantityTextField;
+    @FXML private JFXButton addIngredientButton;
+    @FXML private JFXListView<String> ingredientsListView;
+    @FXML private JFXButton saveItemButton;
     @FXML private JFXButton uploadImageButton;
     @FXML private ImageView itemImageView;
     @FXML private BorderPane createMenuPane;
+
+
     private FileChooser fileChooser;
+    private File imageFile;
+    private URL imageUrl;
+    private Image uploadedImage;
+
+    MenuItemsTable menuItemsTable = new MenuItemsTable();
 
 
 
@@ -36,13 +57,25 @@ public class CreateMenu implements Initializable {
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image files", "*.jpg", "*.png", "*.jpeg"));
 
         Stage stage = (Stage) createMenuPane.getScene().getWindow();
-        File imageFile = fileChooser.showOpenDialog(stage);
+        imageFile = fileChooser.showOpenDialog(stage);
 
         if (imageFile != null) {
-            URL url = imageFile.toURI().toURL();
-            Image uploadedImage = new Image(url.toExternalForm());
+            imageUrl = imageFile.toURI().toURL();
+            uploadedImage = new Image(imageUrl.toExternalForm());
             itemImageView.setImage(uploadedImage);
         }
+    }
+
+    public void addItemToMenu() {
+        //(String itemName, String itemCategory, double price, String imagePath)
+        //Create a new menu item by retrieving the data frm the form
+        MenuItem item = new MenuItem(itemNameTextField.getText(),
+                itemCategoryComboBox.getSelectionModel().getSelectedItem(),
+                itemDiscTextArea.getText(),
+                Double.parseDouble(itemPriceTextField.getText()),
+                imageUrl.toExternalForm());
+        //Insert the new created menu item to database table
+        menuItemsTable.createMenuItem(item);
     }
 
 }

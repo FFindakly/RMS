@@ -22,4 +22,15 @@ public class Const {
     public static final String CRITICAL_QUANTITY = "critical_quantity";
     public static final String ITEM_CATEGORY_ID = "cat_id";
 
+
+    //Menu_items table
+    public static final String TABLE_MENU_ITEMS = "menu_items";
+    public static final String MENU_ITEM_ID = "id";
+    public static final String MENU_ITEM_NAME = "item_name";
+    public static final String MENU_ITEM_CATEGORY = "item_category";
+    public static final String MENU_ITEM_DISC = "item_disc";
+    public static final String MENU_ITEM_PRICE = "item_price";
+    public static final String MENU_ITEM_IMAGE = "item_image";
+
+
 }
