@@ -38,7 +38,6 @@
             <Menu mnemonicParsing="false" text="Menu">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#switchToCreateMenu" text="Create menu" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToMenuItems" text="Build menu items" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMenu" text="Update menu" />
               </items>
             </Menu>
@@ -51,7 +50,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Stats">
               <items>
-                <MenuItem mnemonicParsing="false" text="Sales" />
+                <MenuItem mnemonicParsing="false" text="Sales" onAction="#switchToOrdersStats" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Credits">

@@ -40,4 +40,22 @@ public class Const {
     public static final String ACCOUNTS_NAME = "restaurant_name";
     public static final String ACCOUNTS_TABLENUM = "number_of_table";
 
+    //Menu_items table
+    public static final String TABLE_MENU_ITEMS = "menu_items";
+    public static final String MENU_ITEM_ID = "id";
+    public static final String MENU_ITEM_NAME = "item_name";
+    public static final String MENU_ITEM_CATEGORY = "item_category";
+    public static final String MENU_ITEM_DISC = "item_disc";
+    public static final String MENU_ITEM_PRICE = "item_price";
+    public static final String MENU_ITEM_IMAGE = "item_image";
+
+
+    //Ingredients table
+    public static final String TABLE_INGREDIENTS = "ingredients";
+    public static final String INGREDIENT_ID = "id";
+    public static final String INGREDIENT_MENU_ITEM_ID = "menu_item_id";
+    public static final String INGREDIENT_INVENTORY_ITEM_ID = "inventory_item_id";
+    public static final String INGREDIENT_QUANTITY = "quantity";
+
+
 }

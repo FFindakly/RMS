@@ -132,15 +132,6 @@ public class Login implements Initializable {
     }
 
     /**
-     * function to switch to menu items screen
-     * @autor Fadi Findakly
-     * @return void
-     */
-    public void switchToMenuItems() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/menu_items.fxml")));
-    }
-
-    /**
      * function to switch to update menu screen
      * @autor Fadi Findakly
      * @return void
@@ -177,4 +168,7 @@ public class Login implements Initializable {
     }
 
 
+    public void switchToOrdersStats() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/sales.fxml")));
+    }
 }

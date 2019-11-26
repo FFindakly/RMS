@@ -3,6 +3,7 @@ package tables;
 import daos.InventoryItemsDAO;
 import database.Const;
 import database.Database;
+import javabeans.InventoryCategory;
 import javabeans.InventoryItem;
 
 import javax.swing.plaf.nimbus.State;
@@ -28,12 +29,14 @@ public class InventoyTable implements InventoryItemsDAO {
         try {
             Statement getItems = db.getConnection().createStatement();
             ResultSet data = getItems.executeQuery(query);
-            items.add(new InventoryItem(data.getInt(Const.INVENTORY_ITEM_ID),
-                                    data.getString(Const.INVENTORY_ITEM_NAME),
-                                    data.getString(Const.MEASUREMENT_UNIT),
-                                    data.getDouble(Const.INVENTORY_ITEM_QUANTITY),
-                                    data.getDouble(Const.CRITICAL_QUANTITY),
-                                    data.getInt(Const.ITEM_CATEGORY_ID)));
+            while(data.next()) {
+                items.add(new InventoryItem(data.getInt(Const.INVENTORY_ITEM_ID),
+                        data.getString(Const.INVENTORY_ITEM_NAME),
+                        data.getString(Const.MEASUREMENT_UNIT),
+                        data.getDouble(Const.INVENTORY_ITEM_QUANTITY),
+                        data.getDouble(Const.CRITICAL_QUANTITY),
+                        data.getInt(Const.ITEM_CATEGORY_ID)));
+            }
         } catch(SQLException e) {
             e.printStackTrace();
         }
@@ -68,7 +71,6 @@ public class InventoyTable implements InventoryItemsDAO {
 
 
     }
-
     @Override
     public void deleteInventoryItem(InventoryItem item) {
 
