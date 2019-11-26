@@ -30,4 +30,14 @@ public class Const {
     public static final String CRITICAL_QUANTITY = "critical_quantity";
     public static final String ITEM_CATEGORY_ID = "cat_id";
 
+    //Addresses table
+    public static final String TABLE_ACCOUNTS = "accounts";
+    public static final String ACCOUNTS_ADDRESS = "address";
+    public static final String ACCOUNTS_POSTALCODE = "postal_code";
+    public static final String ACCOUNTS_PHONE = "phone";
+    public static final String ACCOUNTS_EMAIL = "email";
+    public static final String ACCOUNTS_USERID = "userid";
+    public static final String ACCOUNTS_NAME = "restaurant_name";
+    public static final String ACCOUNTS_TABLENUM = "number_of_table";
+
 }

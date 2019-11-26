@@ -33,7 +33,7 @@ public class CreateInventory implements Initializable {
     @FXML private JFXComboBox<String> measurement_unit_ComboBox;
     @FXML private JFXTextField quantity_TextField;
     @FXML private JFXTextField critical_quantity_TextField;
-    @FXML private JFXButton add_to_inventory_button;
+    @FXML private JFXButton nextBtn;
     @FXML private Text message_Text;
 
 

@@ -7,14 +7,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="595.0" BorderPane.alignment="CENTER">
-         <Label layoutX="238.0" layoutY="39.0" text="Restaurant Settings" />
-         <Label layoutX="127.0" layoutY="115.0" text="Number of Tables" />
-         <Label layoutX="127.0" layoutY="160.0" text="Upload restaurant icon" />
-         <JFXComboBox fx:id="tablesId" layoutX="300.0" layoutY="110.0" prefWidth="180.0" promptText="number of tables">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="900" BorderPane.alignment="CENTER">
+         <Label layoutX="198.0" layoutY="39.0" text="Restaurant Settings">
+            <font>
+               <Font name="Arial" size="24.0" />
+            </font></Label>
+         <Label layoutX="197.0" layoutY="322.0" text="Restaurant Icon:">
+            <font>
+               <Font name="Arial Bold" size="14.0" />
+            </font></Label>
+         <JFXComboBox fx:id="tablesId" layoutX="200.0" layoutY="264.0" prefWidth="500.0" promptText="Number of tables">
             <items>
                <FXCollections fx:factory="observableArrayList">
                   <String fx:value="1" />
@@ -30,7 +36,8 @@
                </FXCollections>
             </items>
          </JFXComboBox>
-         <JFXButton fx:id="addImageBtn" buttonType="RAISED" layoutX="298.0" layoutY="155.0" prefHeight="10.0" prefWidth="100.0" text="Browse" />
+         <JFXButton fx:id="addImageBtn" buttonType="RAISED" layoutX="349.0" layoutY="315.0" prefHeight="27.0" prefWidth="350.0" style="-fx-background-color: cccccc;" text="Browse" />
+         <JFXButton layoutX="499.0" layoutY="377.0" prefWidth="200.0" style="-fx-background-color: cccccc;" text="Save" />
       </Pane>
    </center>
 </BorderPane>
