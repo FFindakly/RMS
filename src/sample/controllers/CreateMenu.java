@@ -45,10 +45,10 @@ public class CreateMenu implements Initializable {
     private URL imageUrl;
     private Image uploadedImage;
 
-    MenuItemsTable menuItemsTable = new MenuItemsTable();
-    InventoyTable inventoryTable = new InventoyTable();
-    IngredientTable ingredientsTable = new IngredientTable();
-    ArrayList<String> listViewItems = new ArrayList<>();
+   private MenuItemsTable menuItemsTable = new MenuItemsTable();
+    private InventoyTable inventoryTable = new InventoyTable();
+    private IngredientTable ingredientsTable = new IngredientTable();
+    private ArrayList<String> listViewItems = new ArrayList<>();
 
 
 

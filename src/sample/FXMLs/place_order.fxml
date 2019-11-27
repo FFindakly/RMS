@@ -667,7 +667,7 @@
                                        </JFXButton>
                                     </children>
                                  </HBox>
-                              <ListView fx:id="orderMenu" layoutX="5.0" layoutY="9.0" prefHeight="161.0" prefWidth="441.0" />
+                              <ListView fx:id="orderMenu" layoutX="5.0" layoutY="9.0" prefHeight="161.0" prefWidth="430.0" />
                               </children>
                            </Pane>
                         </content>

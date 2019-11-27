@@ -41,4 +41,12 @@ public class Const {
     public static final String INGREDIENT_QUANTITY = "quantity";
 
 
+    //Order Table
+    public static final String TABLE_ORDER  = "menu";
+    public static final String ORDER_ID = "id";
+    public static final String ORDER_ITEM_MENU = "item_name";
+    public static final String ORDER_CATEGORY_ID = "category_id";
+    public static final String ORDER_INGREDIENTS = "ingredients";
+    public static final String ORDER_PRICE = "price";
+    public static final String ORDER_ITEM_IMAGE = "item_image";
 }
