@@ -667,7 +667,7 @@
                                        </JFXButton>
                                     </children>
                                  </HBox>
-                              <ListView fx:id="orderMenu" layoutX="5.0" layoutY="9.0" prefHeight="161.0" prefWidth="430.0" />
+                              <ListView fx:id="breakfast" layoutX="5.0" layoutY="9.0" prefHeight="161.0" prefWidth="430.0" />
                               </children>
                            </Pane>
                         </content>
@@ -1063,6 +1063,7 @@
                                        </JFXButton>
                                     </children>
                                  </HBox>
+                              <ListView fx:id="lunch" prefHeight="161.0" prefWidth="430.0" />
                               </children>
                            </Pane>
                         </content>
@@ -1461,6 +1462,7 @@
                                        </JFXButton>
                                     </children>
                                  </HBox>
+                              <ListView fx:id="dinner" layoutX="440.0" layoutY="12.0" prefHeight="161.0" prefWidth="430.0" />
                               </children>
                            </Pane>
                         </content>
@@ -1515,6 +1517,7 @@
                                        </JFXButton>
                                     </children>
                                  </HBox>
+                              <ListView fx:id="beverage" layoutX="440.0" layoutY="20.0" prefHeight="161.0" prefWidth="430.0" />
                               </children>
                            </Pane>
                         </content>
@@ -1569,6 +1572,7 @@
                                        </JFXButton>
                                     </children>
                                  </HBox>
+                              <ListView fx:id="dessert" layoutX="440.0" layoutY="14.0" prefHeight="161.0" prefWidth="430.0" />
                               </children>
                            </Pane>
                         </content>

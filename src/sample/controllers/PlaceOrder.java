@@ -16,13 +16,24 @@ import java.util.ResourceBundle;
 public class PlaceOrder implements Initializable {
 
     @FXML
-    private ListView orderMenu;
+    private ListView breakfast;
+    @FXML
+    private ListView lunch;
+    @FXML
+    private ListView dinner;
+    @FXML
+    private ListView beverage;
+    @FXML
+    private ListView dessert;
     private OrderTable menuItemsTable = new OrderTable();
-    ArrayList<String> listViewMenuItems = new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        orderMenu.setItems(FXCollections.observableArrayList(menuItemsTable.allOrders()));
+        breakfast.setItems(FXCollections.observableArrayList(menuItemsTable.breakfast()));
+        lunch.setItems(FXCollections.observableArrayList(menuItemsTable.lunch()));
+        dinner.setItems(FXCollections.observableArrayList(menuItemsTable.dinner()));
+        beverage.setItems(FXCollections.observableArrayList(menuItemsTable.beverage()));
+        dessert.setItems(FXCollections.observableArrayList(menuItemsTable.dessert()));
     }
 
 

@@ -49,4 +49,5 @@ public class Const {
     public static final String ORDER_INGREDIENTS = "ingredients";
     public static final String ORDER_PRICE = "price";
     public static final String ORDER_ITEM_IMAGE = "item_image";
+
 }
