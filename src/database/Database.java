@@ -25,9 +25,7 @@ public class Database {
             connection = DriverManager.getConnection(connectionURL, Credentials.DB_USERNAME, Credentials.DB_PASSWORD);
             System.out.println("Created Connection");
 
-//            String connectionURL = "jdbc:mysql://localhost/"+Credentials.DB_NAME+"?autoReconnect=true&useSSL=false";
-//            connection = DriverManager.getConnection(connectionURL, Credentials.DB_USERNAME, Credentials.DB_PASSWORD);
-//            System.out.println("Connection to database is created!");
+
         } catch (Exception e) {
             e.printStackTrace();
         }

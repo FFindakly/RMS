@@ -58,4 +58,44 @@ public class Const {
     public static final String INGREDIENT_QUANTITY = "quantity";
 
 
+
+//    public static final String CREATE_TABLE_LOGIN =
+//            "CREATE TABLE " + TABLE_LOGIN + "(" +
+//                    LOGIN_ID + " int NOT NULL AUTO_INCREMENT, " +
+//                    LOGIN_PASSWORD + " VARCHAR(80), " +
+//                    LOGIN_USERNAME  + " VARCHAR(30), "+
+//                    LOGIN_PERMISSION  + " VARCHAR(20), "+
+//                    "PRIMARY KEY(" + LOGIN_ID + ")" +
+//                    ");";
+
+    public static final String CREATE_TABLE_INVENTORY =
+            "CREATE TABLE " + TABLE_INVENTORY + "(" +
+                    INVENTORY_ITEM_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
+                    INVENTORY_ITEM_NAME + " varchar(80) NOT NULL, " +
+                    MEASUREMENT_UNIT  + " decimal(10) NOT NULL, "+
+                    INVENTORY_ITEM_QUANTITY  + " decimal(10,0) NOT NULL, "+
+                    ITEM_CATEGORY_ID  + " int(11) NOT NULL, "+
+                    "PRIMARY KEY(" + INVENTORY_ITEM_ID + ")" +
+                    "KEY " + ITEM_CATEGORY_ID + "(" + ITEM_CATEGORY_ID + ")" + ")" +
+                    ");";
+
+    public static final String CREATE_TABLE_LOGIN =
+            "CREATE TABLE " + TABLE_LOGIN + "(" +
+                    LOGIN_ID + " int NOT NULL AUTO_INCREMENT, " +
+                    LOGIN_PASSWORD + " VARCHAR(80), " +
+                    LOGIN_USERNAME  + " VARCHAR(30), "+
+                    LOGIN_PERMISSION  + " VARCHAR(20), "+
+                    "PRIMARY KEY(" + LOGIN_ID + ")" +
+                    ");";
+
+    public static final String CREATE_TABLE_LOGIN =
+            "CREATE TABLE " + TABLE_LOGIN + "(" +
+                    LOGIN_ID + " int NOT NULL AUTO_INCREMENT, " +
+                    LOGIN_PASSWORD + " VARCHAR(80), " +
+                    LOGIN_USERNAME  + " VARCHAR(30), "+
+                    LOGIN_PERMISSION  + " VARCHAR(20), "+
+                    "PRIMARY KEY(" + LOGIN_ID + ")" +
+                    ");";
+
+
 }
