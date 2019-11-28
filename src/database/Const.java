@@ -65,11 +65,11 @@ public class Const {
      */
 
     public static final String CREATE_TABLE_INVENTORY_CATEGORIES =
-            "CREATE TABLE " + TABLE_LOGIN + "(" +
+            "CREATE TABLE " + TABLE_INVENTORY_CATEGORIES + "(" +
                     CATEGORY_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
                     CATEGORY_NAME + " varchar(50) NOT NULL, " +
                     "PRIMARY KEY(" + CATEGORY_ID + ")" +
-                    ")" + "ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;";
+                    ")" + " ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;";
 
     public static final String CREATE_TABLE_LOGIN =
             "CREATE TABLE " + TABLE_LOGIN + "(" +
@@ -81,16 +81,15 @@ public class Const {
                     ");";
 
     public static final String CREATE_TABLE_INVENTORY =
-            "CREATE TABLE " + TABLE_INVENTORY + "(" +
+            "CREATE TABLE " + TABLE_INVENTORY + "( " +
                     INVENTORY_ITEM_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
                     INVENTORY_ITEM_NAME + " varchar(80) NOT NULL, " +
                     MEASUREMENT_UNIT  + " decimal(10) NOT NULL, "+
                     INVENTORY_ITEM_QUANTITY  + " decimal(10,0) NOT NULL, "+
                     ITEM_CATEGORY_ID  + " int(11) NOT NULL, "+
-                    "PRIMARY KEY(" + INVENTORY_ITEM_ID + ")" +
+                    "PRIMARY KEY(" + INVENTORY_ITEM_ID + ")," +
                     "KEY " + ITEM_CATEGORY_ID + "(" + ITEM_CATEGORY_ID + ")" +
-                    ")" + "ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;";
-
+                    ")" + " ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;";
 
     // i did not have access to this table so Ugure if you are reading this update it as you see fit since this is your table - Yonis
     public static final String CREATE_TABLE_ACCOUNTS =
@@ -101,7 +100,7 @@ public class Const {
                     ACCOUNTS_EMAIL  + " varchar(50) NOT NULL, "+
                     ACCOUNTS_USERID  + " int(11) NOT NULL, "+
                     ACCOUNTS_NAME  + " varchar(30) NOT NULL, "+
-                    ACCOUNTS_TABLENUM  + " int(15) NOT NULL, "+
+                    ACCOUNTS_TABLENUM  + " int(15) NOT NULL "+
                     ");";
 
 
@@ -113,9 +112,8 @@ public class Const {
                     MENU_ITEM_DISC  + " varchar(400) NOT NULL, "+
                     MENU_ITEM_PRICE  + " decimal(10,0) NOT NULL, "+
                     MENU_ITEM_IMAGE  + " varchar(150) NOT NULL, "+
-                    "PRIMARY KEY(" + MENU_ITEM_ID +
-                    ")" + "ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;";
-
+                    "PRIMARY KEY(" + MENU_ITEM_ID + ")" +
+                    ")" +  "ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;";
 
     public static final String CREATE_TABLE_INGREDIENTS =
             "CREATE TABLE " + TABLE_INGREDIENTS + "(" +
@@ -123,9 +121,9 @@ public class Const {
                     INGREDIENT_MENU_ITEM_ID + " varchar(80) NOT NULL, " +
                     INGREDIENT_INVENTORY_ITEM_ID  + " decimal(10) NOT NULL, "+
                     INGREDIENT_QUANTITY  + " decimal(10,0) NOT NULL, "+
-                    "PRIMARY KEY(" + INGREDIENT_ID + ")" +
-                    "KEY " + INGREDIENT_MENU_ITEM_ID + "(" + INGREDIENT_MENU_ITEM_ID + "," + INGREDIENT_INVENTORY_ITEM_ID + ")" +
+                    "PRIMARY KEY(" + INGREDIENT_ID + ")," +
+                    "KEY " + INGREDIENT_MENU_ITEM_ID + "(" + INGREDIENT_MENU_ITEM_ID + "," + INGREDIENT_INVENTORY_ITEM_ID + ")," +
                     "KEY " + INGREDIENT_INVENTORY_ITEM_ID + "(" + INGREDIENT_MENU_ITEM_ID + ")" +
-                    ")" + "ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;";
+                    ")" + " ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;";
 
 }
