@@ -6,6 +6,12 @@ package database;
 
 public class Const {
 
+    //database info
+    public static final String HOST = "php.scweb.ca";
+    public static final String DB_NAME = "ysheekhdb";
+    public static final String USER_NAME = "ysheekh";
+    public static final String PASSWORD = "0cptq0cptqw8mprw8mpr";
+
     //Create constants to represent each column in each table
     //Categories table
     public static final String TABLE_INVENTORY_CATEGORIES = "inventory_categories";
