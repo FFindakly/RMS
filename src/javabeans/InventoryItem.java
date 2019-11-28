@@ -1,5 +1,7 @@
 package javabeans;
 
+import tables.InventoryCategoryTable;
+
 /**
  * @author Fadi Findakly
  */
@@ -11,10 +13,11 @@ public class InventoryItem {
     private double quantity;
     private double criticalQuantity;
     private int categoryId;
+    private String categoryName;
 
 
     //Create 2 constructors
-    public InventoryItem(int itemId, String itemName, String measurementUnit,
+    public InventoryItem(String itemName, String measurementUnit,
                          double quantity, double criticalQuantity, int categoryId) {
         this.itemId = itemId;
         this.itemName = itemName;
@@ -24,17 +27,19 @@ public class InventoryItem {
         this.categoryId = categoryId;
     }
 
-    public InventoryItem(String itemName, String measurementUnit,
+    public InventoryItem(int itemId, String itemName, String measurementUnit,
                          double quantity, double criticalQuantity, int categoryId) {
+        InventoryCategoryTable inventoryCategoriesTable = new InventoryCategoryTable();
+        this.itemId = itemId;
         this.itemName = itemName;
         this.measurementUnit = measurementUnit;
         this.quantity = quantity;
         this.criticalQuantity = criticalQuantity;
         this.categoryId = categoryId;
+        this.categoryName = inventoryCategoriesTable.getCategoriesHashMap().get(categoryId);
     }
 
     //Create getters and setters
-
     public int getItemId() {
         return itemId;
     }
@@ -81,6 +86,13 @@ public class InventoryItem {
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     //Create toString method

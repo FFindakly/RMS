@@ -5,3 +5,11 @@
 .valid_data_fields {
     -fx-background-color: white;
 }
+
+.short_items {
+    -fx-background-color: red;
+}
+
+.short {
+    -fx-background-color: red;
+    }

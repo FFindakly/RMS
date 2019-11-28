@@ -1,4 +1,4 @@
 package sample.controllers;
 
-public class TrackInventory {
+public class Track {
 }

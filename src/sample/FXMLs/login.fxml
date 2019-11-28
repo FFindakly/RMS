@@ -32,8 +32,8 @@
           <Menu mnemonicParsing="false" text="Inventory">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#switchToCreateInventory" text="Create inventory" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateInventory" text="Update inventory" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToTrackInventory" text="Track inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToTrackInventory" text="Update inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateInventory" text="Track inventory" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Menu">
@@ -51,7 +51,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Stats">
               <items>
-                <MenuItem mnemonicParsing="false" text="Sales" onAction="#switchToOrdersStats" />
+                <MenuItem mnemonicParsing="false" onAction="#switchToOrdersStats" text="Sales" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Credits">

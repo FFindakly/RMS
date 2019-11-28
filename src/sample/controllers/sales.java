@@ -38,7 +38,7 @@ public class sales implements Initializable {
     private void generate() {
         //the data will be graphed according to this query
         String query = "SELECT " + Const.INVENTORY_ITEM_NAME
-                + "," + Const.INVENTORY_ITEM_QUANTITY + " FROM "
+                + "," + Const.INVENTORY_ITEM_QUANTITY + "," + Const.CRITICAL_QUANTITY + " FROM "
                 + Const.TABLE_INVENTORY + " ORDER BY "
                 + Const.ITEM_CATEGORY_ID + " asc ";
         //bar graph data takes in string and a double value
@@ -54,7 +54,8 @@ public class sales implements Initializable {
             ResultSet data = statement.executeQuery(query);
             //loop through the data set until there are no items left to graph
             while (data.next()) {
-                series.getData().add(new XYChart.Data<>(data.getString(1), data.getDouble(2)));
+                series.getData().add(new XYChart.Data<>(data.getString(Const.INVENTORY_ITEM_NAME), data.getDouble(Const.INVENTORY_ITEM_QUANTITY), data.getDouble(Const.CRITICAL_QUANTITY)));
+               // series.getData().add(new XYChart.Data<>(data.getString(Const.INVENTORY_ITEM_NAME), data.getDouble(Const.CRITICAL_QUANTITY)));
             }
             //set the database query to the graph...no more banter
             barChart.getData().add(series);
@@ -76,6 +77,7 @@ public class sales implements Initializable {
             while (data.next()) {
                 //data will retrieve the item name and the quantity
                 pieChartData.add(new PieChart.Data(data.getString(Const.INVENTORY_ITEM_NAME),data.getInt(Const.INVENTORY_ITEM_QUANTITY)));
+                //pieChartData.add(new PieChart.Data(data.getString(Const.INVENTORY_ITEM_NAME),data.getInt(Const.CRITICAL_QUANTITY)));
             }
         } catch (SQLException e) {
             e.printStackTrace();

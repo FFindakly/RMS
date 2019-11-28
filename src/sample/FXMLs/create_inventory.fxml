@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateInventory">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateInventory">
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -25,7 +26,7 @@
                         <String fx:id="pound" fx:value="Pound" />
                         <String fx:id="ounce" fx:value="Ounce" />
                         <String fx:id="liter" fx:value="Liter" />
-                        <String fx:id="unit" fx:value="Unit" />
+                        <String fx:id="unit" fx:value="Count" />
                     </FXCollections>
                 </items>
             </JFXComboBox>
