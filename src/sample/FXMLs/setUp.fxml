@@ -17,28 +17,28 @@
                         <Font name="Arial Bold" size="25.0" />
                     </font>
                 </Label>
-                <JFXTextField fx:id="host" layoutX="309.0" layoutY="214.0" prefHeight="30.0" prefWidth="230.0" />
+                <JFXTextField fx:id="dbName" layoutX="309.0" layoutY="214.0" prefHeight="30.0" prefWidth="230.0" />
 
                 <Label layoutX="368.0" layoutY="184.0" text="DB Name">
                     <font>
                         <Font name="Arial Bold" size="25.0" />
                     </font>
                 </Label>
-                <JFXTextField fx:id="dbName" layoutX="309.0" layoutY="300.0" prefHeight="30.0" prefWidth="230.0" />
+                <JFXTextField fx:id="dbUsername" layoutX="309.0" layoutY="300.0" prefHeight="30.0" prefWidth="230.0" />
 
                 <Label layoutX="364.0" layoutY="270.0" text="Username">
                     <font>
                         <Font name="Arial Bold" size="25.0" />
                     </font>
                 </Label>
-                <JFXTextField fx:id="usernameDb" layoutX="309.0" layoutY="121.0" prefHeight="30.0" prefWidth="230.0" />
+                <JFXTextField fx:id="host" layoutX="309.0" layoutY="121.0" prefHeight="30.0" prefWidth="230.0" />
                 <Label layoutX="364.0" layoutY="365.0" prefWidth="166.0" text="Password">
                     <font>
                         <Font name="Arial Bold" size="25.0" />
                     </font>
                 </Label>
-                <JFXPasswordField fx:id="passwordDb" layoutX="309.0" layoutY="395.0" prefHeight="30.0" prefWidth="230.0" />
-                <JFXButton layoutX="309.0" layoutY="455.0"  prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #cccccc;" text="Connect">
+                <JFXPasswordField fx:id="dbPassword" layoutX="309.0" layoutY="395.0" prefHeight="30.0" prefWidth="230.0" />
+                <JFXButton fx:id="connecting" layoutX="309.0" layoutY="455.0" onAction="#makeConnection" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #cccccc;" text="Connect">
                     <font>
                         <Font name="Arial Bold" size="14.0" />
                     </font>

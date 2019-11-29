@@ -71,6 +71,7 @@ public class Const {
                     "PRIMARY KEY(" + CATEGORY_ID + ")" +
                     ")" + " ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;";
 
+    // i did not have access to this table so Ugure if you are reading this update it as you see fit since this is your table - Yonis
     public static final String CREATE_TABLE_LOGIN =
             "CREATE TABLE " + TABLE_LOGIN + "(" +
                     LOGIN_ID + " int NOT NULL AUTO_INCREMENT, " +

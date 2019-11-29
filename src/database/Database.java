@@ -1,4 +1,9 @@
 package database;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 import java.sql.*;
 
@@ -13,18 +18,21 @@ public class Database {
     //Create an instance variable
     static private Database instance = null;
     private Connection connection = null;
+    @FXML
+    Button connecting;
+    @FXML
+    JFXTextField host;
+    @FXML JFXTextField dbName;
+    @FXML JFXTextField dbUsername;
+    @FXML
+    JFXPasswordField dbPassword;
 
     //Create a private constructor for the class
-    public Database() {
+    public void makeConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
-            String connectionURL = "jdbc:mysql://localhost:8889/"+Credentials.DB_NAME+"?autoReconnect=true&useSSL=false";
-            connection = DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + Credentials.DB_NAME,
-                    Credentials.DB_USERNAME, Credentials.DB_PASSWORD);
+            connection = DriverManager.getConnection("jdbc:mysql://php.scweb.ca/" + dbName.getText(), dbUsername.getText(), dbPassword.getText());
             System.out.println("Created Connection");
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -66,9 +74,9 @@ public class Database {
         return connection;
     }
 
-    public void createTable(String tableName, String tableQuery,Connection connection) throws SQLException {
 
-        //
+    private void createTable(String tableName, String tableQuery, Connection connection) throws SQLException {
+
         Statement sqlStatement;
         DatabaseMetaData md = connection.getMetaData();
         ResultSet result = md.getTables(null, null, tableName, null);
