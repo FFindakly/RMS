@@ -17,6 +17,7 @@
                         <Font name="Arial Bold" size="25.0" />
                     </font>
                 </Label>
+                
                 <JFXTextField fx:id="dbName" layoutX="309.0" layoutY="214.0" prefHeight="30.0" prefWidth="230.0" />
 
                 <Label layoutX="368.0" layoutY="184.0" text="DB Name">
@@ -43,6 +44,31 @@
                         <Font name="Arial Bold" size="14.0" />
                     </font>
                 </JFXButton>
+                <Label fx:id="messageIndicator" layoutX="236.0" layoutY="501.0" prefHeight="16.0" prefWidth="371.0">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </Label>
+            <Label fx:id="hostMessage" layoutX="574.0" layoutY="143.0" prefHeight="16.0" prefWidth="298.0">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dbMessage" layoutX="574.0" layoutY="236.0" prefHeight="16.0" prefWidth="298.0">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="usernameMessage" layoutX="574.0" layoutY="322.0" prefHeight="16.0" prefWidth="298.0">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordMessage" layoutX="574.0" layoutY="417.0" prefHeight="16.0" prefWidth="298.0">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
     </center>
