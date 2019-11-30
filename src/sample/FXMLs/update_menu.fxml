@@ -6,18 +6,20 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.UpdateMenu">
       <center>
          <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
-               <TableView layoutX="11.0" layoutY="6.0" prefHeight="499.0" prefWidth="875.0">
+               <TableView fx:id="updateMenuTableView" layoutX="46.0" layoutY="13.0" prefHeight="499.0" prefWidth="800.0">
                   <columns>
-                     <TableColumn prefWidth="288.0" text="Category Name" />
-                     <TableColumn minWidth="0.0" prefWidth="300.0" text="Menu item name" />
-                     <TableColumn prefWidth="286.0" text="Description" />
+                     <TableColumn fx:id="menuItemNameCol" onEditCommit="#updateName" prefWidth="200.0" text="Item name" />
+                     <TableColumn fx:id="menuItemCatCol" minWidth="0.0" onEditCommit="#updateCategory" prefWidth="150.0" text="Category name" />
+               <TableColumn fx:id="menuItemPriceCol" onEditCommit="#updatePrice" prefWidth="150.0" text="Item price" />
+                     <TableColumn fx:id="menuItemDescCol" onEditCommit="#updateDescription" prefWidth="286.0" text="Description" />
 
                   </columns>
                </TableView>
-               <JFXButton layoutX="673.0" layoutY="514.0" prefHeight="27.0" prefWidth="213.0" style="-fx-background-color: #cccccc;" text="Remove Item" />
+               <JFXButton layoutX="729.0" layoutY="528.0" onAction="#updateItem" prefHeight="27.0" prefWidth="106.0" style="-fx-background-color: green;" text="Update item" />
+         <JFXButton layoutX="565.0" layoutY="529.0" onAction="#deleteItem" prefHeight="27.0" prefWidth="106.0" style="-fx-background-color: red;" text="Delete item" />
          </Pane>
       </center>
 

@@ -3,9 +3,11 @@ package tables;
 import daos.MenuItemTableDAO;
 import database.Const;
 import database.Database;
-import javabeans.InventoryItem;
 import javabeans.MenuItem;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
+import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -19,6 +21,7 @@ public class MenuItemsTable implements MenuItemTableDAO {
 
     Database db = Database.getInstance();
     ArrayList<MenuItem> menuItems;
+    ObservableList<MenuItem> allItems;
 
     @Override
     public ArrayList<MenuItem> getAllMenuItems() {
@@ -30,7 +33,8 @@ public class MenuItemsTable implements MenuItemTableDAO {
             ResultSet data = getItems.executeQuery(query);
             while(data.next()) {
                 //int id, String itemName, String itemCategory, String itemDisc, double price, String imagePath
-                menuItems.add(new MenuItem(data.getInt(Const.MENU_ITEM_ID),
+                menuItems.add(new MenuItem(
+                        data.getInt(Const.MENU_ITEM_ID),
                         data.getString(Const.MENU_ITEM_NAME),
                         data.getString(Const.MENU_ITEM_CATEGORY),
                         data.getString(Const.MENU_ITEM_DISC),
@@ -73,10 +77,68 @@ public class MenuItemsTable implements MenuItemTableDAO {
     @Override
     public void deleteMenuItem(MenuItem item) {
 
+        String query = "DELETE FROM " + Const.TABLE_MENU_ITEMS + " WHERE " +
+                Const.MENU_ITEM_ID + " = " + item.getId();
+
+        try {
+            db.getConnection().createStatement().execute(query);
+            System.out.println("Item has been deleted from the inventory successfully!");
+        } catch (SQLException e) {
+            showAlert(e.getMessage());
+        }
+
     }
 
     @Override
     public void updateMenuItem(MenuItem item) {
 
+        String query = "UPDATE " + Const.TABLE_MENU_ITEMS + " SET " +
+                Const.MENU_ITEM_NAME + " = '" + item.getItemName() + "', " +
+                Const.MENU_ITEM_CATEGORY + " = '" + item.getItemCategory() + "', " +
+                Const.MENU_ITEM_PRICE + " = " + item.getPrice() + ", " +
+                Const.MENU_ITEM_DISC + " = '" + item.getItemDisc() + "' " +
+                " WHERE " + Const.MENU_ITEM_ID + " = " + item.getId();
+
+        try {
+            db.getConnection().createStatement().execute(query);
+            showAlert("Item has been updated successfully!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public ObservableList<MenuItem> loadUpdateMenuItemsTableView() {
+        String query = "SELECT * FROM " + Const.TABLE_MENU_ITEMS;
+        allItems = FXCollections.observableArrayList();
+
+        try {
+            Statement getItems = db.getConnection().createStatement();
+            ResultSet data = getItems.executeQuery(query);
+            while(data.next()) {
+                //int id, String itemName, String itemCategory, String itemDisc, double price, String imagePath
+                allItems.add(new MenuItem(
+                        data.getInt(Const.MENU_ITEM_ID),
+                        data.getString(Const.MENU_ITEM_NAME),
+                        data.getString(Const.MENU_ITEM_CATEGORY),
+                        data.getString(Const.MENU_ITEM_DISC),
+                        data.getDouble(Const.MENU_ITEM_PRICE),
+                        data.getString(Const.MENU_ITEM_IMAGE)));
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        return allItems;
+    }
+
+
+    /**
+     * This function is to create an alert message
+     * @param message
+     */
+    private void showAlert(String message){
+
+        JOptionPane.showMessageDialog(null, message);
     }
 }
