@@ -16,7 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        root = FXMLLoader.load(getClass().getResource("FXMLs/login.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXMLs/setUp.fxml"));
         scene = new Scene(root, 900, 600);
         scene.getStylesheets().add("/styling/rms.css");
         primaryStage.setScene(scene);
