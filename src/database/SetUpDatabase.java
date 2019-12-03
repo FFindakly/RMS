@@ -91,8 +91,6 @@ public class SetUpDatabase {
                     Class.forName("com.mysql.jdbc.Driver");
                     connection = DriverManager.getConnection("jdbc:mysql://" +database.get("DB_HOST")+"/" + database.get("DB_NAME"), database.get("DB_USERNAME"), database.get("DB_PASSWORD"));
 
-
-
                     createTable(Const.TABLE_INVENTORY_CATEGORIES,
                             Const.CREATE_TABLE_INVENTORY_CATEGORIES,
                             connection);
@@ -113,7 +111,7 @@ public class SetUpDatabase {
                             connection);
                     messageIndicator.setText("Database has been created successfully");
                     messageIndicator.setTextFill(Color.valueOf("#23b023"));
-                    Main.setPane(FXMLLoader.load(getClass().getResource("../sample/FXMLs/login.fxml")));
+                    Main.openLogin(FXMLLoader.load(getClass().getResource("../sample/FXMLs/login.fxml")));
                 }
 
 
