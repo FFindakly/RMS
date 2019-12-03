@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
@@ -18,7 +19,6 @@
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Login" />
-                  <MenuItem mnemonicParsing="false" text="About" />
                   <MenuItem fx:id="exitMi" mnemonicParsing="false" onAction="#close" text="Exit" />
             </items>
           </Menu>
@@ -46,11 +46,6 @@
                 <MenuItem mnemonicParsing="false" onAction="#switchToTables" text="Tables " />
                   <MenuItem mnemonicParsing="false" onAction="#switchToPlaceOrders" text="Place orders" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToOrdersDetails" text="Orders details" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Stats">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#switchToOrdersStats" text="Sales" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Credits">
