@@ -6,6 +6,7 @@ import database.Database;
 import javabeans.InventoryItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.controllers.Login;
 
 import javax.swing.*;
 import java.sql.ResultSet;
@@ -26,7 +27,7 @@ public class InventoyTable implements InventoryItemsDAO {
 
     @Override
     public ArrayList<InventoryItem> getAllInventoryItems() {
-        String query = "SELECT * FROM " + Const.TABLE_INVENTORY;
+        String query = "SELECT * FROM " + Const.TABLE_INVENTORY + " WHERE " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
         items = new ArrayList<>();
 
         try {
@@ -38,7 +39,8 @@ public class InventoyTable implements InventoryItemsDAO {
                             data.getString(Const.MEASUREMENT_UNIT),
                             data.getDouble(Const.INVENTORY_ITEM_QUANTITY),
                             data.getDouble(Const.CRITICAL_QUANTITY),
-                            data.getInt(Const.ITEM_CATEGORY_ID)));
+                            data.getInt(Const.ITEM_CATEGORY_ID),
+                            data.getInt(Const.INVENTORY_USER_ID)));
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -59,10 +61,12 @@ public class InventoyTable implements InventoryItemsDAO {
                 Const.MEASUREMENT_UNIT + ", " +
                 Const.INVENTORY_ITEM_QUANTITY + ", " +
                 Const.CRITICAL_QUANTITY + ", " +
-                Const.ITEM_CATEGORY_ID + ") VALUES ('" +
+                Const.ITEM_CATEGORY_ID + ", " +
+                Const.INVENTORY_USER_ID +") VALUES ('" +
                 item.getItemName() + "', '" + item.getMeasurementUnit() + "', '" +
                 item.getQuantity() + "', '" + item.getCriticalQuantity() + "', '" +
-                item.getCategoryId() + "')";
+                item.getCategoryId() + "', '" + Login.userID.get("ID") +"')";
+        System.out.println(query);
 
         try {
             db.getConnection().createStatement().execute(query);
@@ -77,7 +81,7 @@ public class InventoyTable implements InventoryItemsDAO {
     @Override
     public void deleteInventoryItem(InventoryItem item) {
         String query = "DELETE FROM " + Const.TABLE_INVENTORY + " WHERE " +
-                Const.INVENTORY_ITEM_ID + " = " + item.getItemId();
+                Const.INVENTORY_ITEM_ID + " = " + item.getItemId() + " AND " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
 
         try {
             db.getConnection().createStatement().execute(query);
@@ -98,7 +102,7 @@ public class InventoyTable implements InventoryItemsDAO {
                 Const.INVENTORY_ITEM_QUANTITY + " = " + item.getQuantity() + ", " +
                 Const.CRITICAL_QUANTITY + " = " + item.getCriticalQuantity() + ", " +
                 Const.ITEM_CATEGORY_ID + " = " + item.getCategoryId() + " " +
-                " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getItemId();
+                " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getItemId() + " AND " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
         try {
             db.getConnection().createStatement().execute(query);
             showAlert("Item has been updated successfully!");
