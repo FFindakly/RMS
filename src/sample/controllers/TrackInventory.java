@@ -5,10 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.ScatterChart;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import tables.InventoyTable;
 
 import java.net.URL;
@@ -62,8 +59,6 @@ public class TrackInventory implements Initializable {
 
         //Add the data to the scattered chart
         inventoryChart.setData(data);
-
-
 
     }
 }
