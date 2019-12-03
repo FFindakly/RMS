@@ -8,7 +8,7 @@ public class Credentials {
      * This class contains all the database credentials
      */
 
-    public static final String DB_NAME = "newone";
+    public static final String DB_NAME = "RMS_NEW";
     public static final String DB_USERNAME = "root";
-    public static final String DB_PASSWORD = "";
+    public static final String DB_PASSWORD = "root";
 }
