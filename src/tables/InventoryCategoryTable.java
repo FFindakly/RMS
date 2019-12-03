@@ -80,6 +80,7 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
     //This method is to return a HashMap that contains each category with its id
     public HashMap<Integer, String> getCategoriesHashMap() {
         String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES + " WHERE " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
+        System.out.println(query);
         categoriesHashMap = new HashMap<>();
         try {
             Statement getCategories = db.getConnection().createStatement();

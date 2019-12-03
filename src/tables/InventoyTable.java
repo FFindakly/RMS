@@ -27,7 +27,7 @@ public class InventoyTable implements InventoryItemsDAO {
 
     @Override
     public ArrayList<InventoryItem> getAllInventoryItems() {
-        String query = "SELECT * FROM " + Const.TABLE_INVENTORY;
+        String query = "SELECT * FROM " + Const.TABLE_INVENTORY + " WHERE " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
         items = new ArrayList<>();
 
         try {
@@ -81,7 +81,7 @@ public class InventoyTable implements InventoryItemsDAO {
     @Override
     public void deleteInventoryItem(InventoryItem item) {
         String query = "DELETE FROM " + Const.TABLE_INVENTORY + " WHERE " +
-                Const.INVENTORY_ITEM_ID + " = " + item.getItemId();
+                Const.INVENTORY_ITEM_ID + " = " + item.getItemId() + " AND " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
 
         try {
             db.getConnection().createStatement().execute(query);
@@ -102,7 +102,7 @@ public class InventoyTable implements InventoryItemsDAO {
                 Const.INVENTORY_ITEM_QUANTITY + " = " + item.getQuantity() + ", " +
                 Const.CRITICAL_QUANTITY + " = " + item.getCriticalQuantity() + ", " +
                 Const.ITEM_CATEGORY_ID + " = " + item.getCategoryId() + " " +
-                " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getItemId();
+                " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getItemId() + " AND " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
         try {
             db.getConnection().createStatement().execute(query);
             showAlert("Item has been updated successfully!");
