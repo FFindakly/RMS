@@ -17,6 +17,7 @@ public class LoginTable implements LoginDAO {
     public static Map<String, Integer> userID = new HashMap<String, Integer>();
     @Override
     public User getUser(String username, String password) {
+        System.out.println(db);
         String query = "SELECT * FROM  "+ Const.TABLE_LOGIN +" WHERE  " + Const.LOGIN_USERNAME + " = '"+ username +"'";
         try{
             Statement getUserId = db.getConnection().createStatement();

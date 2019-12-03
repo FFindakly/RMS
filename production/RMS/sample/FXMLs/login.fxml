@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
+
+   <center>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="309.0" layoutY="160.0" text="Username:">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="username" layoutX="309.0" layoutY="176.0" prefHeight="30.0" prefWidth="230.0" />
+            <Label layoutX="309.0" layoutY="232.0" text="Password:">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXPasswordField fx:id="password" layoutX="309.0" layoutY="252.0" prefHeight="30.0" prefWidth="230.0" />
+            <JFXButton layoutX="309.0" layoutY="341.0" onAction="#logon" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #cccccc;" text="LOGIN">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="forgot" layoutX="448.0" layoutY="304.0" text="Forgot password?">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <JFXCheckBox fx:id="rememberMe" layoutX="309.0" layoutY="303.0" text="Remember me">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </JFXCheckBox>
+            <Label fx:id="warning" layoutX="309.0" layoutY="377.0" text="Please try again!" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

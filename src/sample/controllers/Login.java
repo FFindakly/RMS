@@ -52,8 +52,8 @@ public class Login implements Initializable {
                 preferences.put("password", "");
             }
             userID.put("ID", result.getId());
-            Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
             menu.setVisible(true);
+            Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
         }
         else{
             warning.setVisible(true);

@@ -39,7 +39,7 @@ public class Main extends Application {
      * @author Fadi Findakly
      */
     public static void toLogin(BorderPane pane) {
-        root.setCenter(pane.getCenter());
+            root.setCenter(pane.getCenter());
     }
 
     public static void main(String[] args) {
