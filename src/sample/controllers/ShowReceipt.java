@@ -30,7 +30,6 @@ public class ShowReceipt implements Initializable {
         for(int i = 0; i < receipt.size() ; i++){
             HBox itemHbox = new HBox();
             itemHbox.setStyle("-fx-background-color: #cccccc;");
-            itemHbox.
             itemHbox.setMinHeight(50);
             itemHbox.setMinWidth(840);
 
