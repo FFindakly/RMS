@@ -1,13 +1,64 @@
 package sample.controllers;
 
+import javabeans.User;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import sample.Main;
-
+import tables.LoginTable;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
+import java.util.Map;
 
-public class Login {
+public class Login implements Initializable {
 
+    @FXML private CheckBox rememberMe;
+    @FXML private TextField username;
+    @FXML private PasswordField password;
+    @FXML private MenuBar menu;
+    @FXML private Label warning;
+
+    public static Map<String, Integer> userID = new HashMap<String, Integer>();
+
+    Preferences preferences;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        warning.setVisible(false);
+        menu.setVisible(false);
+        preferences = Preferences.userNodeForPackage(Login.class);
+        if(preferences != null){
+            if(preferences.get("username", null) != null && !preferences.get("username", null).isEmpty()){
+                username.setText(preferences.get("username", null));
+                password.setText(preferences.get("password", null));
+                rememberMe.setSelected(true);
+            }
+        }
+    }
+
+    public void logon() throws IOException{
+        LoginTable login = new LoginTable();
+        User result = login.getUser(username.getText(), password.getText());
+        if(result != null){
+            if(rememberMe.isSelected()){
+                preferences.put("username", username.getText());
+                preferences.put("password", password.getText());
+            }else{
+                preferences.put("username", "");
+                preferences.put("password", "");
+            }
+            userID.put("ID", result.getId());
+            Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
+            menu.setVisible(true);
+        }
+        else{
+            warning.setVisible(true);
+        }
+    }
     /**
      * function to exit from application
      * @autor Fadi Findakly
@@ -33,6 +84,15 @@ public class Login {
      */
     public void switchToAcctSettings() throws IOException {
             Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
+    }
+
+    /**
+     * function to switch to account settings screen
+     * @autor Ugur Demir
+     * @return void
+     */
+    public void forgot() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/forgot.fxml")));
     }
 
     /**
