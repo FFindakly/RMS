@@ -35,6 +35,7 @@ public class Const {
     //Addresses table
     public static final String TABLE_ACCOUNTS = "accounts";
     public static final String ACCOUNTS_ADDRESS = "address";
+    public static final String ACCOUNTS_ID = "id";
     public static final String ACCOUNTS_POSTALCODE = "postal_code";
     public static final String ACCOUNTS_PHONE = "phone";
     public static final String ACCOUNTS_PROVINCE = "province";
