@@ -26,8 +26,6 @@
           <TreeTableColumn prefWidth="75.0" text="C1" />
           <TreeTableColumn prefWidth="75.0" text="C2" />
         </columns>
-
       </TreeTableView>
-
    </children>
 </Pane>

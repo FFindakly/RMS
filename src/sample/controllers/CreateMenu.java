@@ -160,9 +160,9 @@ public class CreateMenu implements Initializable {
         if (quantityTextField.getText().trim().isEmpty()) {
             validation_add_ingredients = false;
             quantityTextField.getStyleClass().add("empty_data_fields");
-        } else {
-            quantityTextField.getStyleClass().clear();
-        }
+    } else {
+        quantityTextField.getStyleClass().clear();
+    }
 
         if (!validation_add_ingredients) {
             errorMessageIngredient.setText("Enter data in the missing fields");
