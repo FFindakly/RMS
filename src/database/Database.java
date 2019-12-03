@@ -2,11 +2,14 @@ package database;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import sample.Main;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class Database {
@@ -97,6 +100,7 @@ public class Database {
                             Const.CREATE_TABLE_INGREDIENTS,
                             connection);
                     messageIndicator.setText("Database has been created successfully");
+                    Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
                     messageIndicator.setTextFill(Color.valueOf("#23b023"));
                 }
 
@@ -105,6 +109,8 @@ public class Database {
             messageIndicator.setTextFill(Color.web("#f91313"));
             messageIndicator.setText("please enter the correct information");
 //            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
