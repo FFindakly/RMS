@@ -87,6 +87,15 @@ public class Login implements Initializable {
     }
 
     /**
+     * function to switch to account settings screen
+     * @autor Ugur Demir
+     * @return void
+     */
+    public void forgot() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/forgot.fxml")));
+    }
+
+    /**
      * function to switch to shop settings screen
      * @autor Fadi Findakly
      * @return void

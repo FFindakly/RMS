@@ -11,5 +11,4 @@ public class Credentials {
     public static final String DB_NAME = "newone";
     public static final String DB_USERNAME = "root";
     public static final String DB_PASSWORD = "";
-
 }
