@@ -119,7 +119,7 @@ public class Login implements Initializable {
      * @return void
      */
     public void switchToUpdateInventory() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/update_inventory.fxml")));
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/track_inventory.fxml")));
     }
 
     /**
@@ -128,7 +128,7 @@ public class Login implements Initializable {
      * @return void
      */
     public void switchToTrackInventory() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/track_inventory.fxml")));
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/update_inventory.fxml")));
     }
 
     /**

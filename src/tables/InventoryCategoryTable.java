@@ -4,11 +4,11 @@ import daos.InventoryCategoriesDAO;
 import database.Const;
 import database.Database;
 import javabeans.InventoryCategory;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * @author Fadi Findakly
@@ -18,6 +18,7 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
 
     Database db = Database.getInstance();
     ArrayList<InventoryCategory> categories;
+    HashMap<Integer,String> categoriesHashMap;
 
     @Override
         public ArrayList<InventoryCategory> getAllCategories() {
@@ -28,7 +29,9 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
             Statement getCategories = db.getConnection().createStatement();
             ResultSet data = getCategories.executeQuery(query);
             while(data.next()) {
-                categories.add(new InventoryCategory(data.getInt(Const.CATEGORY_ID),
+                categories.add(
+                        new InventoryCategory(
+                                data.getInt(Const.CATEGORY_ID),
                                 data.getString(Const.CATEGORY_NAME)));
             }
 
@@ -37,6 +40,7 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
         }
         return categories;
     }
+
 
     @Override
     public void createCategory(InventoryCategory category) {
@@ -65,6 +69,26 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
 
     @Override
     public String getCategory() {
+
         return null;
     }
+
+    //This method is to return a HashMap that contains each category with its id
+    public HashMap<Integer, String> getCategoriesHashMap() {
+        String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES;
+        categoriesHashMap = new HashMap<>();
+        try {
+            Statement getCategories = db.getConnection().createStatement();
+            ResultSet data = getCategories.executeQuery(query);
+            while(data.next()) {
+                categoriesHashMap.put(data.getInt(Const.CATEGORY_ID),
+                        data.getString(Const.CATEGORY_NAME));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return categoriesHashMap;
+    }
+
 }

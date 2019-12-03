@@ -3,10 +3,11 @@ package tables;
 import daos.InventoryItemsDAO;
 import database.Const;
 import database.Database;
-import javabeans.InventoryCategory;
 import javabeans.InventoryItem;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-import javax.swing.plaf.nimbus.State;
+import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -21,6 +22,7 @@ public class InventoyTable implements InventoryItemsDAO {
 
     Database db = Database.getInstance();
     ArrayList<InventoryItem> items;
+    ObservableList<InventoryItem> itemsForTrackInventoryTable;
 
     @Override
     public ArrayList<InventoryItem> getAllInventoryItems() {
@@ -31,12 +33,12 @@ public class InventoyTable implements InventoryItemsDAO {
             Statement getItems = db.getConnection().createStatement();
             ResultSet data = getItems.executeQuery(query);
             while(data.next()) {
-                items.add(new InventoryItem(data.getInt(Const.INVENTORY_ITEM_ID),
-                        data.getString(Const.INVENTORY_ITEM_NAME),
-                        data.getString(Const.MEASUREMENT_UNIT),
-                        data.getDouble(Const.INVENTORY_ITEM_QUANTITY),
-                        data.getDouble(Const.CRITICAL_QUANTITY),
-                        data.getInt(Const.ITEM_CATEGORY_ID)));
+                items.add(new InventoryItem(
+                            data.getString(Const.INVENTORY_ITEM_NAME),
+                            data.getString(Const.MEASUREMENT_UNIT),
+                            data.getDouble(Const.INVENTORY_ITEM_QUANTITY),
+                            data.getDouble(Const.CRITICAL_QUANTITY),
+                            data.getInt(Const.ITEM_CATEGORY_ID)));
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -74,11 +76,67 @@ public class InventoyTable implements InventoryItemsDAO {
     }
     @Override
     public void deleteInventoryItem(InventoryItem item) {
+        String query = "DELETE FROM " + Const.TABLE_INVENTORY + " WHERE " +
+                Const.INVENTORY_ITEM_ID + " = " + item.getItemId();
 
+        try {
+            db.getConnection().createStatement().execute(query);
+            System.out.println("Item has been deleted from the inventory successfully!");
+        } catch (SQLException e) {
+            showAlert("The item you are trying to delete is used as an ingredient, You may want to update it instead!");
+        }
     }
 
     @Override
     public void updateInventoryItem(InventoryItem item) {
+        //UPDATE table_name
+        //SET column1 = value1, column2 = value2, ...
+        //WHERE condition;
+        String query = "UPDATE " + Const.TABLE_INVENTORY + " SET " +
+                Const.INVENTORY_ITEM_NAME + " = '" + item.getItemName() + "', " +
+                Const.MEASUREMENT_UNIT + " = '" + item.getMeasurementUnit() + "', " +
+                Const.INVENTORY_ITEM_QUANTITY + " = " + item.getQuantity() + ", " +
+                Const.CRITICAL_QUANTITY + " = " + item.getCriticalQuantity() + ", " +
+                Const.ITEM_CATEGORY_ID + " = " + item.getCategoryId() + " " +
+                " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getItemId();
+        try {
+            db.getConnection().createStatement().execute(query);
+            showAlert("Item has been updated successfully!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+    }
+
+
+    public ObservableList<InventoryItem> loadTrackInventoryTable() {
+        String query = "SELECT * FROM " + Const.TABLE_INVENTORY;
+        itemsForTrackInventoryTable = FXCollections.observableArrayList();
+
+        try {
+            Statement getItems = db.getConnection().createStatement();
+            ResultSet data = getItems.executeQuery(query);
+            while(data.next()) {
+                itemsForTrackInventoryTable.add(new InventoryItem(
+                                                data.getInt(Const.INVENTORY_ITEM_ID),
+                                                data.getString(Const.INVENTORY_ITEM_NAME),
+                                                data.getString(Const.MEASUREMENT_UNIT),
+                                                data.getDouble(Const.INVENTORY_ITEM_QUANTITY),
+                                                data.getDouble(Const.CRITICAL_QUANTITY),
+                                                data.getInt(Const.ITEM_CATEGORY_ID)));
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return itemsForTrackInventoryTable;
+    }
+
+
+    /**
+     * This function is to create an alret message
+     * @param message
+     */
+    private void showAlert(String message){
+        JOptionPane.showMessageDialog(null, message);
     }
 }

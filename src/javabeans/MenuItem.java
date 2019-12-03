@@ -24,14 +24,6 @@ public class MenuItem {
         this.imagePath = imagePath;
     }
 
-    public String getItemDisc() {
-        return itemDisc;
-    }
-
-    public void setItemDisc(String itemDisc) {
-        this.itemDisc = itemDisc;
-    }
-
     public MenuItem(String itemName, String itemCategory, String itemDisc, double price, String imagePath) {
         this.itemName = itemName;
         this.itemCategory = itemCategory;
@@ -39,6 +31,7 @@ public class MenuItem {
         this.price = price;
         this.imagePath = imagePath;
     }
+
 
     //Create setters and getters
 
@@ -80,6 +73,14 @@ public class MenuItem {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public String getItemDisc() {
+        return itemDisc;
+    }
+
+    public void setItemDisc(String itemDisc) {
+        this.itemDisc = itemDisc;
     }
 
 
