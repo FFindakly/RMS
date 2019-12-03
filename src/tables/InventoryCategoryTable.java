@@ -4,6 +4,9 @@ import daos.InventoryCategoriesDAO;
 import database.Const;
 import database.Database;
 import javabeans.InventoryCategory;
+import sample.controllers.Login;
+import sun.rmi.runtime.Log;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -45,8 +48,9 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
     @Override
     public void createCategory(InventoryCategory category) {
         String query = "INSERT INTO " + Const.TABLE_INVENTORY_CATEGORIES +
-                        "(" + Const.CATEGORY_NAME + ") VALUES ('" +
+                        "(" + Const.INVENTORY_USER_ID + ","  + Const.CATEGORY_NAME + ") VALUES ('" + Login.userID.get("ID") + "' , '" +
                         category.getName() + "')";
+        System.out.println(query);
         try {
             Statement addCategory = db.getConnection().createStatement();
             addCategory.execute(query);
@@ -75,7 +79,8 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
 
     //This method is to return a HashMap that contains each category with its id
     public HashMap<Integer, String> getCategoriesHashMap() {
-        String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES;
+        String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES + " WHERE " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
+        System.out.println(query);
         categoriesHashMap = new HashMap<>();
         try {
             Statement getCategories = db.getConnection().createStatement();

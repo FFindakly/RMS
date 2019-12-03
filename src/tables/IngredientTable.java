@@ -5,6 +5,7 @@ import database.Const;
 import database.Database;
 import javabeans.IngredientItem;
 import javabeans.InventoryItem;
+import sample.controllers.Login;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -35,8 +36,10 @@ public class IngredientTable implements IngredientsTableDAO {
         String query = "INSERT INTO " + Const.TABLE_INGREDIENTS +
                 "(" + Const.INGREDIENT_MENU_ITEM_ID + ", " +
                 Const.INGREDIENT_INVENTORY_ITEM_ID + ", " +
+                Const.INGREDIENT_USER_ID + ", " +
                 Const.INGREDIENT_QUANTITY + ") VALUES ('" +
                 item.getMenuItemId() + "', '" + item.getInventoryItemId() + "', '" +
+                Login.userID.get("ID") + "', '" +
                 item.getIngredientQuantity() + "')";
 
         try {
@@ -61,7 +64,7 @@ public class IngredientTable implements IngredientsTableDAO {
 
         String query = "UPDATE " + Const.TABLE_INVENTORY +
                 " SET " + Const.INVENTORY_ITEM_QUANTITY + " = " + quantityInInventory + " - " +
-                usage + " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getInventoryItemId();
+                usage + " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getInventoryItemId() + " AND " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
 
         try {
             db.getConnection().createStatement().execute(query);

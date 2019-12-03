@@ -68,8 +68,8 @@ public class CreateMenu implements Initializable {
         fileChooser.setTitle("Upload menu item image");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image files", "*.jpg", "*.png", "*.jpeg"));
 
-//        Stage stage = (Stage) createMenuPane.getScene().getWindow();
-//        imageFile = fileChooser.showOpenDialog(createMenuPane.getScene().getWindow());
+//      Stage stage = (Stage) createMenuPane.getScene().getWindow();
+//      imageFile = fileChooser.showOpenDialog(createMenuPane.getScene().getWindow());
         imageFile = fileChooser.showOpenDialog(new Stage());
 
         if (imageFile != null) {
