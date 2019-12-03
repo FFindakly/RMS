@@ -18,7 +18,7 @@ public class Const {
     public static final String LOGIN_ID = "id";
     public static final String LOGIN_PASSWORD = "password";
     public static final String LOGIN_USERNAME = "user_name";
-    public static final String LOGIN_PERMISSION = "permission";
+
 
 
     //Inventory table
@@ -35,10 +35,11 @@ public class Const {
     public static final String ACCOUNTS_ADDRESS = "address";
     public static final String ACCOUNTS_POSTALCODE = "postal_code";
     public static final String ACCOUNTS_PHONE = "phone";
+    public static final String ACCOUNTS_PROVINCE = "province";
     public static final String ACCOUNTS_EMAIL = "email";
-    public static final String ACCOUNTS_USERID = "userid";
+    public static final String ACCOUNTS_USERID = "user_id";
     public static final String ACCOUNTS_NAME = "restaurant_name";
-    public static final String ACCOUNTS_TABLENUM = "number_of_table";
+    public static final String ACCOUNTS_TABLENUM = "number_of_tables";
 
     //Menu_items table
     public static final String TABLE_MENU_ITEMS = "menu_items";
@@ -57,5 +58,15 @@ public class Const {
     public static final String INGREDIENT_INVENTORY_ITEM_ID = "inventory_item_id";
     public static final String INGREDIENT_QUANTITY = "quantity";
 
+
+    //Orders Table
+    public static final String TABLE_ORDER = "table_order";
+    public static final String TABLE_ORDER_ID = "id";
+    public static final String TABLE_USER_ID = "user_id";
+    public static final String TABLE_ORDER_TABLE_ID = "table_id";
+    public static final String TABLE_ORDER_ITEM_ID = "item_id";
+    public static final String TABLE_ORDER_QUANTITY = "quantity";
+    public static final String TABLE_ORDER_DATE = "date";
+    public static final String TABLE_ORDER_STATUS = "status";
 
 }
