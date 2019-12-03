@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.UpdatePassword">
+   <center>
+      <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextField fx:id="newPass" layoutX="250.0" layoutY="217.0" prefHeight="30.0" prefWidth="400.0" promptText="New password" />
+            <JFXTextField fx:id="newPass2" layoutX="250.0" layoutY="287.0" prefHeight="30.0" prefWidth="400.0" promptText="Verify password" />
+            <JFXButton fx:id="update" layoutX="450.0" layoutY="347.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cccccc;" text="Update" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

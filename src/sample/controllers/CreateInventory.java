@@ -106,7 +106,7 @@ public class CreateInventory implements Initializable {
                     measurement_unit_ComboBox.getSelectionModel().getSelectedItem(),
                     Double.parseDouble(quantity_TextField.getText()),
                     Double.parseDouble(critical_quantity_TextField.getText()),
-                    categories_ComboBox.getSelectionModel().getSelectedIndex() + 1);
+                    categories_ComboBox.getSelectionModel().getSelectedIndex(), Login.userID.get("ID") + 1);
 
             inventoyTable.createInventoryItem(item);
             message_Text.setText("Item has been added successfully!");

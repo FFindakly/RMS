@@ -30,7 +30,12 @@ public class Main extends Application {
      * @author Fadi Findakly
      */
     public static void setPane(BorderPane pane) {
-        root.setCenter(pane);
+        root.setCenter(pane.getCenter());
+    }
+
+    public static void openLogin(BorderPane pane) {
+        root.setCenter(pane.getCenter());
+        root.setTop(pane.getTop());
     }
 
     /**
@@ -39,7 +44,7 @@ public class Main extends Application {
      * @author Fadi Findakly
      */
     public static void toLogin(BorderPane pane) {
-        root.setCenter(pane.getCenter());
+            root.setCenter(pane.getCenter());
     }
 
     public static void main(String[] args) {

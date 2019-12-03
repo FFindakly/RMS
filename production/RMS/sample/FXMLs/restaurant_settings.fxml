@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="900" BorderPane.alignment="CENTER">
+         <Label layoutX="198.0" layoutY="39.0" text="Restaurant Settings">
+            <font>
+               <Font name="Arial" size="24.0" />
+            </font></Label>
+         <Label layoutX="197.0" layoutY="322.0" text="Restaurant Icon:">
+            <font>
+               <Font name="Arial Bold" size="14.0" />
+            </font></Label>
+         <JFXComboBox fx:id="tablesId" layoutX="200.0" layoutY="264.0" prefWidth="500.0" promptText="Number of tables">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="1" />
+                  <String fx:value="2" />
+                  <String fx:value="3" />
+                  <String fx:value="4" />
+                  <String fx:value="5" />
+                  <String fx:value="6" />
+                  <String fx:value="7" />
+                  <String fx:value="8" />
+                  <String fx:value="9" />
+                  <String fx:value="10" />
+               </FXCollections>
+            </items>
+         </JFXComboBox>
+         <JFXButton fx:id="addImageBtn" buttonType="RAISED" layoutX="349.0" layoutY="315.0" prefHeight="27.0" prefWidth="350.0" style="-fx-background-color: cccccc;" text="Browse" />
+         <JFXButton layoutX="499.0" layoutY="377.0" prefWidth="200.0" style="-fx-background-color: cccccc;" text="Save" />
+      </Pane>
+   </center>
+</BorderPane>

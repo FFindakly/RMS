@@ -11,6 +11,7 @@ public class Const {
     public static final String TABLE_INVENTORY_CATEGORIES = "inventory_categories";
     public static final String CATEGORY_ID = "id";
     public static final String CATEGORY_NAME = "category_name";
+    public static final String CATEGORY_USER_ID = "user_id";
 
 
     //Login table
@@ -29,6 +30,7 @@ public class Const {
     public static final String INVENTORY_ITEM_QUANTITY = "quantity";
     public static final String CRITICAL_QUANTITY = "critical_quantity";
     public static final String ITEM_CATEGORY_ID = "cat_id";
+    public static final String INVENTORY_USER_ID = "user_id";
 
     //Addresses table
     public static final String TABLE_ACCOUNTS = "accounts";
@@ -40,6 +42,7 @@ public class Const {
     public static final String ACCOUNTS_USERID = "user_id";
     public static final String ACCOUNTS_NAME = "restaurant_name";
     public static final String ACCOUNTS_TABLENUM = "number_of_tables";
+    public static final String ACCOUNTS_USER_ID = "user_id";
 
     //Menu_items table
     public static final String TABLE_MENU_ITEMS = "menu_items";
@@ -49,6 +52,7 @@ public class Const {
     public static final String MENU_ITEM_DISC = "item_disc";
     public static final String MENU_ITEM_PRICE = "item_price";
     public static final String MENU_ITEM_IMAGE = "item_image";
+    public static final String MENU_ITEM_USER_ID = "user_id";
 
 
     //Ingredients table
@@ -57,6 +61,7 @@ public class Const {
     public static final String INGREDIENT_MENU_ITEM_ID = "menu_item_id";
     public static final String INGREDIENT_INVENTORY_ITEM_ID = "inventory_item_id";
     public static final String INGREDIENT_QUANTITY = "quantity";
+    public static final String INGREDIENT_USER_ID = "user_id";
 
 
     //Orders Table
@@ -79,6 +84,8 @@ public class Const {
             "CREATE TABLE " + TABLE_INVENTORY_CATEGORIES + "(" +
                     CATEGORY_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
                     CATEGORY_NAME + " varchar(50) NOT NULL, " +
+                    CATEGORY_USER_ID + " int(11) NOT NULL, " +
+
                     "PRIMARY KEY(" + CATEGORY_ID + ")" +
                     ")" + " ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;";
 
@@ -98,6 +105,7 @@ public class Const {
                     MEASUREMENT_UNIT  + " decimal(10) NOT NULL, "+
                     INVENTORY_ITEM_QUANTITY  + " decimal(10,0) NOT NULL, "+
                     ITEM_CATEGORY_ID  + " int(11) NOT NULL, "+
+                    INVENTORY_USER_ID + " int(11) NOT NULL, " +
                     "PRIMARY KEY(" + INVENTORY_ITEM_ID + ")," +
                     "KEY " + ITEM_CATEGORY_ID + "(" + ITEM_CATEGORY_ID + ")" +
                     ")" + " ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;";
@@ -123,6 +131,7 @@ public class Const {
                     MENU_ITEM_DISC  + " varchar(400) NOT NULL, "+
                     MENU_ITEM_PRICE  + " decimal(10,0) NOT NULL, "+
                     MENU_ITEM_IMAGE  + " varchar(150) NOT NULL, "+
+                    MENU_ITEM_USER_ID + " int(11) NOT NULL, " +
                     "PRIMARY KEY(" + MENU_ITEM_ID + ")" +
                     ")" +  "ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;";
 
@@ -131,6 +140,7 @@ public class Const {
                     INGREDIENT_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
                     INGREDIENT_MENU_ITEM_ID + " varchar(80) NOT NULL, " +
                     INGREDIENT_INVENTORY_ITEM_ID  + " decimal(10) NOT NULL, "+
+                    INVENTORY_USER_ID + " int(11) NOT NULL, " +
                     INGREDIENT_QUANTITY  + " decimal(10,0) NOT NULL, "+
                     "PRIMARY KEY(" + INGREDIENT_ID + ")," +
                     "KEY " + INGREDIENT_MENU_ITEM_ID + "(" + INGREDIENT_MENU_ITEM_ID + "," + INGREDIENT_INVENTORY_ITEM_ID + ")," +

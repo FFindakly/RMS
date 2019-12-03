@@ -6,6 +6,8 @@ import database.Database;
 import javabeans.MenuItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.controllers.Login;
+import sun.rmi.runtime.Log;
 
 import javax.swing.*;
 import java.sql.ResultSet;
@@ -25,7 +27,7 @@ public class MenuItemsTable implements MenuItemTableDAO {
 
     @Override
     public ArrayList<MenuItem> getAllMenuItems() {
-        String query = "SELECT * FROM " + Const.TABLE_MENU_ITEMS;
+        String query = "SELECT * FROM " + Const.TABLE_MENU_ITEMS + " WHERE " + Const.MENU_ITEM_USER_ID + " = " + Login.userID.get("ID");
         menuItems = new ArrayList<>();
 
         try {
@@ -61,9 +63,10 @@ public class MenuItemsTable implements MenuItemTableDAO {
                 Const.MENU_ITEM_CATEGORY + ", " +
                 Const.MENU_ITEM_DISC + ", " +
                 Const.MENU_ITEM_PRICE + ", " +
+                Const.MENU_ITEM_USER_ID + ", " +
                 Const.MENU_ITEM_IMAGE + ") VALUES ('" +
                 item.getItemName() + "', '" + item.getItemCategory() + "', '" + item.getItemDisc() + "', '" +
-                item.getPrice() + "', '" + item.getImagePath() + "')";
+                item.getPrice() + "', '" + Login.userID.get("ID") + "', '" + item.getImagePath() + "')";
 
         try {
             db.getConnection().createStatement().execute(query);
@@ -78,7 +81,7 @@ public class MenuItemsTable implements MenuItemTableDAO {
     public void deleteMenuItem(MenuItem item) {
 
         String query = "DELETE FROM " + Const.TABLE_MENU_ITEMS + " WHERE " +
-                Const.MENU_ITEM_ID + " = " + item.getId();
+                Const.MENU_ITEM_ID + " = " + item.getId() + " AND " + Const.MENU_ITEM_USER_ID + " = " + Login.userID.get("ID");
 
         try {
             db.getConnection().createStatement().execute(query);
@@ -97,7 +100,7 @@ public class MenuItemsTable implements MenuItemTableDAO {
                 Const.MENU_ITEM_CATEGORY + " = '" + item.getItemCategory() + "', " +
                 Const.MENU_ITEM_PRICE + " = " + item.getPrice() + ", " +
                 Const.MENU_ITEM_DISC + " = '" + item.getItemDisc() + "' " +
-                " WHERE " + Const.MENU_ITEM_ID + " = " + item.getId();
+                " WHERE " + Const.MENU_ITEM_ID + " = " + item.getId() + " AND " + Const.MENU_ITEM_USER_ID + " = " + Login.userID.get("ID");
 
         try {
             db.getConnection().createStatement().execute(query);
@@ -109,7 +112,7 @@ public class MenuItemsTable implements MenuItemTableDAO {
     }
 
     public ObservableList<MenuItem> loadUpdateMenuItemsTableView() {
-        String query = "SELECT * FROM " + Const.TABLE_MENU_ITEMS;
+        String query = "SELECT * FROM " + Const.TABLE_MENU_ITEMS + " WHERE " + Const.MENU_ITEM_USER_ID + " = " + Login.userID.get("ID");
         allItems = FXCollections.observableArrayList();
 
         try {
