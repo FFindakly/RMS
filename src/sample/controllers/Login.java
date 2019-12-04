@@ -32,7 +32,6 @@ public class Login implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         logBtn.getStyleClass().add("buttons");
-        warning.setVisible(false);
         menu.setVisible(false);
         preferences = Preferences.userNodeForPackage(Login.class);
         if(preferences != null){
@@ -79,7 +78,9 @@ public class Login implements Initializable {
             }
         }
         else{
-            warning.setVisible(true);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("The username or password you have entered is wrong!");
+            alert.showAndWait();
         }
     }
 

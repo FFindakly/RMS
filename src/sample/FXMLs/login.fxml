@@ -60,40 +60,51 @@
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="309.0" layoutY="150.0" text="Username:" textFill="#060606">
+            <Label layoutX="270.0" layoutY="140.0" text="Username:" textFill="#060606">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="username" layoutX="309.0" layoutY="176.0" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #ffffff;">
+            <JFXTextField fx:id="username" layoutX="270.0" layoutY="166.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff;">
                <opaqueInsets>
                   <Insets left="5.0" right="5.0" />
-               </opaqueInsets></JFXTextField>
-            <Label layoutX="309.0" layoutY="222.0" text="Password:" textFill="#060606">
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></JFXTextField>
+            <Label layoutX="270.0" layoutY="222.0" text="Password:" textFill="#060606">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXPasswordField fx:id="password" layoutX="309.0" layoutY="252.0" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #ffffff;">
+            <JFXPasswordField fx:id="password" layoutX="270.0" layoutY="252.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff;">
                <opaqueInsets>
                   <Insets />
-               </opaqueInsets></JFXPasswordField>
-            <JFXButton fx:id="logBtn" layoutX="309.0" layoutY="341.0" onAction="#logon" prefHeight="30.0" prefWidth="230.0" text="LOGIN">
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></JFXPasswordField>
+            <JFXButton fx:id="logBtn" layoutX="270.0" layoutY="341.0" onAction="#logon" prefHeight="30.0" prefWidth="300.0" text="LOGIN">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <Label fx:id="forgot" layoutX="448.0" layoutY="304.0" text="Forgot password?">
+            <Label fx:id="forgot" layoutX="456.0" layoutY="304.0" text="Forgot password?">
                <font>
-                  <Font size="12.0" />
+                  <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <JFXCheckBox fx:id="rememberMe" layoutX="309.0" layoutY="303.0" text="Remember me">
+            <JFXCheckBox fx:id="rememberMe" layoutX="270.0" layoutY="303.0" text="Remember me">
                <font>
-                  <Font size="12.0" />
+                  <Font size="14.0" />
                </font>
             </JFXCheckBox>
-            <Label fx:id="warning" layoutX="309.0" layoutY="377.0" text="Please try again!" />
          </children>
       </Pane>
    </center>
