@@ -39,7 +39,6 @@ public class CreateInventory implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         //Add content to the categories ComboBox from the database
         categories_ComboBox.setItems(FXCollections.observableArrayList(inventoryCategoriesTable.getAllCategories()));
     }

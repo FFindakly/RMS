@@ -34,6 +34,7 @@
             <JFXTextField fx:id="quantity_TextField" layoutX="469.0" layoutY="288.0" prefHeight="25.0" prefWidth="402.0" promptText="Quantity" />
             <JFXTextField fx:id="critical_quantity_TextField" layoutX="469.0" layoutY="381.0" prefHeight="25.0" prefWidth="402.0" promptText="Critical quantity" />
             <Text fx:id="message_Text" fill="#96d311" layoutX="442.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text" textAlignment="CENTER" visible="false" />
+             <Text fx:id="message_Text_Category" fill="#96d311" layoutX="442.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text" textAlignment="CENTER" visible="false" />
          </children>
       </Pane>
    </center>

@@ -102,7 +102,7 @@ public class SetUpDatabase {
                     createTable(Const.TABLE_INGREDIENTS,
                             Const.CREATE_TABLE_INGREDIENTS,
                             connection);
-                    Main.openLogin(FXMLLoader.load(getClass().getResource("../sample/FXMLs/login.fxml")));
+                    Main.openLogin(FXMLLoader.load(getClass().getResource("../sample/FXMLs/splash.fxml")));
                 }
 
 
