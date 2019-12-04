@@ -5,22 +5,24 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0"
-            xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateInventory">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateInventory">
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTextField fx:id="category_TextField" layoutX="30.0" layoutY="64.0" prefHeight="30.0" prefWidth="400.0" promptText="meats, vegetable etc" />
-            <JFXButton fx:id="add_category_button" layoutX="470.0" layoutY="79.0" onAction="#addNewInventoryCategory" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Add Category" />
-            <JFXTextField fx:id="item_name_TextField" layoutX="30.0" layoutY="195.0" prefHeight="30.0" prefWidth="400.0" promptText="Enter inventory item name" />
+            <JFXTextField fx:id="category_TextField" layoutX="28.0" layoutY="100.0" prefHeight="30.0" prefWidth="400.0" promptText="meats, vegetable etc" />
+            <JFXButton fx:id="add_category_button" layoutX="460.0" layoutY="102.0" onAction="#addNewInventoryCategory" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Add Category" />
+            <JFXTextField fx:id="item_name_TextField" layoutX="30.0" layoutY="285.0" prefHeight="30.0" prefWidth="400.0" promptText="Enter inventory item name" />
 
-            <JFXComboBox fx:id="categories_ComboBox" layoutX="30.0" layoutY="376.0" prefHeight="30.0" prefWidth="400.0" promptText="Assign to a category" />
+            <JFXComboBox fx:id="categories_ComboBox" layoutX="30.0" layoutY="460.0" prefHeight="30.0" prefWidth="400.0" promptText="Assign to a category" />
 
-            <JFXComboBox fx:id="measurement_unit_ComboBox" layoutX="30.0" layoutY="285.0" prefHeight="30.0" prefWidth="400.0" promptText="Measurement unit">
+            <JFXComboBox fx:id="measurement_unit_ComboBox" layoutX="30.0" layoutY="375.0" prefHeight="30.0" prefWidth="400.0" promptText="Measurement unit">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:id="pound" fx:value="Pound" />
@@ -30,10 +32,21 @@
                     </FXCollections>
                 </items>
             </JFXComboBox>
-            <JFXButton fx:id="add_to_inventory_button" layoutX="250.0" layoutY="458.0" onAction="#addToInventory" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Add Inventory" />
-            <JFXTextField fx:id="quantity_TextField" layoutX="469.0" layoutY="288.0" prefHeight="25.0" prefWidth="402.0" promptText="Quantity" />
-            <JFXTextField fx:id="critical_quantity_TextField" layoutX="469.0" layoutY="381.0" prefHeight="25.0" prefWidth="402.0" promptText="Critical quantity" />
+            <JFXButton fx:id="add_to_inventory_button" layoutX="460.0" layoutY="462.0" onAction="#addToInventory" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Add Inventory" />
+            <JFXTextField fx:id="quantity_TextField" layoutX="460.0" layoutY="288.0" prefHeight="25.0" prefWidth="402.0" promptText="Quantity" />
+            <JFXTextField fx:id="critical_quantity_TextField" layoutX="460.0" layoutY="378.0" prefHeight="25.0" prefWidth="400.0" promptText="Critical quantity" />
             <Text fx:id="message_Text" fill="#96d311" layoutX="442.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text" textAlignment="CENTER" visible="false" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="2.0" layoutX="30.0" layoutY="206.0" stroke="BLACK" strokeType="INSIDE" width="890.0" />
+            <Label layoutX="30.0" layoutY="29.0" text="Add Category">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="247.0" text="Add Inventory">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>
