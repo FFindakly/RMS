@@ -37,7 +37,7 @@
          </JFXComboBox>
          <JFXTextField fx:id="phoneNumber" layoutX="200.0" layoutY="399.0" prefWidth="500.0" promptText="Phone Number" />
          <JFXTextField fx:id="email" layoutX="200.0" layoutY="449.0" prefWidth="500.0" promptText="E-mail" />
-         <JFXButton fx:id="nextBtn" buttonType="RAISED" layoutX="550.0" layoutY="496.0" onAction="#insertAccountSetting" prefHeight="10.0" prefWidth="150.0" style="-fx-background-color: cccccc;" text="Next" />
+         <JFXButton fx:id="nextBtn" buttonType="RAISED" layoutX="550.0" layoutY="496.0" onAction="#insertAccountSetting" prefHeight="10.0" prefWidth="150.0" text="Next" />
          <JFXTextArea fx:id="addressTextField" layoutX="200.0" layoutY="178.0" prefColumnCount="20" prefHeight="116.0" prefWidth="500.0" promptText="Address" style="-fx-background-color: cccccc;" />
          <Label fx:id="resultLabel" layoutX="199.0" layoutY="501.0">
             <font>
@@ -45,7 +45,7 @@
             </font>
          </Label>
          <JFXTextField fx:id="restName" layoutX="199.0" layoutY="95.0" prefWidth="500.0" promptText="Restaurant Name" />
-         <JFXTextField fx:id="tableNum" layoutX="199.0" layoutY="135.0" prefWidth="500.0" promptText="Number of tables"/>
+         <JFXTextField fx:id="tableNum" layoutX="199.0" layoutY="135.0" prefWidth="500.0" promptText="Restaurant Name"/>
      </Pane>
    </center>
 </BorderPane>

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.UpdateInventory">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.UpdateInventory">
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -19,8 +19,8 @@
                   <TableColumn fx:id="itemCategoryColumn" onEditCommit="#updateCategory" prefWidth="150.0" text="Category" />
                </columns>
             </TableView>
-            <JFXButton layoutX="719.0" layoutY="515.0" onAction="#updateItem" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: green;" text="Update item" />
-            <JFXButton layoutX="565.0" layoutY="515.0" onAction="#deleteItem" prefHeight="25.0" prefWidth="106.0" ripplerFill="#e01010" style="-fx-background-color: red;" text="Remove item" />
+            <JFXButton fx:id="updateBt" layoutX="719.0" layoutY="515.0" onAction="#updateItem" prefHeight="25.0" prefWidth="106.0" text="Update item" />
+            <JFXButton fx:id="removeBt" layoutX="565.0" layoutY="515.0" onAction="#deleteItem" prefHeight="25.0" prefWidth="106.0"  text="Remove item" />
          </children>
       </Pane>
    </center>

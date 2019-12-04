@@ -33,14 +33,19 @@ public class CreateInventory implements Initializable {
     @FXML private JFXComboBox<String> measurement_unit_ComboBox;
     @FXML private JFXTextField quantity_TextField;
     @FXML private JFXTextField critical_quantity_TextField;
-    @FXML private JFXButton nextBtn;
     @FXML private Text message_Text;
+    @FXML private JFXButton addCtBt;
+    @FXML private JFXButton addToInventoryBt;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Add content to the categories ComboBox from the database
         categories_ComboBox.setItems(FXCollections.observableArrayList(inventoryCategoriesTable.getAllCategories()));
+
+
+        addCtBt.getStyleClass().add("buttons");
+        addToInventoryBt.getStyleClass().add("buttons");
     }
 
     //Add an event listener to the addNewCategory button

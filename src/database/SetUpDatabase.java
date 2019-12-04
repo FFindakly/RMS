@@ -93,6 +93,9 @@ public class SetUpDatabase {
                     createTable(Const.TABLE_INVENTORY,
                             Const.CREATE_TABLE_INVENTORY,
                             connection);
+                    createTable(Const.TABLE_ORDER,
+                            Const.CREATE_TABLE_ORDER,
+                            connection);
                     createTable(Const.TABLE_ACCOUNTS,
                             Const.CREATE_TABLE_ACCOUNTS,
                             connection);

@@ -40,6 +40,9 @@ public class CreateMenu implements Initializable {
     @FXML private ImageView itemImageView;
     @FXML private Text add_new_item;
     @FXML private Text add_ingredient;
+    @FXML private JFXButton uploadImageBt;
+    @FXML private JFXButton addItemBt;
+    @FXML private JFXButton addIngredientBt;
 
     @FXML private TableView<Ingredient> ingredientsListTableView;
     @FXML private TableColumn<Ingredient, String> ingredientNameCol;
@@ -65,6 +68,12 @@ public class CreateMenu implements Initializable {
         ingredientNameCol.setCellValueFactory(new PropertyValueFactory<Ingredient, String> ("itemName"));
         ingredientQtyCol.setCellValueFactory(new PropertyValueFactory<Ingredient, Double>("quantity"));
         ingredientUnitCol.setCellValueFactory(new PropertyValueFactory<Ingredient, String>("unit"));
+
+        uploadImageBt.getStyleClass().add("buttons");
+        addItemBt.getStyleClass().add("buttons");
+        addIngredientBt.getStyleClass().add("buttons");
+
+
     }
 
     public void uploadImage() throws IOException {

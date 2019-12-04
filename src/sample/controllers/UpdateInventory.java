@@ -1,5 +1,6 @@
 package sample.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import javabeans.InventoryCategory;
 import javabeans.InventoryItem;
 import javafx.collections.FXCollections;
@@ -34,6 +35,9 @@ public class UpdateInventory implements Initializable {
     @FXML private TableColumn <InventoryItem, String> measurementUnitColumn;
     @FXML private TableColumn <InventoryItem, Double> quantityColumn;
     @FXML private TableColumn <InventoryItem, Double> criticalColumn;
+    @FXML private JFXButton updateBt;
+    @FXML private JFXButton removeBt;
+
 
     //Create an InventoryTable instance
     InventoyTable inventoryTable = new InventoyTable();
@@ -84,6 +88,10 @@ public class UpdateInventory implements Initializable {
         quantityColumn.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         criticalColumn.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         itemCategoryColumn.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), categories));
+
+        //Set the style class of buttons
+        updateBt.getStyleClass().add("buttons");
+        removeBt.getStyleClass().add("delete_buttons");
     }
 
 

@@ -86,22 +86,23 @@ public class Const {
 
     public static final String CREATE_TABLE_INVENTORY_CATEGORIES =
             "CREATE TABLE " + TABLE_INVENTORY_CATEGORIES + "(" +
-                    CATEGORY_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
+                    CATEGORY_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     CATEGORY_NAME + " varchar(50) NOT NULL, " +
-                    CATEGORY_USER_ID + " int(11) NOT NULL " + ")"
+                    CATEGORY_USER_ID + " int(11) NOT NULL " +
+                    ")"
                     + " ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;";
 
     // i did not have access to this table so Ugure if you are reading this update it as you see fit since this is your table - Yonis
     public static final String CREATE_TABLE_LOGIN =
             "CREATE TABLE " + TABLE_LOGIN + "(" +
-                    LOGIN_ID + " int NOT NULL AUTO_INCREMENT, " +
+                    LOGIN_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     LOGIN_PASSWORD + " VARCHAR(80), " +
                     LOGIN_USERNAME  + " VARCHAR(30) "+ ")" +
                     " ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 
     public static final String CREATE_TABLE_INVENTORY =
             "CREATE TABLE " + TABLE_INVENTORY + "( " +
-                    INVENTORY_ITEM_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
+                    INVENTORY_ITEM_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     INVENTORY_ITEM_NAME + " varchar(80) NOT NULL, " +
                     MEASUREMENT_UNIT  + " decimal(10) NOT NULL, "+
                     INVENTORY_ITEM_QUANTITY  + " decimal(10,0) NOT NULL, "+
@@ -113,7 +114,7 @@ public class Const {
     // i did not have access to this table so Ugure if you are reading this update it as you see fit since this is your table - Yonis
     public static final String CREATE_TABLE_ACCOUNTS =
             "CREATE TABLE " + TABLE_ACCOUNTS + "(" +
-                    ACCOUNTS_ID + " varchar(80) NOT NULL, " +
+                    ACCOUNTS_ID + " varchar(80) NOT NULL PRIMARY KEY, " +
                     ACCOUNTS_ADDRESS + " varchar(80) NOT NULL, " +
                     ACCOUNTS_POSTALCODE + " char(6) NOT NULL, " +
                     ACCOUNTS_PROVINCE + " char(6) NOT NULL, " +
@@ -127,7 +128,7 @@ public class Const {
 
     public static final String CREATE_TABLE_MENU_ITEMS =
             "CREATE TABLE " + TABLE_MENU_ITEMS + "(" +
-                    MENU_ITEM_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
+                    MENU_ITEM_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     MENU_ITEM_NAME + " varchar(80) NOT NULL, " +
                     MENU_ITEM_CATEGORY  + " varchar(25) NOT NULL, "+
                     MENU_ITEM_DISC  + " varchar(400) NOT NULL, "+
@@ -138,7 +139,7 @@ public class Const {
 
     public static final String CREATE_TABLE_INGREDIENTS =
             "CREATE TABLE " + TABLE_INGREDIENTS + "(" +
-                    INGREDIENT_ID + " int(11) NOT NULL AUTO_INCREMENT, " +
+                    INGREDIENT_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     INGREDIENT_MENU_ITEM_ID + " varchar(80) NOT NULL, " +
                     INGREDIENT_INVENTORY_ITEM_ID  + " decimal(10) NOT NULL, "+
                     INVENTORY_USER_ID + " int(11) NOT NULL, " +
@@ -148,7 +149,7 @@ public class Const {
 
     public static final String CREATE_TABLE_ORDER =
             "CREATE TABLE " + TABLE_ORDER + "(" +
-                    TABLE_ORDER_ID + " int(11) NOT NULL, " +
+                    TABLE_ORDER_ID + " int(11) NOT NULL PRIMARY KEY, " +
                     TABLE_USER_ID + " int(11) NOT NULL, " +
                     TABLE_ORDER_ITEM_ID  + " int(11) NOT NULL, "+
                     TABLE_ORDER_QUANTITY + " int(11) NOT NULL, " +

@@ -26,6 +26,7 @@ public class AccountSettings implements Initializable {
     @FXML private JFXTextField tableNum;
     @FXML private Label resultLabel;
     @FXML private JFXTextField email;
+    @FXML private JFXButton nextBtn;
 
     AccountSettingsTable accountSettingsTable = new AccountSettingsTable();
     public void insertAccountSetting() {
@@ -100,6 +101,8 @@ public class AccountSettings implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        nextBtn.getStyleClass().add("buttons");
 
     }
 }
