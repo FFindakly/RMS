@@ -24,12 +24,14 @@ public class Login implements Initializable {
     @FXML private PasswordField password;
     @FXML private MenuBar menu;
     @FXML private Label warning, forgot;
+    @FXML private Button logBtn;
 
     public static Map<String, Integer> userID = new HashMap<String, Integer>();
 
     Preferences preferences;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        logBtn.getStyleClass().add("buttons");
         warning.setVisible(false);
         menu.setVisible(false);
         preferences = Preferences.userNodeForPackage(Login.class);
