@@ -12,7 +12,9 @@ public class Credentials {
 //    public static final String DB_USERNAME = SetUpDatabase.database.get("DB_USERNAME");
 //    public static final String DB_PASSWORD = SetUpDatabase.database.get("DB_PASSWORD");
 
-    public static final String DB_NAME = "RMS";
+
+    public static final String DB_NAME = "new_one";
     public static final String DB_USERNAME = "root";
-    public static final String DB_PASSWORD = "root";
+    public static final String DB_PASSWORD = "";
+
 }

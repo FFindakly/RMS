@@ -25,7 +25,8 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
 
     @Override
         public ArrayList<InventoryCategory> getAllCategories() {
-            String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES;
+            String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES + " WHERE user_id = " +
+                    Login.userID.get("ID");
             categories = new ArrayList<>();
 
         try {
@@ -79,8 +80,7 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
 
     //This method is to return a HashMap that contains each category with its id
     public HashMap<Integer, String> getCategoriesHashMap() {
-        String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES + " WHERE " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
-        System.out.println(query);
+        String query = "SELECT * FROM " + Const.TABLE_INVENTORY_CATEGORIES + " WHERE " + Const.CATEGORY_USER_ID + " = " + Login.userID.get("ID");
         categoriesHashMap = new HashMap<>();
         try {
             Statement getCategories = db.getConnection().createStatement();

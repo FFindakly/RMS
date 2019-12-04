@@ -30,6 +30,7 @@ public class UpdateInventory implements Initializable {
     @FXML private TableView <InventoryItem> trackTableView;
     @FXML private TableColumn <InventoryItem, String> itemNameColumn;
     @FXML private TableColumn<InventoryItem, String> itemCategoryColumn;
+//    @FXML private TableColumn<InventoryItem, Integer> itemCategoryColumn;
     @FXML private TableColumn <InventoryItem, String> measurementUnitColumn;
     @FXML private TableColumn <InventoryItem, Double> quantityColumn;
     @FXML private TableColumn <InventoryItem, Double> criticalColumn;
@@ -55,6 +56,8 @@ public class UpdateInventory implements Initializable {
         quantityColumn.setCellValueFactory(new PropertyValueFactory<InventoryItem, Double>("quantity"));
         criticalColumn.setCellValueFactory(new PropertyValueFactory<InventoryItem, Double>("criticalQuantity"));
         itemCategoryColumn.setCellValueFactory(new PropertyValueFactory<InventoryItem, String>("categoryName"));
+//        itemCategoryColumn.setCellValueFactory(new PropertyValueFactory<InventoryItem, Integer>("categoryId"));
+
 
         //Load the data in the table view
         trackTableView.setItems(inventoryTable.loadTrackInventoryTable());
@@ -73,7 +76,7 @@ public class UpdateInventory implements Initializable {
             categories.add(item.getName());
         }
         //Get the categories HashMap from database
-        categoriesHashMap = categoriesTable.getCategoriesHashMap();
+        //categoriesHashMap = categoriesTable.getCategoriesHashMap();
 
         //Set the table cells to TextField or ComboBox
         itemNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());

@@ -66,7 +66,6 @@ public class InventoyTable implements InventoryItemsDAO {
                 item.getItemName() + "', '" + item.getMeasurementUnit() + "', '" +
                 item.getQuantity() + "', '" + item.getCriticalQuantity() + "', '" +
                 item.getCategoryId() + "', '" + Login.userID.get("ID") +"')";
-        System.out.println(query);
 
         try {
             db.getConnection().createStatement().execute(query);
@@ -114,7 +113,8 @@ public class InventoyTable implements InventoryItemsDAO {
 
 
     public ObservableList<InventoryItem> loadTrackInventoryTable() {
-        String query = "SELECT * FROM " + Const.TABLE_INVENTORY;
+        String query = "SELECT * FROM " + Const.TABLE_INVENTORY + " WHERE user_id = " +
+                Login.userID.get("ID");
         itemsForTrackInventoryTable = FXCollections.observableArrayList();
 
         try {
@@ -127,7 +127,8 @@ public class InventoyTable implements InventoryItemsDAO {
                                                 data.getString(Const.MEASUREMENT_UNIT),
                                                 data.getDouble(Const.INVENTORY_ITEM_QUANTITY),
                                                 data.getDouble(Const.CRITICAL_QUANTITY),
-                                                data.getInt(Const.ITEM_CATEGORY_ID)));
+                                                data.getInt(Const.ITEM_CATEGORY_ID),
+                                                data.getInt(Const.INVENTORY_USER_ID)));
             }
         } catch(SQLException e) {
             e.printStackTrace();

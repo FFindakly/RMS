@@ -20,9 +20,12 @@ public class Database {
     private Database() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
-            String connectionURL = "jdbc:mysql://localhost:8889/"+Credentials.DB_NAME+"?autoReconnect=true&useSSL=false";
-//            String connectionURL = "jdbc:mysql://php.scweb.ca"+Credentials.DB_NAME+"?autoReconnect=true&useSSL=false";
+            System.out.println(Credentials.DB_NAME);
+            System.out.println(Credentials.DB_USERNAME);
+            System.out.println(Credentials.DB_PASSWORD);
+//          String connectionURL = "jdbc:mysql://php.scweb.ca/"+Credentials.DB_NAME+"?autoReconnect=true&useSSL=false";
+            String connectionURL = "jdbc:mysql://localhost/"+Credentials.DB_NAME+"?autoReconnect=true&useSSL=false";
+//          String connectionURL = "jdbc:mysql://php.scweb.ca"+Credentials.DB_NAME+"?autoReconnect=true&useSSL=false";
             connection = DriverManager.getConnection(connectionURL, Credentials.DB_USERNAME, Credentials.DB_PASSWORD);
             System.out.println("Created Connection");
 
