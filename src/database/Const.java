@@ -152,6 +152,7 @@ public class Const {
                     TABLE_ORDER_ID + " int(11) NOT NULL PRIMARY KEY, " +
                     TABLE_USER_ID + " int(11) NOT NULL, " +
                     TABLE_ORDER_ITEM_ID  + " int(11) NOT NULL, "+
+                    TABLE_ORDER_TABLE_ID  + " int(11) NOT NULL, "+
                     TABLE_ORDER_QUANTITY + " int(11) NOT NULL, " +
                     TABLE_ORDER_DATE + " date NOT NULL, " +
                     TABLE_ORDER_STATUS  + " tinyint(1) NOT NULL "+ ")"

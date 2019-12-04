@@ -31,7 +31,7 @@ public class Tables implements Initializable {
 
         for(int i = 1; i <= count; i++) {
             buttonPane.setHgap(27);
-            buttonPane.setVgap(30);
+            buttonPane.setVgap(20);
             buttonPane.setPadding(new Insets(20));
             btnTable = new Button(Integer.toString(i));
             btnTable.setMinWidth(150);
