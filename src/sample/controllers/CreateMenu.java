@@ -103,28 +103,28 @@ public class CreateMenu implements Initializable {
         //Check all the inputs if they have data entered
         if (itemNameTextField.getText().trim().isEmpty()) {
             formIsValid = false;
-            itemNameTextField.getStyleClass().add("empty_data_fields");
+            itemNameTextField.getStyleClass().add("empty");
         } else {
-            itemNameTextField.getStyleClass().clear();
+            itemNameTextField.getStyleClass().add("valid");
         }
         if (itemCategoryComboBox.getSelectionModel().getSelectedItem() == null) {
             formIsValid = false;
-            itemCategoryComboBox.getStyleClass().add("empty_data_fields");
+            itemCategoryComboBox.getStyleClass().add("empty");
         } else {
-            itemCategoryComboBox.getStyleClass().clear();
+            itemCategoryComboBox.getStyleClass().add("valid");
         }
         if (itemPriceTextField.getText().trim().isEmpty()) {
             formIsValid = false;
-            itemPriceTextField.getStyleClass().add("empty_data_fields");
+            itemPriceTextField.getStyleClass().add("empty");
         } else {
-            itemPriceTextField.getStyleClass().clear();
+            itemPriceTextField.getStyleClass().add("valid");
         }
 
         if (itemDiscTextArea.getText().trim().isEmpty()) {
             formIsValid = false;
-            itemDiscTextArea.getStyleClass().add("empty_data_fields");
+            itemDiscTextArea.getStyleClass().add("empty");
         } else {
-            itemDiscTextArea.getStyleClass().clear();
+            itemDiscTextArea.getStyleClass().add("valid");
         }
         if(formIsValid){
             MenuItem item = new MenuItem(itemNameTextField.getText(),
@@ -152,15 +152,15 @@ public class CreateMenu implements Initializable {
         boolean formIsValidIngredient = true;
         if (ingredientComboBox.getSelectionModel().getSelectedItem() == null) {
             formIsValidIngredient = false;
-            ingredientComboBox.getStyleClass().add("empty_data_fields");
+            ingredientComboBox.getStyleClass().add("empty");
         } else {
-            ingredientComboBox.getStyleClass().clear();
+            ingredientComboBox.getStyleClass().add("valid");
         }
         if (quantityTextField.getText().trim().isEmpty()) {
             formIsValidIngredient = false;
-            quantityTextField.getStyleClass().add("empty_data_fields");
+            quantityTextField.getStyleClass().add("empty");
         } else {
-            quantityTextField.getStyleClass().clear();
+            quantityTextField.getStyleClass().add("valid");
         }
         if (formIsValidIngredient){
             Ingredient ingredientItem = new Ingredient(

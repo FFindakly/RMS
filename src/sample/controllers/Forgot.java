@@ -27,6 +27,7 @@ public class Forgot implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         verify.setOnAction(e->{
+            // Ask the user to enter his username and postal code, if they are correct let him to get change password screen.
             LoginTable login = new LoginTable();
             boolean result = login.verify(userName.getText(), postal.getText());
             if(result){

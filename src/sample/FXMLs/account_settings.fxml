@@ -6,20 +6,27 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.AccountSettings">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.AccountSettings">
    <center>
      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="900" BorderPane.alignment="CENTER">
         <Label layoutX="199.0" layoutY="38.0" text="Account Settings">
             <font>
                <Font size="24.0" />
             </font></Label>
-         <JFXTextField fx:id="postalCode" layoutX="199.0" layoutY="354.0" maxWidth="1.7976931348623157E308" prefWidth="500.0" promptText="Postal Code" />
-         <JFXComboBox fx:id="province" layoutX="200.0" layoutY="312.0" prefWidth="500.0" promptText="Province">
+         <JFXTextField fx:id="postalCode" layoutX="199.0" layoutY="354.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="500.0" promptText="Postal Code" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
+         <JFXComboBox fx:id="province" focusColor="WHITE" layoutX="199.0" layoutY="312.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="500.0" promptText="Province" style="-fx-background-color: #ffffff;" unFocusColor="WHITE">
              <items>
                  <FXCollections fx:factory="observableArrayList">
                      <String fx:value="NB" />
@@ -34,18 +41,51 @@
                      <String fx:value="YT" />
                  </FXCollections>
              </items>
+            <padding>
+               <Insets left="5.0" />
+            </padding>
          </JFXComboBox>
-         <JFXTextField fx:id="phoneNumber" layoutX="200.0" layoutY="399.0" prefWidth="500.0" promptText="Phone Number" />
-         <JFXTextField fx:id="email" layoutX="200.0" layoutY="449.0" prefWidth="500.0" promptText="E-mail" />
+         <JFXTextField fx:id="phoneNumber" layoutX="200.0" layoutY="399.0" prefHeight="30.0" prefWidth="500.0" promptText="Phone Number" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
+         <JFXTextField fx:id="email" layoutX="200.0" layoutY="449.0" prefHeight="30.0" prefWidth="500.0" promptText="E-mail" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
          <JFXButton fx:id="nextBtn" buttonType="RAISED" layoutX="550.0" layoutY="496.0" onAction="#insertAccountSetting" prefHeight="10.0" prefWidth="150.0" text="Next" />
-         <JFXTextArea fx:id="addressTextField" layoutX="200.0" layoutY="178.0" prefColumnCount="20" prefHeight="116.0" prefWidth="500.0" promptText="Address" style="-fx-background-color: cccccc;" />
+         <JFXTextArea fx:id="addressTextField" layoutX="200.0" layoutY="178.0" prefColumnCount="20" prefHeight="116.0" prefWidth="500.0" promptText="Address" style="-fx-background-color: #ffffff;">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font></JFXTextArea>
          <Label fx:id="resultLabel" layoutX="199.0" layoutY="501.0">
             <font>
                <Font name="Arial Bold" size="14.0" />
             </font>
          </Label>
-         <JFXTextField fx:id="restName" layoutX="199.0" layoutY="95.0" prefWidth="500.0" promptText="Restaurant Name" />
-         <JFXTextField fx:id="tableNum" layoutX="199.0" layoutY="135.0" prefWidth="500.0" promptText="Restaurant Name"/>
+         <JFXTextField fx:id="restName" layoutX="199.0" layoutY="95.0" prefHeight="30.0" prefWidth="500.0" promptText="Restaurant Name" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
+         <JFXTextField fx:id="tableNum" layoutX="199.0" layoutY="135.0" prefHeight="30.0" prefWidth="500.0" promptText="Number of tables" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
      </Pane>
    </center>
 </BorderPane>

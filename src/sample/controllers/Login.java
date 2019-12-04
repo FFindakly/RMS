@@ -24,15 +24,21 @@ public class Login implements Initializable {
     @FXML private PasswordField password;
     @FXML private MenuBar menu;
     @FXML private Label warning, forgot;
+    @FXML private Button logBtn;
 
+    // Create and hash map store the userID
     public static Map<String, Integer> userID = new HashMap<String, Integer>();
 
     Preferences preferences;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        warning.setVisible(false);
+        logBtn.getStyleClass().add("buttons");
         menu.setVisible(false);
+
+        // Create a preferences to store username and password permanently
         preferences = Preferences.userNodeForPackage(Login.class);
+
+        // If preferences is not null set the data for username and password field
         if(preferences != null){
             if(preferences.get("username", null) != null && !preferences.get("username", null).isEmpty()){
                 username.setText(preferences.get("username", null));
@@ -41,6 +47,7 @@ public class Login implements Initializable {
             }
         }
 
+        // When forget the password, user can click here to get verify screen
         forgot.setOnMouseClicked(e->{
             try {
                 Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/forgot.fxml")));
@@ -54,6 +61,8 @@ public class Login implements Initializable {
     public void logon() throws IOException{
         LoginTable login = new LoginTable();
         User result = login.getUser(username.getText(), password.getText());
+
+        // If result is not null, it means user entered the correct information. Store the data to remember for the next time.
         if(result != null){
             if(rememberMe.isSelected()){
                 preferences.put("username", username.getText());
@@ -62,10 +71,17 @@ public class Login implements Initializable {
                 preferences.put("username", "");
                 preferences.put("password", "");
             }
+
+            // Add the user id into the hash map
             userID.put("ID", result.getId());
+
+            //Set menu visible true, so user can see the menu after login
             menu.setVisible(true);
+
             AccountSettingsTable accountSettingsTable = new AccountSettingsTable();
             int count = accountSettingsTable.getCountOfTables(Login.userID.get("ID"));
+
+            // If the user already added his account settings, pass this screen to get the inventory screen.
             if(count > 0){
                 try {
                     Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/create_inventory.fxml")));
@@ -77,7 +93,10 @@ public class Login implements Initializable {
             }
         }
         else{
-            warning.setVisible(true);
+            // Show the warning to the user
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("The username or password you have entered is wrong!");
+            alert.showAndWait();
         }
     }
 

@@ -114,7 +114,7 @@ public class Const {
     // i did not have access to this table so Ugure if you are reading this update it as you see fit since this is your table - Yonis
     public static final String CREATE_TABLE_ACCOUNTS =
             "CREATE TABLE " + TABLE_ACCOUNTS + "(" +
-                    ACCOUNTS_ID + " varchar(80) NOT NULL PRIMARY KEY, " +
+                    ACCOUNTS_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     ACCOUNTS_ADDRESS + " varchar(80) NOT NULL, " +
                     ACCOUNTS_POSTALCODE + " char(6) NOT NULL, " +
                     ACCOUNTS_PROVINCE + " char(6) NOT NULL, " +
@@ -152,6 +152,7 @@ public class Const {
                     TABLE_ORDER_ID + " int(11) NOT NULL PRIMARY KEY, " +
                     TABLE_USER_ID + " int(11) NOT NULL, " +
                     TABLE_ORDER_ITEM_ID  + " int(11) NOT NULL, "+
+                    TABLE_ORDER_TABLE_ID  + " int(11) NOT NULL, "+
                     TABLE_ORDER_QUANTITY + " int(11) NOT NULL, " +
                     TABLE_ORDER_DATE + " date NOT NULL, " +
                     TABLE_ORDER_STATUS  + " tinyint(1) NOT NULL "+ ")"

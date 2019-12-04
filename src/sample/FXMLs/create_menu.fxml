@@ -19,10 +19,17 @@
 <BorderPane fx:id="createMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateMenu">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="896.0" BorderPane.alignment="CENTER">
-         <children>
-         <JFXTextField fx:id="itemNameTextField" layoutX="24.0" layoutY="27.0" prefHeight="34.0" prefWidth="380.0" promptText="Enter Your menu Item's Name" />
 
-         <JFXComboBox fx:id="itemCategoryComboBox" layoutX="25.0" layoutY="119.0" prefHeight="25.0" prefWidth="380.0" promptText="Assign item to category">
+         <children>
+         <JFXTextField fx:id="itemNameTextField" layoutX="24.0" layoutY="27.0" prefHeight="30.0" prefWidth="380.0" promptText="Enter Your menu Item's Name" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding></JFXTextField>
+
+         <JFXComboBox fx:id="itemCategoryComboBox" layoutX="25.0" layoutY="119.0" prefHeight="30.0" prefWidth="380.0" promptText="Assign item to category" style="-fx-background-color: #ffffff;">
             <items>
                <FXCollections fx:factory="observableArrayList">
                   <String fx:id="breakfast" fx:value="Breakfast" />
@@ -33,15 +40,28 @@
                </FXCollections>
             </items>
          </JFXComboBox>
-         <JFXTextArea fx:id="itemDiscTextArea" labelFloat="true" layoutX="455.0" layoutY="42.0" prefHeight="96.0" prefWidth="410.0" promptText="Add item's description" style="-fx-border-color: #cccccc;" unFocusColor="#cccccc">
+
+         <JFXTextArea fx:id="itemDiscTextArea" labelFloat="true" layoutX="455.0" layoutY="26.0" prefHeight="121.0" prefWidth="410.0" promptText="Add item's description" style="-fx-background-color: #ffffff;" unFocusColor="#cccccc">
             <padding>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-            </padding></JFXTextArea>
-         <JFXButton fx:id="addItemBt" buttonType="RAISED" layoutX="455.0" layoutY="210.0" onAction="#addItemToMenu" prefHeight="30.0" prefWidth="200.0" text="Add new item to menu" />
-         <JFXComboBox fx:id="menuItemsComboBox" layoutX="24.0" layoutY="351.0" prefHeight="30.0" prefWidth="380.0" promptText="Choose item from menu" />
-         <JFXComboBox fx:id="ingredientComboBox" layoutX="24.0" layoutY="404.0" prefHeight="30.0" prefWidth="380.0" promptText="Add ingredients from inventory" />
-         <JFXTextField fx:id="quantityTextField" layoutX="23.0" layoutY="465.0" prefHeight="30.0" prefWidth="380.0" promptText="Enter ingredient quantity" />
-         <JFXButton fx:id="addIngredientBt" buttonType="RAISED" layoutX="25.0" layoutY="517.0" onAction="#addIngredient" prefHeight="30.0" prefWidth="380.0" text="Add ingredient" />
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></JFXTextArea>
+         <JFXButton fx:id="addItemBt" buttonType="RAISED" layoutX="455.0" layoutY="201.0" onAction="#addItemToMenu" prefHeight="30.0" prefWidth="200.0" text="Add new item to menu" />
+         <JFXComboBox fx:id="menuItemsComboBox" layoutX="24.0" layoutY="351.0" prefHeight="30.0" prefWidth="380.0" promptText="Choose item from menu" style="-fx-background-color: #ffffff;" />
+         <JFXComboBox fx:id="ingredientComboBox" layoutX="24.0" layoutY="404.0" prefHeight="30.0" prefWidth="380.0" promptText="Add ingredients from inventory" style="-fx-background-color: #ffffff;" />
+         <JFXTextField fx:id="quantityTextField" layoutX="23.0" layoutY="465.0" prefHeight="30.0" prefWidth="380.0" promptText="Enter ingredient quantity" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
+         <JFXButton fx:id="addIngredientBt" buttonType="RAISED" layoutX="25.0" layoutY="517.0" onAction="#addIngredient" prefHeight="30.0" prefWidth="380.0" text="Add ingredient">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></JFXButton>
          <Label alignment="TOP_LEFT" layoutX="24.0" layoutY="312.0" prefHeight="17.0" prefWidth="380.0" text="Build menu item" textAlignment="CENTER">
             <font>
                <Font name="Arial" size="18.0" />
@@ -50,9 +70,15 @@
                <Insets bottom="5.0" top="5.0" />
             </padding>
          </Label>
-         <JFXButton fx:id="uploadImageBt" buttonType="RAISED" layoutX="455.0" layoutY="155.0" onAction="#uploadImage" prefHeight="30.0" prefWidth="200.0" text="Upload image" />
+         <JFXButton fx:id="uploadImageBt" buttonType="RAISED" layoutX="455.0" layoutY="160.0" onAction="#uploadImage" prefHeight="30.0" prefWidth="200.0" text="Upload image" />
          <ImageView fx:id="itemImageView" fitHeight="89.0" fitWidth="173.0" layoutX="692.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
-         <JFXTextField fx:id="itemPriceTextField" layoutX="24.0" layoutY="205.0" prefHeight="34.0" prefWidth="380.0" promptText="Enter item's price" />
+         <JFXTextField fx:id="itemPriceTextField" layoutX="24.0" layoutY="205.0" prefHeight="30.0" prefWidth="380.0" promptText="Enter item's price" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
          <TableView fx:id="ingredientsListTableView" layoutX="455.0" layoutY="353.0" prefHeight="195.0" prefWidth="410.0">
            <columns>
              <TableColumn fx:id="ingredientNameCol" prefWidth="150.0" text="Ingredient item" />

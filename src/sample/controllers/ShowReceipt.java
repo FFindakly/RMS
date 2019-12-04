@@ -1,8 +1,6 @@
 package sample.controllers;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXScrollPane;
-import database.Const;
 import javabeans.Receipt;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import sample.Main;
-import sun.rmi.runtime.Log;
 import tables.ReceiptTable;
 
 import javax.swing.*;
@@ -37,6 +33,9 @@ public class ShowReceipt implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        payButton.getStyleClass().add("buttons");
+
+        // Get the all order for the chosen table by table id and status
         ArrayList<Receipt> receipt = receiptTable.getItems(Tables.tableId.get("table_id"));
         tableNumber.setText(Integer.toString(receipt.get(0).getTableId()));
         dateText.setText(receipt.get(0).getDate());
@@ -67,6 +66,8 @@ public class ShowReceipt implements Initializable {
             vContent.getChildren().addAll(itemHbox);
             vContent.setSpacing(10.0);
         }
+
+        // Calculate the sub total, total and tax
         subTotalText.setText("$"+subTotalFinal);
         double afterTax = (subTotalFinal * 13) / 100;
         taxText.setText("$" + afterTax);
@@ -76,8 +77,9 @@ public class ShowReceipt implements Initializable {
         itemsPane.setFitToWidth(true);
 
         payButton.setOnAction(e->{
+           // When user click to pay button, update the order status 0(false)
            boolean res = receiptTable.updateTableOrder(Integer.parseInt(tableNumber.getText()), Login.userID.get("ID"));
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Thank you for the payment!");
             alert.showAndWait();
             try {
