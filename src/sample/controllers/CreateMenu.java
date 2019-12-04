@@ -13,6 +13,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import tables.IngredientTable;
@@ -36,6 +38,8 @@ public class CreateMenu implements Initializable {
     @FXML private JFXTextField quantityTextField;
     @FXML private JFXListView<String> ingredientsListView;
     @FXML private ImageView itemImageView;
+    @FXML private Text add_new_item;
+    @FXML private Text add_ingredient;
 
     @FXML private TableView<Ingredient> ingredientsListTableView;
     @FXML private TableColumn<Ingredient, String> ingredientNameCol;
@@ -53,18 +57,14 @@ public class CreateMenu implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         //Add all menu items to the menu items ComboBox
         menuItemsComboBox.setItems(FXCollections.observableArrayList(menuItemsTable.getAllMenuItems()));
-
         //Add all inventory items to the ingredients ComboBox
         ingredientComboBox.setItems(FXCollections.observableArrayList(inventoryTable.getAllInventoryItems()));
-
         //Set TableView columns
         ingredientNameCol.setCellValueFactory(new PropertyValueFactory<Ingredient, String> ("itemName"));
         ingredientQtyCol.setCellValueFactory(new PropertyValueFactory<Ingredient, Double>("quantity"));
         ingredientUnitCol.setCellValueFactory(new PropertyValueFactory<Ingredient, String>("unit"));
-
     }
 
     public void uploadImage() throws IOException {
@@ -89,16 +89,50 @@ public class CreateMenu implements Initializable {
     public void addItemToMenu() {
         //(String itemName, String itemCategory, double price, String imagePath)
         //Create a new menu item by retrieving the data frm the form
-        MenuItem item = new MenuItem(itemNameTextField.getText(),
-                itemCategoryComboBox.getSelectionModel().getSelectedItem(),
-                itemDiscTextArea.getText(),
-                Double.parseDouble(itemPriceTextField.getText()),
-                imageUrl.toExternalForm());
-        //Insert the new created menu item to database table
-        menuItemsTable.createMenuItem(item);
+        boolean formIsValid = true;
 
-        //Update the content of the menu items ComboBox
-        menuItemsComboBox.setItems(FXCollections.observableArrayList(menuItemsTable.getAllMenuItems()));
+        //Check all the inputs if they have data entered
+        if (itemNameTextField.getText().trim().isEmpty()) {
+            formIsValid = false;
+            itemNameTextField.getStyleClass().add("empty_data_fields");
+        } else {
+            itemNameTextField.getStyleClass().clear();
+        }
+        if (itemCategoryComboBox.getSelectionModel().getSelectedItem() == null) {
+            formIsValid = false;
+            itemCategoryComboBox.getStyleClass().add("empty_data_fields");
+        } else {
+            itemCategoryComboBox.getStyleClass().clear();
+        }
+        if (itemPriceTextField.getText().trim().isEmpty()) {
+            formIsValid = false;
+            itemPriceTextField.getStyleClass().add("empty_data_fields");
+        } else {
+            itemPriceTextField.getStyleClass().clear();
+        }
+
+        if (itemDiscTextArea.getText().trim().isEmpty()) {
+            formIsValid = false;
+            itemDiscTextArea.getStyleClass().add("empty_data_fields");
+        } else {
+            itemDiscTextArea.getStyleClass().clear();
+        }
+        if(formIsValid){
+            MenuItem item = new MenuItem(itemNameTextField.getText(),
+                    itemCategoryComboBox.getSelectionModel().getSelectedItem(),
+                    itemDiscTextArea.getText(),
+                    Double.parseDouble(itemPriceTextField.getText()),
+                    imageUrl.toExternalForm());
+            //Insert the new created menu item to database table
+            menuItemsTable.createMenuItem(item);
+            menuItemsComboBox.setItems(FXCollections.observableArrayList(menuItemsTable.getAllMenuItems()));
+            //Update the content of the menu items ComboBox
+        }else{
+            add_new_item.setText("Please, enter the missing data!");
+            add_new_item.setFill(Paint.valueOf("red"));
+            add_new_item.setVisible(true);
+        }
+
 
     }
 
@@ -106,14 +140,34 @@ public class CreateMenu implements Initializable {
      * A function to create a new ingredient and add it to the database
      */
     public void addIngredient() {
-        Ingredient ingredientItem = new Ingredient(
-                ingredientComboBox.getSelectionModel().getSelectedItem().getItemName(),
-                quantityTextField.getText(),
-                ingredientComboBox.getSelectionModel().getSelectedItem().getMeasurementUnit()
-        );
-        ingredientsList.add(ingredientItem);
-        ingredientsListTableView.setItems(ingredientsList);
-        ingredientsListTableView.setEditable(false);
+        boolean formIsValidIngredient = true;
+        if (ingredientComboBox.getSelectionModel().getSelectedItem() == null) {
+            formIsValidIngredient = false;
+            ingredientComboBox.getStyleClass().add("empty_data_fields");
+        } else {
+            ingredientComboBox.getStyleClass().clear();
+        }
+        if (quantityTextField.getText().trim().isEmpty()) {
+            formIsValidIngredient = false;
+            quantityTextField.getStyleClass().add("empty_data_fields");
+        } else {
+            quantityTextField.getStyleClass().clear();
+        }
+        if (formIsValidIngredient){
+            Ingredient ingredientItem = new Ingredient(
+                    ingredientComboBox.getSelectionModel().getSelectedItem().getItemName(),
+                    quantityTextField.getText(),
+                    ingredientComboBox.getSelectionModel().getSelectedItem().getMeasurementUnit()
+            );
+            ingredientsList.add(ingredientItem);
+            ingredientsListTableView.setItems(ingredientsList);
+            ingredientsListTableView.setEditable(false);
+        }else{
+            add_ingredient.setText("Please, enter the missing data!");
+            add_ingredient.setFill(Paint.valueOf("red"));
+            add_ingredient.setVisible(true);
+        }
+
     }
 
 }
