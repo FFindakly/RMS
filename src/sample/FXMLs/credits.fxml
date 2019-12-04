@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Credits">
+    <center>
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="logo" fitHeight="500.0" fitWidth="500.0" layoutX="50.0" layoutY="22.0">
+                    <image>
+                        <Image url="@../../logo.png" />
+                    </image></ImageView>
+                <Label fx:id="item1" layoutX="214.0" layoutY="478.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item2" layoutX="214.0" layoutY="550.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item3" layoutX="214.0" layoutY="514.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item4" layoutX="214.0" layoutY="442.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item5" layoutX="214.0" layoutY="406.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item6" layoutX="214.0" layoutY="370.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item7" layoutX="214.0" layoutY="334.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item8" layoutX="214.0" layoutY="300.0" text="Bright Code">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>

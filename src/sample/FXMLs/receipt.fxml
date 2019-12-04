@@ -17,7 +17,7 @@
                <content>
                   <VBox fx:id="vContent" prefHeight="190.0" prefWidth="750.0" />
                </content></ScrollPane>
-            <JFXButton layoutX="470.0" layoutY="517.0" fx:id="payButton" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Pay">
+            <JFXButton layoutX="470.0" layoutY="517.0" fx:id="payButton" prefHeight="30.0" prefWidth="400.0" text="Pay">
                <font>
                   <Font name="Arial Bold" size="15.0" />
                </font></JFXButton>

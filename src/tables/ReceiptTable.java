@@ -34,6 +34,7 @@ public class ReceiptTable implements ReceiptDAO {
                 + Const.TABLE_ORDER_STATUS + " = " + 1 + " AND "
                 + Const.TABLE_ORDER_ITEM_ID + " = " + "menu_items." + Const.MENU_ITEM_ID;
         items = new ArrayList<>();
+        System.out.println(query);
         try {
             Statement getItems = db.getConnection().createStatement();
             ResultSet data = getItems.executeQuery(query);

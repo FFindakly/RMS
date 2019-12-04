@@ -15,12 +15,10 @@
                      <TableColumn fx:id="menuItemCatCol" minWidth="0.0" onEditCommit="#updateCategory" prefWidth="150.0" text="Category name" />
                <TableColumn fx:id="menuItemPriceCol" onEditCommit="#updatePrice" prefWidth="150.0" text="Item price" />
                      <TableColumn fx:id="menuItemDescCol" onEditCommit="#updateDescription" prefWidth="286.0" text="Description" />
-
                   </columns>
                </TableView>
                <JFXButton layoutX="729.0" layoutY="528.0" onAction="#updateItem" prefHeight="27.0" prefWidth="106.0" style="-fx-background-color: green;" text="Update item" />
          <JFXButton layoutX="565.0" layoutY="529.0" onAction="#deleteItem" prefHeight="27.0" prefWidth="106.0" style="-fx-background-color: red;" text="Delete item" />
          </Pane>
       </center>
-
 </BorderPane>

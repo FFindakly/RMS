@@ -24,13 +24,14 @@ public class Login implements Initializable {
     @FXML private PasswordField password;
     @FXML private MenuBar menu;
     @FXML private Label warning, forgot;
+    @FXML private Button logBtn;
 
     public static Map<String, Integer> userID = new HashMap<String, Integer>();
 
     Preferences preferences;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        warning.setVisible(false);
+        logBtn.getStyleClass().add("buttons");
         menu.setVisible(false);
         preferences = Preferences.userNodeForPackage(Login.class);
         if(preferences != null){
@@ -77,7 +78,9 @@ public class Login implements Initializable {
             }
         }
         else{
-            warning.setVisible(true);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("The username or password you have entered is wrong!");
+            alert.showAndWait();
         }
     }
 
@@ -98,7 +101,8 @@ public class Login implements Initializable {
      */
     public void switchToLogin() throws IOException {
         //Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
-        Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
+        menu.setVisible(false);
+        Main.openLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
     }
     /**
      * function to switch to account settings screen
@@ -189,5 +193,11 @@ public class Login implements Initializable {
      */
     public void switchToOrdersDetails() throws IOException {
         Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/order_details.fxml")));
+    }
+    public void switchToOrdersStats() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/sales.fxml")));
+    }
+    public void switchToCredits() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/credits.fxml")));
     }
 }

@@ -29,16 +29,17 @@ public class Tables implements Initializable {
         int count = table.getCountOfTables(Login.userID.get("ID"));
         Button btnTable;
 
+
         for(int i = 1; i <= count; i++) {
             buttonPane.setHgap(27);
-            buttonPane.setVgap(30);
+            buttonPane.setVgap(20);
             buttonPane.setPadding(new Insets(20));
             btnTable = new Button(Integer.toString(i));
             btnTable.setMinWidth(150);
             btnTable.setMinHeight(150);
             buttonPane.getChildren().add(btnTable);
             FlowPane.setMargin(btnTable, new Insets(10,0,0,0));
-            btnTable.setStyle("-fx-font-size: 25pt; -fx-font-family: Arial; -fx-font-weight: bold;");
+            btnTable.setStyle("-fx-font-size: 25pt; -fx-font-family: Arial; -fx-font-weight: bold; -fx-background-color: #ffffff;");
             btnTable.setId(Integer.toString(i));
             int id = i;
             btnTable.setOnAction(event -> {

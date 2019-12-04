@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
 import sample.Main;
 
 import java.io.IOException;
@@ -37,50 +39,41 @@ public class SetUpDatabase {
     @FXML
     JFXPasswordField dbPassword;
     @FXML
-    Label messageIndicator;
-    @FXML
-    Label hostMessage;
-    @FXML
-    Label dbMessage;
-    @FXML
-    Label usernameMessage;
-    @FXML
-    Label passwordMessage;
+    Text errorMessage;
     public static Map<String, String> database = new HashMap<String, String>();
     //Create a private constructor for the class
     public void makeConnection() {
         try {
             boolean validation = true;
-
-                if(host.getText().equals("")){
+                if(host.getText().trim().isEmpty()){
                     validation = false;
-                    hostMessage.setText("please enter host");
-                    hostMessage.setTextFill(Color.web("#f91313"));
-
+                    host.getStyleClass().add("empty_data_fields");
                 } else {
-                    hostMessage.setVisible(false);
+                    host.getStyleClass().clear();
                 }
-                if(dbName.getText().equals("")){
-                    validation = false;
-                    dbMessage.setText("please enter db name");
-                    dbMessage.setTextFill(Color.web("#f91313"));
-                } else {
-                    dbMessage.setVisible(false);
-                }
-                if(dbUsername.getText().equals("")){
-                    validation = false;
-                    usernameMessage.setText("please enter db username");
-                    usernameMessage.setTextFill(Color.web("#f91313"));
-                } else {
-                    usernameMessage.setVisible(false);
-                }
-                if(dbPassword.getText().equals("")){
-                    passwordMessage.setText("please enter Password");
-                    passwordMessage.setTextFill(Color.web("#f91313"));
-                    validation = false;
-                } else {
-                    passwordMessage.setVisible(false);
-                }
+            if(dbName.getText().trim().isEmpty()){
+                validation = false;
+                dbName.getStyleClass().add("empty_data_fields");
+            } else {
+                dbName.getStyleClass().clear();
+            }
+            if(dbUsername.getText().trim().isEmpty()){
+                validation = false;
+                dbUsername.getStyleClass().add("empty_data_fields");
+            } else {
+                dbUsername.getStyleClass().clear();
+            }
+            if(dbPassword.getText().trim().isEmpty()){
+                validation = false;
+                dbPassword.getStyleClass().add("empty_data_fields");
+            } else {
+                dbPassword.getStyleClass().clear();
+            }
+            if (!validation){
+                errorMessage.setText("Enter data in the missing fields");
+                errorMessage.setFill(Paint.valueOf("red"));
+                errorMessage.setVisible(true);
+            }
 
                 if(validation){
                     database.put("DB_HOST", host.getText());
@@ -100,6 +93,9 @@ public class SetUpDatabase {
                     createTable(Const.TABLE_INVENTORY,
                             Const.CREATE_TABLE_INVENTORY,
                             connection);
+                    createTable(Const.TABLE_ORDER,
+                            Const.CREATE_TABLE_ORDER,
+                            connection);
                     createTable(Const.TABLE_ACCOUNTS,
                             Const.CREATE_TABLE_ACCOUNTS,
                             connection);
@@ -109,15 +105,11 @@ public class SetUpDatabase {
                     createTable(Const.TABLE_INGREDIENTS,
                             Const.CREATE_TABLE_INGREDIENTS,
                             connection);
-                    messageIndicator.setText("Database has been created successfully");
-                    messageIndicator.setTextFill(Color.valueOf("#23b023"));
-                    Main.openLogin(FXMLLoader.load(getClass().getResource("../sample/FXMLs/login.fxml")));
+                    Main.openLogin(FXMLLoader.load(getClass().getResource("../sample/FXMLs/splash.fxml")));
                 }
 
 
         } catch (SQLException | ClassNotFoundException | IOException e) {
-            messageIndicator.setTextFill(Color.web("#f91313"));
-            messageIndicator.setText("please enter the correct information");
             e.printStackTrace();
         }
     }

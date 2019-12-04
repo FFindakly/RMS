@@ -86,7 +86,6 @@ public class InventoyTable implements InventoryItemsDAO {
             db.getConnection().createStatement().execute(query);
             System.out.println("Item has been deleted from the inventory successfully!");
         } catch (SQLException e) {
-            showAlert("The item you are trying to delete is used as an ingredient, You may want to update it instead!");
         }
     }
 
@@ -104,7 +103,6 @@ public class InventoyTable implements InventoryItemsDAO {
                 " WHERE " + Const.INVENTORY_ITEM_ID + " = " + item.getItemId() + " AND " + Const.INVENTORY_USER_ID + " = " + Login.userID.get("ID");
         try {
             db.getConnection().createStatement().execute(query);
-            showAlert("Item has been updated successfully!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -134,14 +132,5 @@ public class InventoyTable implements InventoryItemsDAO {
             e.printStackTrace();
         }
         return itemsForTrackInventoryTable;
-    }
-
-
-    /**
-     * This function is to create an alret message
-     * @param message
-     */
-    private void showAlert(String message){
-        JOptionPane.showMessageDialog(null, message);
     }
 }

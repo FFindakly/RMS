@@ -55,8 +55,10 @@ public class PlaceOrder implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        addOrder.getStyleClass().add("buttons");
+        details.getStyleClass().add("buttons");
         ArrayList<Receipt> receipt = receiptTable.getItems(Tables.tableId.get("table_id"));
-        if(receipt.size() > 1){
+        if(receipt.size() > 0){
             details.setVisible(true);
         }
         else{

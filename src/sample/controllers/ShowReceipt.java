@@ -37,6 +37,7 @@ public class ShowReceipt implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        payButton.getStyleClass().add("buttons");
         ArrayList<Receipt> receipt = receiptTable.getItems(Tables.tableId.get("table_id"));
         tableNumber.setText(Integer.toString(receipt.get(0).getTableId()));
         dateText.setText(receipt.get(0).getDate());

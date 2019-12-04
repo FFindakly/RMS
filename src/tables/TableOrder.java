@@ -49,7 +49,7 @@ public class TableOrder implements TableOrderDAO {
         return false;
     }
 
-    //UPDATE table SET quantity = quantity + 5 WHERE Item_id = <x>
+
 
     public boolean updateQuantity(Orders order) {
         String query = "UPDATE " + Const.TABLE_ORDER + " SET " + Const.TABLE_ORDER_QUANTITY + " = " + (Const.TABLE_ORDER_QUANTITY + " + " +  order.getQuantity()) + " WHERE " + Const.TABLE_USER_ID + " = " + order.getUserId() + " AND " + Const.TABLE_ORDER_TABLE_ID + " = " + order.getTableId() + " AND " + Const.TABLE_ORDER_STATUS + " = " + 1 + " AND " + Const.TABLE_ORDER_ITEM_ID + " = " + order.getItemId();

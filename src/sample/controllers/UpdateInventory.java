@@ -1,11 +1,13 @@
 package sample.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import javabeans.InventoryCategory;
 import javabeans.InventoryItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.ComboBoxTableCell;
@@ -34,6 +36,9 @@ public class UpdateInventory implements Initializable {
     @FXML private TableColumn <InventoryItem, String> measurementUnitColumn;
     @FXML private TableColumn <InventoryItem, Double> quantityColumn;
     @FXML private TableColumn <InventoryItem, Double> criticalColumn;
+    @FXML private JFXButton updateBt;
+    @FXML private JFXButton removeBt;
+
 
     //Create an InventoryTable instance
     InventoyTable inventoryTable = new InventoyTable();
@@ -84,6 +89,10 @@ public class UpdateInventory implements Initializable {
         quantityColumn.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         criticalColumn.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         itemCategoryColumn.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), categories));
+
+        //Set the style class of buttons
+        updateBt.getStyleClass().add("buttons");
+        removeBt.getStyleClass().add("delete_buttons");
     }
 
 
@@ -122,6 +131,9 @@ public class UpdateInventory implements Initializable {
     public void updateItem() {
         InventoryItem item = trackTableView.getSelectionModel().getSelectedItem();
         inventoryTable.updateInventoryItem(item);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Item has been updated successfully!");
+        alert.showAndWait();
     }
 
     /**
@@ -133,6 +145,10 @@ public class UpdateInventory implements Initializable {
 
         //Update the TableView after the item gets deleted
         trackTableView.setItems(inventoryTable.loadTrackInventoryTable());
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Item has been deleted successfully!");
+        alert.showAndWait();
     }
 
     /**

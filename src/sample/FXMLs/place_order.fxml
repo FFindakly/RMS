@@ -68,8 +68,8 @@
                      </Tab>
                   </tabs>
                </TabPane>
-               <JFXButton fx:id="addOrder" layoutX="679.0" layoutY="522.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: cccccc;" text="ORDER" />
-            <JFXButton fx:id="details" layoutX="453.0" layoutY="523.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: cccccc;" text="ORDER DETAILS" />
+               <JFXButton fx:id="addOrder" layoutX="679.0" layoutY="510.0" prefHeight="30.0" prefWidth="200.0" text="ORDER" />
+            <JFXButton fx:id="details" layoutX="453.0" layoutY="510.0" prefHeight="30.0" prefWidth="200.0"  text="ORDER DETAILS" />
             <Label fx:id="resultText" layoutX="29.0" layoutY="530.0" text="Orders added successfully!" visible="false">
                <font>
                   <Font name="Arial Bold" size="15.0" />
