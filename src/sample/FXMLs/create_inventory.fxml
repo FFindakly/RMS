@@ -47,7 +47,10 @@
                   <Insets left="5.0" right="5.0" />
                </padding>
             </JFXComboBox>
-            <JFXButton fx:id="addToInventoryBt" layoutX="458.0" layoutY="456.0" onAction="#addToInventory" prefHeight="30.0" prefWidth="400.0" text="Add Inventory" />
+            <JFXButton fx:id="addToInventoryBt" layoutX="458.0" layoutY="456.0" onAction="#addToInventory" prefHeight="30.0" prefWidth="400.0" text="Add Inventory">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></JFXButton>
             <JFXTextField fx:id="quantity_TextField" layoutX="460.0" layoutY="375.0" prefHeight="30.0" prefWidth="402.0" promptText="Quantity" style="-fx-background-color: #ffffff;">
                <padding>
                   <Insets left="5.0" right="5.0" />
