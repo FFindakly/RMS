@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
@@ -17,7 +18,9 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
+
               <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Logout" />
+
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Settings">
