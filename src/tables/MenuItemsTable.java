@@ -87,7 +87,6 @@ public class MenuItemsTable implements MenuItemTableDAO {
             db.getConnection().createStatement().execute(query);
             System.out.println("Item has been deleted from the inventory successfully!");
         } catch (SQLException e) {
-            showAlert(e.getMessage());
         }
 
     }
@@ -104,7 +103,6 @@ public class MenuItemsTable implements MenuItemTableDAO {
 
         try {
             db.getConnection().createStatement().execute(query);
-            showAlert("Item has been updated successfully!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -133,15 +131,5 @@ public class MenuItemsTable implements MenuItemTableDAO {
         }
 
         return allItems;
-    }
-
-
-    /**
-     * This function is to create an alert message
-     * @param message
-     */
-    private void showAlert(String message){
-
-        JOptionPane.showMessageDialog(null, message);
     }
 }

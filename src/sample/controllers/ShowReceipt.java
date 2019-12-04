@@ -1,25 +1,33 @@
 package sample.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXScrollPane;
 import database.Const;
 import javabeans.Receipt;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import sample.Main;
+import sun.rmi.runtime.Log;
 import tables.ReceiptTable;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ShowReceipt implements Initializable {
+    @FXML
+    JFXButton payButton;
     @FXML
     ScrollPane itemsPane;
     @FXML Label tableNumber, total, dateText, taxText, subTotalText;
@@ -54,7 +62,7 @@ public class ShowReceipt implements Initializable {
             subTotalFinal = subTotalFinal + subtotal;
             Label subTotalText = new Label();
             subTotalText.setStyle("-fx-font-size: 14px; -fx-font-family: 'Arial'; -fx-font-weight: bold;");
-            subTotalText.setText("$"+Double.toString(subtotal));
+            subTotalText.setText("$"+ subtotal);
             itemHbox.getChildren().addAll(item_name, item_quantity, item_price, subTotalText);
             vContent.getChildren().addAll(itemHbox);
             vContent.setSpacing(10.0);
@@ -66,5 +74,17 @@ public class ShowReceipt implements Initializable {
         itemsPane.setContent(vContent);
         itemsPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         itemsPane.setFitToWidth(true);
+
+        payButton.setOnAction(e->{
+           boolean res = receiptTable.updateTableOrder(Integer.parseInt(tableNumber.getText()), Login.userID.get("ID"));
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText("Thank you for the payment!");
+            alert.showAndWait();
+            try {
+                Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/tables.fxml")));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 }

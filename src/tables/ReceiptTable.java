@@ -4,7 +4,6 @@ import daos.ReceiptDAO;
 import database.Const;
 import database.Database;
 import javabeans.Receipt;
-import sample.controllers.PlaceOrder;
 import sample.controllers.Tables;
 
 import java.sql.ResultSet;
@@ -47,5 +46,21 @@ public class ReceiptTable implements ReceiptDAO {
         }
 
         return items;
+    }
+
+    public boolean updateTableOrder(int tableId, int userId){
+        String query = "UPDATE " + Const.TABLE_ORDER + " SET " + Const.TABLE_ORDER_STATUS + " = " + 0 + " WHERE " + Const.TABLE_ORDER_TABLE_ID + " = " + tableId + " AND " + Const.TABLE_USER_ID + " = " + userId;
+                ;
+        System.out.println(query);
+        try{
+            Statement getVerify = db.getConnection().createStatement();
+            int data = getVerify.executeUpdate(query);
+            if(data > 0){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
