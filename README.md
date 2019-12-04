@@ -11,14 +11,11 @@ RMS is a management system for restaurants , coffee shops and any business that 
 
 
 # Developed by
-
 ![](https://ffindakly.scweb.ca/logo.png)
 Logo created by: [source link](https://hatchful.shopify.com/ "source's link")
-
-
-**Yonis Sheekh**
-**Ugur Demir**
-**Fadi Findakly**
+- Yonis Sheekh
+- Ugur Demir
+- Fadi Findakly
 
 
 # Purpose of the software
@@ -33,4 +30,5 @@ Cai Filiault - course professor
 - Intellij IDEA
 - Gluon Scene Builder
 - JFoenix library [source link](https://github.com/jfoenixadmin "source link")
+
 
