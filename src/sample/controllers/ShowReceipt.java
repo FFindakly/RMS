@@ -18,6 +18,7 @@ import tables.ReceiptTable;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -71,7 +72,8 @@ public class ShowReceipt implements Initializable {
         subTotalText.setText("$"+subTotalFinal);
         double afterTax = (subTotalFinal * 13) / 100;
         taxText.setText("$" + afterTax);
-        total.setText("$" + (afterTax + subTotalFinal));
+        DecimalFormat df = new DecimalFormat("###.##");
+        total.setText("$" + df.format(afterTax + subTotalFinal));
         itemsPane.setContent(vContent);
         itemsPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         itemsPane.setFitToWidth(true);

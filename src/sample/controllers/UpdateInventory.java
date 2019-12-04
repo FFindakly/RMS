@@ -93,6 +93,11 @@ public class UpdateInventory implements Initializable {
         //Set the style class of buttons
         updateBt.getStyleClass().add("buttons");
         removeBt.getStyleClass().add("delete_buttons");
+
+
+        //set columns text alignment
+        itemCategoryColumn.getStyleClass().add("table-column");
+
     }
 
 

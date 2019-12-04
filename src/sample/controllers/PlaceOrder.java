@@ -65,7 +65,6 @@ public class PlaceOrder implements Initializable {
             details.setVisible(false);
         }
         //Populate the pane dynamically
-        System.out.println("Table number: " + Tables.tableId.get("table_id"));
         ArrayList<javabeans.PlaceOrder> breakfast =  orderList.breakfast();
         ArrayList<javabeans.PlaceOrder> lunch =  orderList.lunch();
         ArrayList<javabeans.PlaceOrder> dinner =  orderList.dinner();

@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -142,6 +143,9 @@ public class CreateMenu implements Initializable {
             add_new_item.setVisible(true);
         }
 
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Item has been updated successfully!");
+        alert.showAndWait();
 
     }
 
@@ -176,6 +180,10 @@ public class CreateMenu implements Initializable {
             add_ingredient.setFill(Paint.valueOf("red"));
             add_ingredient.setVisible(true);
         }
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Ingredient has been updated successfully!");
+        alert.showAndWait();
 
     }
 

@@ -27,7 +27,6 @@ public class TableOrder implements TableOrderDAO {
 
         try {
             db.getConnection().createStatement().execute(query);
-            System.out.println("Address has been inserted to the table successfully!");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -36,7 +35,6 @@ public class TableOrder implements TableOrderDAO {
 
     public Boolean findItem(Orders order){
         String query = "SELECT * FROM " + Const.TABLE_ORDER + " WHERE " + Const.TABLE_ORDER_TABLE_ID + " = " + order.getTableId() + " AND " + Const.TABLE_ORDER_STATUS + " = " + 1 + " AND " + Const.TABLE_USER_ID + " = " + order.getUserId() + " AND " + Const.TABLE_ORDER_ITEM_ID + " = " + order.getItemId();
-        System.out.println(query);
         try {
             Statement getItems = db.getConnection().createStatement();
             ResultSet data = getItems.executeQuery(query);

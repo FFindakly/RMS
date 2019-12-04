@@ -34,7 +34,6 @@ public class ReceiptTable implements ReceiptDAO {
                 + Const.TABLE_ORDER_STATUS + " = " + 1 + " AND "
                 + Const.TABLE_ORDER_ITEM_ID + " = " + "menu_items." + Const.MENU_ITEM_ID;
         items = new ArrayList<>();
-        System.out.println(query);
         try {
             Statement getItems = db.getConnection().createStatement();
             ResultSet data = getItems.executeQuery(query);
@@ -51,8 +50,6 @@ public class ReceiptTable implements ReceiptDAO {
 
     public boolean updateTableOrder(int tableId, int userId){
         String query = "UPDATE " + Const.TABLE_ORDER + " SET " + Const.TABLE_ORDER_STATUS + " = " + 0 + " WHERE " + Const.TABLE_ORDER_TABLE_ID + " = " + tableId + " AND " + Const.TABLE_USER_ID + " = " + userId;
-                ;
-        System.out.println(query);
         try{
             Statement getVerify = db.getConnection().createStatement();
             int data = getVerify.executeUpdate(query);

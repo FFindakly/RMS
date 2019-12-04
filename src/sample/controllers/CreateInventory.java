@@ -55,6 +55,12 @@ public class CreateInventory implements Initializable {
 
         //Update the content of the ComboBox after creating the new category
         categories_ComboBox.setItems(FXCollections.observableArrayList(inventoryCategoriesTable.getAllCategories()));
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Category has been added to inventory successfully!");
+        alert.showAndWait();
+
+        category_TextField.setText("");
     }
 
     //Add an event listener to the addToInventory button

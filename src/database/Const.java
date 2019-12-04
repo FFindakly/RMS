@@ -149,7 +149,7 @@ public class Const {
 
     public static final String CREATE_TABLE_ORDER =
             "CREATE TABLE " + TABLE_ORDER + "(" +
-                    TABLE_ORDER_ID + " int(11) NOT NULL PRIMARY KEY, " +
+                    TABLE_ORDER_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     TABLE_USER_ID + " int(11) NOT NULL, " +
                     TABLE_ORDER_ITEM_ID  + " int(11) NOT NULL, "+
                     TABLE_ORDER_TABLE_ID  + " int(11) NOT NULL, "+
