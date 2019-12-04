@@ -56,7 +56,7 @@ public class TableOrder implements TableOrderDAO {
         try{
             Statement getVerify = db.getConnection().createStatement();
             int data = getVerify.executeUpdate(query);
-            if(data == 1){
+            if(data > 0){
                 return true;
             }
         } catch (SQLException e) {

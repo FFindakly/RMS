@@ -13,11 +13,11 @@
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <ScrollPane fx:id="itemsPane" layoutX="26.0" layoutY="165.0" prefHeight="194.0" prefWidth="838.0">
+            <ScrollPane fx:id="itemsPane" layoutX="30.0" layoutY="165.0" prefHeight="194.0" prefWidth="838.0">
                <content>
                   <VBox fx:id="vContent" prefHeight="190.0" prefWidth="750.0" />
                </content></ScrollPane>
-            <JFXButton layoutX="470.0" layoutY="517.0" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Pay">
+            <JFXButton layoutX="470.0" layoutY="517.0" fx:id="payButton" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #cccccc;" text="Pay">
                <font>
                   <Font name="Arial Bold" size="15.0" />
                </font></JFXButton>
