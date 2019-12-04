@@ -27,7 +27,7 @@ Windosr - Ontario  / Fall 2019
 Cai Filiault - course professor
 
 # Development tools
-- Intellij IDEA
+- IntelliJ IDEA
 - Gluon Scene Builder
 - JFoenix library [source link](https://search.maven.org/remotecontent?filepath=com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar "source link")
 
