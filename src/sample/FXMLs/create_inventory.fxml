@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -15,13 +16,25 @@
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTextField fx:id="category_TextField" layoutX="28.0" layoutY="100.0" prefHeight="30.0" prefWidth="400.0" promptText="meats, vegetable etc" />
-            <JFXButton fx:id="addCtBt" layoutX="460.0" layoutY="102.0" onAction="#addNewInventoryCategory" prefHeight="30.0" prefWidth="400.0" text="Add Category" />
-            <JFXTextField fx:id="item_name_TextField" layoutX="30.0" layoutY="285.0" prefHeight="30.0" prefWidth="400.0" promptText="Enter inventory item name" />
+            <JFXTextField fx:id="category_TextField" layoutX="28.0" layoutY="100.0" prefHeight="30.0" prefWidth="400.0" promptText="meats, vegetable etc" style="-fx-background-color: #ffffff;">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></JFXTextField>
+            <JFXButton fx:id="addCtBt" layoutX="458.0" layoutY="96.0" onAction="#addNewInventoryCategory" prefHeight="30.0" prefWidth="400.0" text="Add Category" />
+            <JFXTextField fx:id="item_name_TextField" layoutX="30.0" layoutY="285.0" prefHeight="30.0" prefWidth="400.0" promptText="Enter inventory item name" style="-fx-background-color: #ffffff;">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding></JFXTextField>
 
-            <JFXComboBox fx:id="categories_ComboBox" layoutX="30.0" layoutY="460.0" prefHeight="30.0" prefWidth="400.0" promptText="Assign to a category" />
+            <JFXComboBox fx:id="categories_ComboBox" layoutX="30.0" layoutY="460.0" prefHeight="30.0" prefWidth="400.0" promptText="Assign to a category" style="-fx-background-color: #ffffff;">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding></JFXComboBox>
 
-            <JFXComboBox fx:id="measurement_unit_ComboBox" layoutX="30.0" layoutY="375.0" prefHeight="30.0" prefWidth="400.0" promptText="Measurement unit">
+            <JFXComboBox fx:id="measurement_unit_ComboBox" layoutX="30.0" layoutY="375.0" prefHeight="30.0" prefWidth="400.0" promptText="Measurement unit" style="-fx-background-color: #ffffff;">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:id="pound" fx:value="Pound" />
@@ -30,10 +43,22 @@
                         <String fx:id="unit" fx:value="Count" />
                     </FXCollections>
                 </items>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
             </JFXComboBox>
-            <JFXButton fx:id="addToInventoryBt" layoutX="460.0" layoutY="462.0" onAction="#addToInventory" prefHeight="30.0" prefWidth="400.0" text="Add Inventory" />
-            <JFXTextField fx:id="quantity_TextField" layoutX="460.0" layoutY="288.0" prefHeight="25.0" prefWidth="402.0" promptText="Quantity" />
-            <JFXTextField fx:id="critical_quantity_TextField" layoutX="460.0" layoutY="378.0" prefHeight="25.0" prefWidth="400.0" promptText="Critical quantity" />
+            <JFXButton fx:id="addToInventoryBt" layoutX="458.0" layoutY="456.0" onAction="#addToInventory" prefHeight="30.0" prefWidth="400.0" text="Add Inventory" />
+            <JFXTextField fx:id="quantity_TextField" layoutX="460.0" layoutY="375.0" prefHeight="30.0" prefWidth="402.0" promptText="Quantity" style="-fx-background-color: #ffffff;">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="critical_quantity_TextField" layoutX="460.0" layoutY="285.0" prefHeight="30.0" prefWidth="400.0" promptText="Critical quantity" style="-fx-background-color: #ffffff;">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding></JFXTextField>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="2.0" layoutX="30.0" layoutY="206.0" stroke="BLACK" strokeType="INSIDE" width="890.0" />
             <Label layoutX="30.0" layoutY="29.0" text="Add Category">
                <font>
