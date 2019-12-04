@@ -1,15 +1,18 @@
 package sample.controllers;
 
 import com.jfoenix.controls.*;
+import javabeans.Ingredient;
 import javabeans.InventoryItem;
-import javabeans.IngredientItem;
 import javabeans.MenuItem;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import tables.IngredientTable;
@@ -28,18 +31,18 @@ public class CreateMenu implements Initializable {
     @FXML private JFXComboBox<String> itemCategoryComboBox;
     @FXML private JFXTextField itemPriceTextField;
     @FXML private JFXTextArea itemDiscTextArea;
-    @FXML private JFXButton addItemButton;
     @FXML private JFXComboBox<MenuItem> menuItemsComboBox;
     @FXML private JFXComboBox<InventoryItem> ingredientComboBox;
     @FXML private JFXTextField quantityTextField;
-    @FXML private JFXButton addIngredientButton;
     @FXML private JFXListView<String> ingredientsListView;
-    @FXML private JFXButton saveItemButton;
-    @FXML private JFXButton uploadImageButton;
     @FXML private ImageView itemImageView;
-    @FXML private BorderPane createMenuPane;
 
-
+    @FXML private TableView<Ingredient> ingredientsListTableView;
+    @FXML private TableColumn<Ingredient, String> ingredientNameCol;
+    @FXML private TableColumn<Ingredient, Double> ingredientQtyCol;
+    @FXML private TableColumn<Ingredient, String> ingredientUnitCol;
+    private ObservableList<Ingredient> ingredientsList = FXCollections.observableArrayList();
+    
     private FileChooser fileChooser;
     private File imageFile;
     private URL imageUrl;
@@ -47,10 +50,6 @@ public class CreateMenu implements Initializable {
 
     MenuItemsTable menuItemsTable = new MenuItemsTable();
     InventoyTable inventoryTable = new InventoyTable();
-    IngredientTable ingredientsTable = new IngredientTable();
-    ArrayList<String> listViewItems = new ArrayList<>();
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -60,6 +59,11 @@ public class CreateMenu implements Initializable {
 
         //Add all inventory items to the ingredients ComboBox
         ingredientComboBox.setItems(FXCollections.observableArrayList(inventoryTable.getAllInventoryItems()));
+
+        //Set TableView columns
+        ingredientNameCol.setCellValueFactory(new PropertyValueFactory<Ingredient, String> ("itemName"));
+        ingredientQtyCol.setCellValueFactory(new PropertyValueFactory<Ingredient, Double>("quantity"));
+        ingredientUnitCol.setCellValueFactory(new PropertyValueFactory<Ingredient, String>("unit"));
 
     }
 
@@ -102,20 +106,14 @@ public class CreateMenu implements Initializable {
      * A function to create a new ingredient and add it to the database
      */
     public void addIngredient() {
-        IngredientItem itemIngredient = new IngredientItem(menuItemsComboBox.getSelectionModel().getSelectedItem().getId(),
-                                                           ingredientComboBox.getSelectionModel().getSelectedItem().getItemId(),
-                                                           Double.parseDouble(quantityTextField.getText()));
-        ingredientsTable.createItemIngredient(itemIngredient);
-
-        //Add the ingredients names with their quantity to the list view
-        listViewItems.add(ingredientComboBox.getSelectionModel().getSelectedItem().getItemName() +
-                          "                         " + quantityTextField.getText() +
-                          ingredientComboBox.getSelectionModel().getSelectedItem().getMeasurementUnit());
-        ingredientsListView.setItems(FXCollections.observableArrayList(listViewItems));
-
-        //Update the inventory item quantity as being used as an ingredient
-        ingredientsTable.deductQuantityFromInventory(ingredientComboBox.getSelectionModel().getSelectedItem().getQuantity(),
-                                                           itemIngredient, Double.parseDouble(quantityTextField.getText()));
+        Ingredient ingredientItem = new Ingredient(
+                ingredientComboBox.getSelectionModel().getSelectedItem().getItemName(),
+                quantityTextField.getText(),
+                ingredientComboBox.getSelectionModel().getSelectedItem().getMeasurementUnit()
+                );
+        ingredientsList.add(ingredientItem);
+        ingredientsListTableView.setItems(ingredientsList);
+        ingredientsListTableView.setEditable(false);
     }
 
 }

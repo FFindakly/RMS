@@ -20,7 +20,6 @@ public class InventoryItem {
     //Create 2 constructors
     public InventoryItem(String itemName, String measurementUnit,
                          double quantity, double criticalQuantity, int categoryId, int userId) {
-        this.itemId = itemId;
         this.itemName = itemName;
         this.measurementUnit = measurementUnit;
         this.quantity = quantity;
@@ -29,16 +28,8 @@ public class InventoryItem {
         this.userId = userId;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public InventoryItem(int itemId, String itemName, String measurementUnit,
-                         double quantity, double criticalQuantity, int categoryId) {
+                         double quantity, double criticalQuantity, int categoryId, int userId) {
         InventoryCategoryTable inventoryCategoriesTable = new InventoryCategoryTable();
         this.itemId = itemId;
         this.itemName = itemName;
@@ -47,6 +38,7 @@ public class InventoryItem {
         this.criticalQuantity = criticalQuantity;
         this.categoryId = categoryId;
         this.categoryName = inventoryCategoriesTable.getCategoriesHashMap().get(categoryId);
+        this.userId = userId;
     }
 
     //Create getters and setters
@@ -96,6 +88,14 @@ public class InventoryItem {
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getCategoryName() {
