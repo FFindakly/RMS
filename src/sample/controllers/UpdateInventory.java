@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.ComboBoxTableCell;
@@ -130,6 +131,9 @@ public class UpdateInventory implements Initializable {
     public void updateItem() {
         InventoryItem item = trackTableView.getSelectionModel().getSelectedItem();
         inventoryTable.updateInventoryItem(item);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Item has been updated successfully!");
+        alert.showAndWait();
     }
 
     /**
@@ -141,6 +145,10 @@ public class UpdateInventory implements Initializable {
 
         //Update the TableView after the item gets deleted
         trackTableView.setItems(inventoryTable.loadTrackInventoryTable());
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Item has been deleted successfully!");
+        alert.showAndWait();
     }
 
     /**
