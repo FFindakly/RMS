@@ -98,7 +98,8 @@ public class Login implements Initializable {
      */
     public void switchToLogin() throws IOException {
         //Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
-        Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
+        menu.setVisible(false);
+        Main.openLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
     }
     /**
      * function to switch to account settings screen

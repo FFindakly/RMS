@@ -20,6 +20,7 @@
             <items>
 
               <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Logout" />
+                <MenuItem mnemonicParsing="false" onAction="#close" text="Exit" />
 
             </items>
           </Menu>
