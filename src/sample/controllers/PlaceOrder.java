@@ -476,7 +476,7 @@ public class PlaceOrder implements Initializable {
             }
 
             cart.clear();
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("We added the order successfully!");
             alert.showAndWait();
             try {

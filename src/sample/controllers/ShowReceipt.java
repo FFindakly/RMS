@@ -79,7 +79,7 @@ public class ShowReceipt implements Initializable {
         payButton.setOnAction(e->{
            // When user click to pay button, update the order status 0(false)
            boolean res = receiptTable.updateTableOrder(Integer.parseInt(tableNumber.getText()), Login.userID.get("ID"));
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Thank you for the payment!");
             alert.showAndWait();
             try {
