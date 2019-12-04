@@ -1,11 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.PlaceOrder">
+ <center>
+         <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER" fx:id="screenContent">
+            <children>
+               <TabPane layoutX="10.0" layoutY="20.0" prefHeight="510.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                     <Tab style="-fx-pref-width: 174;" text="Breakfast">
+                        <content>
+                           <Pane fx:id="ordersParent" prefHeight="0.0" prefWidth="880.0">
+                           <children>
+                              <VBox fx:id="leftItem" layoutX="0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                              <VBox fx:id="rightItem" layoutX="450.0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                           </children>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <Label text="Place orders" BorderPane.alignment="CENTER" />
-   </center>
-</BorderPane>
+                           </Pane>
+                        </content>
+                     </Tab>
+                     <Tab style="-fx-pref-width: 174;" text="Lunch">
+                        <content>
+                           <Pane fx:id="ordersParentLunch" prefHeight="0.0" prefWidth="880.0">
+                              <children>
+                                 <VBox fx:id="leftItemLunch" layoutX="0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                                 <VBox fx:id="rightItemLunch" layoutX="450.0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                              </children>
+                           </Pane>
+                        </content>
+                     </Tab>
+                     <Tab style="-fx-pref-width: 172;" text="Dinner">
+                        <content>
+                           <Pane fx:id="ordersParentDinner" prefHeight="0.0" prefWidth="880.0">
+                              <children>
+                                 <VBox fx:id="leftItemDinner" layoutX="0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                                 <VBox fx:id="rightItemDinner" layoutX="450.0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                              </children>
+                           </Pane>
+                        </content>
+                     </Tab>
+                     <Tab style="-fx-pref-width: 172;" text="Beverages">
+                        <content>
+                           <Pane fx:id="ordersParentBeverage" prefHeight="0.0" prefWidth="880.0">
+                              <children>
+                                 <VBox fx:id="leftItemBeverage" layoutX="0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                                 <VBox fx:id="rightItemBeverage" layoutX="450.0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                              </children>
+                           </Pane>
+                        </content>
+                     </Tab>
+                     <Tab style="-fx-pref-width: 170;" text="Dessert">
+                        <content>
+                           <Pane fx:id="ordersParentDessert" prefHeight="0.0" prefWidth="880.0">
+                              <children>
+                                 <VBox fx:id="leftItemDessert" layoutX="0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                                 <VBox fx:id="rightItemDessert" layoutX="450.0" layoutY="10.0" prefHeight="458.0" prefWidth="430.0" />
+                              </children>
+                           </Pane>
+                        </content>
+                     </Tab>
+                  </tabs>
+               </TabPane>
+               <JFXButton fx:id="addOrder" layoutX="679.0" layoutY="510.0" prefHeight="30.0" prefWidth="200.0" text="ORDER" />
+            <JFXButton fx:id="details" layoutX="453.0" layoutY="510.0" prefHeight="30.0" prefWidth="200.0"  text="ORDER DETAILS" />
+            <Label fx:id="resultText" layoutX="29.0" layoutY="530.0" text="Orders added successfully!" visible="false">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            </children>
+         </Pane>
+      </center>
+   </BorderPane>

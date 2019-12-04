@@ -18,6 +18,7 @@ public class Main extends Application {
 
         root = FXMLLoader.load(getClass().getResource("FXMLs/login.fxml"));
         scene = new Scene(root, 900, 600);
+        scene.getStylesheets().add("/styling/rms.css");
         primaryStage.setScene(scene);
         primaryStage.setTitle("RMS - Restaurant Management System");
         primaryStage.show();
@@ -29,7 +30,12 @@ public class Main extends Application {
      * @author Fadi Findakly
      */
     public static void setPane(BorderPane pane) {
-        root.setCenter(pane);
+        root.setCenter(pane.getCenter());
+    }
+
+    public static void openLogin(BorderPane pane) {
+        root.setCenter(pane.getCenter());
+        root.setTop(pane.getTop());
     }
 
     /**
@@ -38,7 +44,7 @@ public class Main extends Application {
      * @author Fadi Findakly
      */
     public static void toLogin(BorderPane pane) {
-        root.setCenter(pane.getCenter());
+            root.setCenter(pane.getCenter());
     }
 
     public static void main(String[] args) {

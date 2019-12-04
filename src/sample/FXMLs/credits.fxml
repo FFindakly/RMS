@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Credits">
+    <center>
+        <Pane fx:id="pane" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="tableViewVideo" layoutX="321.0" layoutY="60.0" text="TableView videos ">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item7" layoutX="307.0" layoutY="322.0" prefHeight="36.0" prefWidth="286.0" text="FileChooser videos">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="item8" layoutX="306.0" layoutY="239.0" text="ScatterChart videos">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+            <Label fx:id="vid1" layoutX="116.0" layoutY="113.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=LQlwTIayyl4&amp;list=PLW5XCMuTwZgCfX_cfbWRYIrEMFDzuwQzv&amp;index=2&amp;t=5s">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="vid2" layoutX="118.0" layoutY="135.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=uh5R7D_vFto&amp;list=PLW5XCMuTwZgCfX_cfbWRYIrEMFDzuwQzv&amp;index=3&amp;t=1s">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="vid3" layoutX="118.0" layoutY="156.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=z4LVoLg6ch0&amp;list=PLW5XCMuTwZgCfX_cfbWRYIrEMFDzuwQzv&amp;index=3">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="vid4" layoutX="118.0" layoutY="177.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=PUH6njIXV1A&amp;list=PLW5XCMuTwZgCfX_cfbWRYIrEMFDzuwQzv&amp;index=4">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="vid5" layoutX="116.0" layoutY="201.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=_FBPukQOLCY&amp;list=PLW5XCMuTwZgCfX_cfbWRYIrEMFDzuwQzv&amp;index=5">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="vid6" layoutX="118.0" layoutY="285.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=_z6DOji-AG0&amp;list=PLW5XCMuTwZgB1Uu2jg8fT6j84ZXfRSPQF&amp;index=2&amp;t=0s">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="vid7" layoutX="118.0" layoutY="372.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=P7jY4ITZH8s&amp;list=PLW5XCMuTwZgD-cM7TCnaeUYBNwl5q98vI&amp;index=2&amp;t=0s">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="vid8" layoutX="118.0" layoutY="398.0" prefHeight="15.0" prefWidth="664.0" text="https://www.youtube.com/watch?v=HXEpl7fM7e4&amp;list=PLW5XCMuTwZgD-cM7TCnaeUYBNwl5q98vI&amp;index=2">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>

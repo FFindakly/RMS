@@ -1,30 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateMenu">
+<BorderPane fx:id="createMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.CreateMenu">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="896.0" BorderPane.alignment="CENTER">
-         <JFXTextField fx:id="itemNameId" layoutX="14.0" layoutY="14.0" prefHeight="34.0" prefWidth="409.0" promptText="Enter Your menu Item's Name" />
-         <JFXTextArea fx:id="descriptionId" labelFloat="true" layoutX="16.0" layoutY="67.0" prefHeight="164.0" prefWidth="407.0" promptText="Add Description" style="-fx-background-color: grey;" unFocusColor="#cccccc">
-         </JFXTextArea>
-         <JFXTextField fx:id="addCatId" layoutX="473.0" layoutY="14.0" prefHeight="34.0" prefWidth="409.0" promptText="Assign to a category" />
-         <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="474.0" layoutY="191.0" prefHeight="40.0" prefWidth="408.0" style="-fx-background-color: #cccccc;" text="Add to Menu" />
-         <TableView layoutX="25.0" layoutY="278.0" prefHeight="269.0" prefWidth="846.0">
-           <columns>
-             <TableColumn prefWidth="290.99998474121094" text="Category Name" />
-               <TableColumn prefWidth="276.0" text="Menu item name" />
-               <TableColumn prefWidth="290.0" text="Description" />
 
+         <children>
+         <JFXTextField fx:id="itemNameTextField" layoutX="24.0" layoutY="27.0" prefHeight="30.0" prefWidth="380.0" promptText="Enter Your menu Item's Name" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding></JFXTextField>
+
+         <JFXComboBox fx:id="itemCategoryComboBox" layoutX="25.0" layoutY="119.0" prefHeight="30.0" prefWidth="380.0" promptText="Assign item to category" style="-fx-background-color: #ffffff;">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:id="breakfast" fx:value="Breakfast" />
+                  <String fx:id="lunch" fx:value="Lunch" />
+                  <String fx:id="dinner" fx:value="Dinner" />
+                  <String fx:id="dessert" fx:value="Desserts" />
+                  <String fx:id="beverages" fx:value="Beverages" />
+               </FXCollections>
+            </items>
+         </JFXComboBox>
+
+         <JFXTextArea fx:id="itemDiscTextArea" labelFloat="true" layoutX="455.0" layoutY="26.0" prefHeight="121.0" prefWidth="410.0" promptText="Add item's description" style="-fx-background-color: #ffffff;" unFocusColor="#cccccc">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></JFXTextArea>
+         <JFXButton fx:id="addItemBt" buttonType="RAISED" layoutX="455.0" layoutY="201.0" onAction="#addItemToMenu" prefHeight="30.0" prefWidth="200.0" text="Add new item to menu" />
+         <JFXComboBox fx:id="menuItemsComboBox" layoutX="24.0" layoutY="351.0" prefHeight="30.0" prefWidth="380.0" promptText="Choose item from menu" style="-fx-background-color: #ffffff;" />
+         <JFXComboBox fx:id="ingredientComboBox" layoutX="24.0" layoutY="404.0" prefHeight="30.0" prefWidth="380.0" promptText="Add ingredients from inventory" style="-fx-background-color: #ffffff;" />
+         <JFXTextField fx:id="quantityTextField" layoutX="23.0" layoutY="465.0" prefHeight="30.0" prefWidth="380.0" promptText="Enter ingredient quantity" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
+         <JFXButton fx:id="addIngredientBt" buttonType="RAISED" layoutX="25.0" layoutY="517.0" onAction="#addIngredient" prefHeight="30.0" prefWidth="380.0" text="Add ingredient">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></JFXButton>
+         <Label alignment="TOP_LEFT" layoutX="24.0" layoutY="312.0" prefHeight="17.0" prefWidth="380.0" text="Build menu item" textAlignment="CENTER">
+            <font>
+               <Font name="Arial" size="18.0" />
+            </font>
+            <padding>
+               <Insets bottom="5.0" top="5.0" />
+            </padding>
+         </Label>
+         <JFXButton fx:id="uploadImageBt" buttonType="RAISED" layoutX="455.0" layoutY="160.0" onAction="#uploadImage" prefHeight="30.0" prefWidth="200.0" text="Upload image" />
+         <ImageView fx:id="itemImageView" fitHeight="89.0" fitWidth="173.0" layoutX="692.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
+         <JFXTextField fx:id="itemPriceTextField" layoutX="24.0" layoutY="205.0" prefHeight="30.0" prefWidth="380.0" promptText="Enter item's price" style="-fx-background-color: #ffffff;">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" right="5.0" />
+            </padding></JFXTextField>
+         <TableView fx:id="ingredientsListTableView" layoutX="455.0" layoutY="353.0" prefHeight="195.0" prefWidth="410.0">
+           <columns>
+             <TableColumn fx:id="ingredientNameCol" prefWidth="150.0" text="Ingredient item" />
+             <TableColumn fx:id="ingredientQtyCol" prefWidth="110.0" text="Quantity" />
+               <TableColumn fx:id="ingredientUnitCol" prefWidth="150.0" text="M. unit" />
            </columns>
          </TableView>
+         <Label alignment="CENTER" layoutX="455.0" layoutY="323.0" prefHeight="17.0" prefWidth="410.0" text="Menu Item Ingredients List" textAlignment="CENTER">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+            <padding>
+               <Insets bottom="5.0" top="5.0" />
+            </padding>
+         </Label>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="2.0" layoutX="25.0" layoutY="278.0" stroke="BLACK" strokeType="INSIDE" width="860.0" />
+         </children>
       </Pane>
-      
    </center>
 </BorderPane>

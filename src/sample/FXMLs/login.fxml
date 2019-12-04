@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -12,34 +13,33 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Login">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="menu" BorderPane.alignment="CENTER" style="-fx-background-color: #ffffff; -fx-font-family: Arial; -fx-font-size: 14; -fx-font-weight: bold;">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Login" />
-                  <MenuItem mnemonicParsing="false" text="About" />
-                  <MenuItem fx:id="exitMi" mnemonicParsing="false" onAction="#close" text="Exit" />
+
+              <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Logout" />
+                <MenuItem mnemonicParsing="false" onAction="#close" text="Exit" />
+
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Settings">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#switchToAcctSettings" text="Accout settings" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToShopSettings" text="Shop settings" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Inventory">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#switchToCreateInventory" text="Create inventory" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateInventory" text="Update inventory" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToTrackInventory" text="Track inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToTrackInventory" text="Update inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToUpdateInventory" text="Track inventory" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Menu">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#switchToCreateMenu" text="Create menu" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToMenuItems" text="Build menu items" />
                   <MenuItem mnemonicParsing="false" onAction="#switchToUpdateMenu" text="Update menu" />
               </items>
             </Menu>
@@ -47,50 +47,62 @@
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#switchToTables" text="Tables " />
                   <MenuItem mnemonicParsing="false" onAction="#switchToPlaceOrders" text="Place orders" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToOrdersDetails" text="Orders details" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Stats">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Sales" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Credits">
               <items>
-                <MenuItem mnemonicParsing="false" text="Credits" />
+                <MenuItem mnemonicParsing="false" onAction="#switchToCredits" text="Credits" />
               </items>
             </Menu>
         </menus>
       </MenuBar>
    </top>
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="2.0" layoutY="4.0" text="Username:">
+            <Label layoutX="290.0" layoutY="140.0" text="Username:" textFill="#060606">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField alignment="TOP_CENTER" layoutX="2.0" layoutY="20.0" prefHeight="30.0" prefWidth="230.0" />
-            <Label layoutX="2.0" layoutY="76.0" text="Password:">
+            <JFXTextField fx:id="username" layoutX="290.0" layoutY="166.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff;">
+               <opaqueInsets>
+                  <Insets left="5.0" right="5.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></JFXTextField>
+            <Label layoutX="290.0" layoutY="222.0" text="Password:" textFill="#060606">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXPasswordField layoutX="2.0" layoutY="96.0" prefHeight="30.0" prefWidth="230.0" />
-            <JFXButton layoutX="2.0" layoutY="185.0" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #cccccc;" text="LOGIN">
+            <JFXPasswordField fx:id="password" layoutX="290.0" layoutY="252.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #ffffff;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></JFXPasswordField>
+            <JFXButton fx:id="logBtn" layoutX="290.0" layoutY="341.0" onAction="#logon" prefHeight="30.0" prefWidth="300.0" text="LOGIN">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <Label layoutX="141.0" layoutY="148.0" text="Forgot password?">
+            <Label fx:id="forgot" layoutX="476.0" layoutY="304.0" text="Forgot password?">
                <font>
-                  <Font size="12.0" />
+                  <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <JFXCheckBox layoutX="2.0" layoutY="147.0" text="Remember me">
+            <JFXCheckBox fx:id="rememberMe" layoutX="290.0" layoutY="303.0" text="Remember me">
                <font>
-                  <Font size="12.0" />
+                  <Font size="14.0" />
                </font>
             </JFXCheckBox>
          </children>
