@@ -44,7 +44,7 @@ Cai Filiault - course professor
 ![](https://ffindakly.scweb.ca/screen2.png)
 6- Import the external libraries
 ![](https://ffindakly.scweb.ca/Screen3.png)
-- JFoenix library [source link](https://github.com/jfoenixadmin/JFoenix.git "source link")
+- JFoenix library [source link](https://search.maven.org/remotecontent?filepath=com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar"source link")
 - JDBC Driver library [source link](https://jar-download.com/artifacts/mysql/mysql-connector-java/5.1.43/source-code"source link")
 
 
