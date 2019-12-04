@@ -7,12 +7,22 @@ public class Receipt {
     private int quantity;
     private double itemPrice;
     private int tableId;
+    private String date;
 
-    public Receipt(String itemName, int quantity, double itemPrice, int tableId) {
+    public Receipt(String itemName, int quantity, double itemPrice, int tableId, String date) {
         this.itemName = itemName;
         this.quantity = quantity;
         this.itemPrice = itemPrice;
         this.tableId = tableId;
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getItemName() {

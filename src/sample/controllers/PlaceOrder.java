@@ -2,11 +2,13 @@ package sample.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import javabeans.Orders;
+import javabeans.Receipt;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -18,6 +20,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import sample.Main;
 import tables.PlaceOrderTable;
+import tables.ReceiptTable;
 import tables.TableOrder;
 
 import java.io.IOException;
@@ -42,14 +45,23 @@ public class PlaceOrder implements Initializable {
     @FXML
     VBox rightItem, rightItemLunch, rightItemDinner, rightItemBeverage, rightItemDessert;;
     Text count;
-    TextField storeId;
+    @FXML Label resultText;
+    @FXML Pane screenContent;
 
     public static Map<Integer, Integer> cart = new HashMap<Integer, Integer>();
     private PlaceOrderTable orderList = new PlaceOrderTable();
     TableOrder tableOrder = new TableOrder();
+    ReceiptTable receiptTable = new ReceiptTable();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ArrayList<Receipt> receipt = receiptTable.getItems(Tables.tableId.get("table_id"));
+        if(receipt.size() > 1){
+            details.setVisible(true);
+        }
+        else{
+            details.setVisible(false);
+        }
         //Populate the pane dynamically
         System.out.println("Table number: " + Tables.tableId.get("table_id"));
         ArrayList<javabeans.PlaceOrder> breakfast =  orderList.breakfast();
@@ -445,9 +457,24 @@ public class PlaceOrder implements Initializable {
 
             for (Map.Entry el : cart.entrySet()) {
                 Orders order = new Orders(Tables.tableId.get("table_id"), Login.userID.get("ID"), (Integer)el.getKey(), (Integer)el.getValue(), dtf.format(now), 1);
-                tableOrder.InsertOrder(order);
+                Boolean res = tableOrder.findItem(order);
+                if(!res) {
+                    tableOrder.InsertOrder(order);
+                }else{
+                    tableOrder.updateQuantity(order);
+                }
             }
 
+            cart.clear();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText("We added the order successfully!");
+            alert.showAndWait();
+            try {
+                Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/receipt.fxml")));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            resultText.setVisible(true);
         });
 
         details.setOnAction(e->{

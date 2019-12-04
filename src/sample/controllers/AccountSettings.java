@@ -13,6 +13,7 @@ import javafx.scene.paint.Color;
 import sample.Main;
 import tables.AccountSettingsTable;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,7 +28,6 @@ public class AccountSettings implements Initializable {
     @FXML private JFXTextField email;
 
     AccountSettingsTable accountSettingsTable = new AccountSettingsTable();
-
     public void insertAccountSetting() {
 
             boolean formIsValid = true;

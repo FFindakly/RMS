@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.UpdatePassword">
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTextField fx:id="newPass" layoutX="250.0" layoutY="217.0" prefHeight="30.0" prefWidth="400.0" promptText="New password" />
-            <JFXTextField fx:id="newPass2" layoutX="250.0" layoutY="287.0" prefHeight="30.0" prefWidth="400.0" promptText="Verify password" />
-            <JFXButton fx:id="update" layoutX="450.0" layoutY="347.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cccccc;" text="Update" />
+            <JFXButton fx:id="update" layoutX="450.0" layoutY="337.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cccccc;" text="Update" />
+            <Label layoutX="250.0" layoutY="93.0" text="Update Password">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXPasswordField fx:id="newPass" layoutX="250.0" layoutY="210.0" prefHeight="30.0" prefWidth="400.0" promptText="New password" />
+            <JFXPasswordField fx:id="newPass2" layoutX="250.0" layoutY="280.0" prefHeight="30.0" prefWidth="400.0" promptText="Verify password" />
+            <Label layoutX="250.0" layoutY="344.0" text="Passwords do not match!" visible="false" fx:id="resultText">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>

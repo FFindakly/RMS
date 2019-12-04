@@ -17,15 +17,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Login" />
-                  <MenuItem mnemonicParsing="false" text="About" />
-                  <MenuItem fx:id="exitMi" mnemonicParsing="false" onAction="#close" text="Exit" />
+              <MenuItem mnemonicParsing="false" onAction="#switchToLogin" text="Logout" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Settings">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#switchToAcctSettings" text="Accout settings" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToShopSettings" text="Shop settings" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Inventory">
@@ -45,12 +42,6 @@
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#switchToTables" text="Tables " />
                   <MenuItem mnemonicParsing="false" onAction="#switchToPlaceOrders" text="Place orders" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToOrdersDetails" text="Orders details" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Stats">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#switchToOrdersStats" text="Sales" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Credits">
