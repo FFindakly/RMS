@@ -29,7 +29,7 @@ Cai Filiault - course professor
 # Development tools
 - Intellij IDEA
 - Gluon Scene Builder
-- JFoenix library [source link](https://github.com/jfoenixadmin/JFoenix.git "source link")
+- JFoenix library [source link](https://search.maven.org/remotecontent?filepath=com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar "source link")
 
 # Settingup steps
 1- Clone the project [https://github.com/FFindakly/RMS.git](https://github.com/FFindakly/RMS.git "https://github.com/FFindakly/RMS.git")
