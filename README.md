@@ -29,6 +29,24 @@ Cai Filiault - course professor
 # Development tools
 - Intellij IDEA
 - Gluon Scene Builder
-- JFoenix library [source link](https://github.com/jfoenixadmin "source link")
+- JFoenix library [source link](https://github.com/jfoenixadmin/JFoenix.git "source link")
+
+# Settingup steps
+1- Clone the project [https://github.com/FFindakly/RMS.git](https://github.com/FFindakly/RMS.git "https://github.com/FFindakly/RMS.git")
+2- Open your Intellij IDEA
+3- Create a new package called "out" in the main folder (RMS)
+4- Go to File -> Project Structure -> Project and do the following settings:
+	- Project SDK : 1.8
+	- Project Language Level: 8 - Lambdas, type annotations etc.
+	- Project comipler output: set it to the "out" package you have already created.
+![](https://ffindakly.scweb.ca/screen1.png)
+5- Import external libraries: set the content root the main folder of the project (RMS)
+![](https://ffindakly.scweb.ca/screen2.png)
+6- Import the external libraries
+![](https://ffindakly.scweb.ca/Screen3.png)
+- JFoenix library [source link](https://github.com/jfoenixadmin/JFoenix.git "source link")
+- JDBC Driver library [source link](https://jar-download.com/artifacts/mysql/mysql-connector-java/5.1.43/source-code"source link")
+
+
 
 
