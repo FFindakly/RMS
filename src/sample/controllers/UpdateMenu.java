@@ -1,5 +1,6 @@
 package sample.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import javabeans.InventoryItem;
 import javabeans.MenuItem;
 import javafx.collections.FXCollections;
@@ -29,6 +30,8 @@ public class UpdateMenu implements Initializable {
     @FXML private TableColumn<MenuItem, String> menuItemCatCol;
     @FXML private TableColumn<MenuItem, Double> menuItemPriceCol;
     @FXML private TableColumn<MenuItem, String> menuItemDescCol;
+    @FXML private JFXButton updateBt;
+    @FXML private JFXButton deleteBt;
 
     //Create an instance of the MenuItemsTable
     MenuItemsTable menuItemsTable = new MenuItemsTable();
@@ -59,6 +62,9 @@ public class UpdateMenu implements Initializable {
         menuItemCatCol.setCellFactory(ComboBoxTableCell.forTableColumn(new DefaultStringConverter(), menuItemsCategories));
         menuItemPriceCol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         menuItemDescCol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        updateBt.getStyleClass().add("buttons");
+        deleteBt.getStyleClass().add("delete_buttons");
     }
 
 

@@ -10,17 +10,17 @@
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="trackTableView" layoutX="75.0" layoutY="31.0" prefHeight="460.0" prefWidth="750.0">
+            <TableView fx:id="trackTableView" layoutX="30" layoutY="31.0" prefHeight="460.0" prefWidth="840">
                <columns>
                   <TableColumn fx:id="itemNameColumn" onEditCommit="#updateName" prefWidth="150.0" text="Item name" />
-                  <TableColumn fx:id="measurementUnitColumn" minWidth="0.0" onEditCommit="#updateUnit" prefWidth="150.0" text="Measurement unit" />
-                  <TableColumn fx:id="quantityColumn" minWidth="0.0" onEditCommit="#updateQuantity" prefWidth="150.0" text="Quantity" />
-                  <TableColumn fx:id="criticalColumn" onEditCommit="#updateCritical" prefWidth="150.0" text="Critical quantity" />
-                  <TableColumn fx:id="itemCategoryColumn" onEditCommit="#updateCategory" prefWidth="150.0" text="Category" />
+                  <TableColumn fx:id="measurementUnitColumn" minWidth="0.0" onEditCommit="#updateUnit" prefWidth="170.0" text="Measurement unit" />
+                  <TableColumn fx:id="quantityColumn" minWidth="0.0" onEditCommit="#updateQuantity" prefWidth="170.0" text="Quantity" />
+                  <TableColumn fx:id="criticalColumn" onEditCommit="#updateCritical" prefWidth="175.0" text="Critical quantity" />
+                  <TableColumn fx:id="itemCategoryColumn" onEditCommit="#updateCategory" prefWidth="175.0" text="Category" />
                </columns>
             </TableView>
-            <JFXButton fx:id="updateBt" layoutX="719.0" layoutY="515.0" onAction="#updateItem" prefHeight="25.0" prefWidth="106.0" text="Update item" />
-            <JFXButton fx:id="removeBt" layoutX="565.0" layoutY="515.0" onAction="#deleteItem" prefHeight="25.0" prefWidth="106.0"  text="Remove item" />
+            <JFXButton fx:id="updateBt" layoutX="720.0" layoutY="515.0" onAction="#updateItem" prefHeight="25.0" prefWidth="150" text="Update item" />
+            <JFXButton fx:id="removeBt" layoutX="565.0" layoutY="515.0" onAction="#deleteItem" prefHeight="25.0" prefWidth="150"  text="Remove item" />
          </children>
       </Pane>
    </center>

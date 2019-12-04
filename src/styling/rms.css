@@ -1,5 +1,12 @@
-.empty_data_fields {
+.root{
+    -fx-background-image: url("background.jpg");
+}
+
+.empty {
     -fx-background-color: rgba(255,0,0,0.3);
+}
+.valid {
+    -fx-background-color: none;
 }
 
 .valid_data_fields {

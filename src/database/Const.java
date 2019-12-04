@@ -104,7 +104,7 @@ public class Const {
             "CREATE TABLE " + TABLE_INVENTORY + "( " +
                     INVENTORY_ITEM_ID + " int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                     INVENTORY_ITEM_NAME + " varchar(80) NOT NULL, " +
-                    MEASUREMENT_UNIT  + " decimal(10) NOT NULL, "+
+                    MEASUREMENT_UNIT  + " varchar(20) NOT NULL, "+
                     INVENTORY_ITEM_QUANTITY  + " decimal(10,0) NOT NULL, "+
                     CRITICAL_QUANTITY  + " decimal(10,0) NOT NULL, "+
                     ITEM_CATEGORY_ID  + " int(11) NOT NULL, "+

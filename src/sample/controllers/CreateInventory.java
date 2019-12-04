@@ -110,7 +110,7 @@ public class CreateInventory implements Initializable {
                     measurement_unit_ComboBox.getSelectionModel().getSelectedItem(),
                     Double.parseDouble(quantity_TextField.getText()),
                     Double.parseDouble(critical_quantity_TextField.getText()),
-                    categories_ComboBox.getSelectionModel().getSelectedIndex()+2,
+                    categories_ComboBox.getSelectionModel().getSelectedIndex()+1,
                     Login.userID.get("ID"));
 
             inventoyTable.createInventoryItem(item);
@@ -118,15 +118,15 @@ public class CreateInventory implements Initializable {
             message_Text.setFill(Paint.valueOf("green"));
             message_Text.setVisible(true);
 
-            item_name_TextField.getStyleClass().clear();
-            item_name_TextField.clear();
-            measurement_unit_ComboBox.getStyleClass().clear();
+            item_name_TextField.getStyleClass().remove("empty_data_fields");
+            item_name_TextField.getStyleClass().remove("empty_data_fields");
+            measurement_unit_ComboBox.getStyleClass().remove("empty_data_fields");
             measurement_unit_ComboBox.getSelectionModel().clearSelection();
-            quantity_TextField.getStyleClass().clear();
-            quantity_TextField.clear();
-            critical_quantity_TextField.getStyleClass().clear();
-            critical_quantity_TextField.clear();
-            categories_ComboBox.getStyleClass().clear();
+            quantity_TextField.getStyleClass().remove("empty_data_fields");
+            quantity_TextField.getStyleClass().remove("empty_data_fields");
+            critical_quantity_TextField.getStyleClass().remove("empty_data_fields");
+            critical_quantity_TextField.getStyleClass().remove("empty_data_fields");
+            categories_ComboBox.getStyleClass().remove("empty_data_fields");
             categories_ComboBox.getSelectionModel().clearSelection();
             formIsValid = false;
         }
