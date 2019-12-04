@@ -176,8 +176,11 @@ public class Login implements Initializable {
         Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/order_details.fxml")));
     }
 
-
     public void switchToOrdersStats() throws IOException {
         Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/sales.fxml")));
+    }
+
+    public void switchToCredits() throws IOException {
+        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/credits.fxml")));
     }
 }

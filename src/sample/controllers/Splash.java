@@ -42,7 +42,7 @@ public class Splash implements Initializable {
         delay.play();
         delay.setOnFinished(event -> {
             try {
-                Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
+                Main.openLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
             } catch (IOException e) {
                 e.printStackTrace();
             }
