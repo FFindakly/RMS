@@ -73,6 +73,7 @@ public class PlaceOrder implements Initializable {
         ArrayList<javabeans.PlaceOrder> dessert =  orderList.dessert();
 
         // Breakfast
+        // Get the all breakfast item, and create the appropriate element to show them on the screen.
         for (int i = 0; i < breakfast.size(); i++) {
             HBox item = new HBox();
             item.setId(Integer.toString(breakfast.get(i).getId()));
@@ -107,8 +108,10 @@ public class PlaceOrder implements Initializable {
             HBox.setMargin(quantity, new Insets(23, 5, 0, 5));
             HBox.setMargin(item_name, new Insets(24, 5, 0, 10));
 
-
+            // Add all items into the HBox we created above.
             item.getChildren().addAll(img,item_name,item_price,minus_btn,quantity,plus_btn);
+
+            // Put it that HBox left or right side
             if(i%2==0){
                 leftItem.getChildren().add(item);
             }else{
@@ -116,6 +119,8 @@ public class PlaceOrder implements Initializable {
             }
 
         }
+
+        // Get the all children element in the main content
         for(Node parent: ordersParent.getChildren()) {
             VBox left_or_right = (VBox) parent;
             for (Node child : left_or_right.getChildren()) {
@@ -457,8 +462,11 @@ public class PlaceOrder implements Initializable {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
 
+            // Create a loop to get all hash map key and value to insert into the database
             for (Map.Entry el : cart.entrySet()) {
                 Orders order = new Orders(Tables.tableId.get("table_id"), Login.userID.get("ID"), (Integer)el.getKey(), (Integer)el.getValue(), dtf.format(now), 1);
+
+                // Check the item, if it is already inserted, do not again. Update the quantity
                 Boolean res = tableOrder.findItem(order);
                 if(!res) {
                     tableOrder.InsertOrder(order);
@@ -479,6 +487,7 @@ public class PlaceOrder implements Initializable {
             resultText.setVisible(true);
         });
 
+        // See the receipt screen
         details.setOnAction(e->{
             try {
                 Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/receipt.fxml")));

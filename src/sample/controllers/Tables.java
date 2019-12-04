@@ -25,11 +25,12 @@ public class Tables implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        // Get the count of the table from the accounts table
         AccountSettingsTable table = new AccountSettingsTable();
         int count = table.getCountOfTables(Login.userID.get("ID"));
         Button btnTable;
 
-
+        // Create a for loop to create button for each table
         for(int i = 1; i <= count; i++) {
             buttonPane.setHgap(27);
             buttonPane.setVgap(20);

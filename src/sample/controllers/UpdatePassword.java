@@ -29,6 +29,8 @@ public class UpdatePassword implements Initializable {
         update.setOnAction(e->{
             boolean result = false;
             LoginTable login = new LoginTable();
+
+            //If password matches, verify them with the data in the database
             if(newPass.getText().equals(newPass2.getText())){
                 result  = login.updatePass(LoginTable.userID.get("id"), BCrypt.hashpw(newPass.getText(), BCrypt.gensalt(10)));
             }
