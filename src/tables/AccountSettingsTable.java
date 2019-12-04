@@ -5,8 +5,10 @@ import daos.AccountSettingDAO;
 import database.Const;
 import database.Database;
 import javabeans.Accounts;
+import javafx.scene.control.Alert;
 import sample.controllers.Login;
 
+import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -31,6 +33,9 @@ public class AccountSettingsTable implements AccountSettingDAO {
                 Login.userID.get("ID") + "')";
 
         try {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText("Are you sure?");
+            alert.showAndWait();
             db.getConnection().createStatement().execute(query);
             System.out.println("Address has been inserted to the table successfully!");
 

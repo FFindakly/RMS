@@ -1,11 +1,13 @@
 package sample.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import javabeans.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import sample.Main;
+import tables.AccountSettingsTable;
 import tables.LoginTable;
 
 import java.io.IOException;
@@ -21,7 +23,7 @@ public class Login implements Initializable {
     @FXML private TextField username;
     @FXML private PasswordField password;
     @FXML private MenuBar menu;
-    @FXML private Label warning;
+    @FXML private Label warning, forgot;
 
     public static Map<String, Integer> userID = new HashMap<String, Integer>();
 
@@ -38,6 +40,15 @@ public class Login implements Initializable {
                 rememberMe.setSelected(true);
             }
         }
+
+        forgot.setOnMouseClicked(e->{
+            try {
+                Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/forgot.fxml")));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
     }
 
     public void logon() throws IOException{
@@ -53,12 +64,24 @@ public class Login implements Initializable {
             }
             userID.put("ID", result.getId());
             menu.setVisible(true);
-            Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
+            AccountSettingsTable accountSettingsTable = new AccountSettingsTable();
+            int count = accountSettingsTable.getCountOfTables(Login.userID.get("ID"));
+            if(count > 0){
+                try {
+                    Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/create_inventory.fxml")));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
+            }
         }
         else{
             warning.setVisible(true);
         }
     }
+
+
     /**
      * function to exit from application
      * @autor Fadi Findakly
@@ -86,14 +109,6 @@ public class Login implements Initializable {
             Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/account_settings.fxml")));
     }
 
-    /**
-     * function to switch to account settings screen
-     * @autor Ugur Demir
-     * @return void
-     */
-    public void forgot() throws IOException {
-        Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/forgot.fxml")));
-    }
 
     /**
      * function to switch to shop settings screen
@@ -175,11 +190,9 @@ public class Login implements Initializable {
     public void switchToOrdersDetails() throws IOException {
         Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/order_details.fxml")));
     }
-
     public void switchToOrdersStats() throws IOException {
         Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/sales.fxml")));
     }
-
     public void switchToCredits() throws IOException {
         Main.setPane(FXMLLoader.load(getClass().getResource("../FXMLs/credits.fxml")));
     }

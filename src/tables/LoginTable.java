@@ -20,6 +20,7 @@ public class LoginTable implements LoginDAO {
         System.out.println(db);
         String query = "SELECT * FROM  "+ Const.TABLE_LOGIN +" WHERE  " + Const.LOGIN_USERNAME + " = '"+ username +"'";
         try{
+
             Statement getUserId = db.getConnection().createStatement();
             ResultSet data = getUserId.executeQuery(query);
             while (data.next()) {

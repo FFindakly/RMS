@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import sample.Main;
 import tables.LoginTable;
 
@@ -17,7 +18,10 @@ public class Forgot implements Initializable {
     @FXML
     JFXTextField userName, postal;
     @FXML
-    JFXButton verify;
+    Label resultText;
+    @FXML
+    JFXButton verify, backToLogin;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -32,13 +36,18 @@ public class Forgot implements Initializable {
                     ex.printStackTrace();
                 }
             }else{
-               showAlert("We could not match these information!");
+                resultText.setVisible(true);
+            }
+        });
+
+        backToLogin.setOnAction(e->{
+            try {
+                Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
         });
 
     }
 
-    private void showAlert(String s){
-        JOptionPane.showMessageDialog(null, s);
-    }
 }
