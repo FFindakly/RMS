@@ -14,7 +14,7 @@
                      <TableColumn fx:id="menuItemNameCol" onEditCommit="#updateName" prefWidth="200.0" text="Item name" />
                      <TableColumn fx:id="menuItemCatCol" minWidth="0.0" onEditCommit="#updateCategory" prefWidth="150.0" text="Category name" />
                <TableColumn fx:id="menuItemPriceCol" onEditCommit="#updatePrice" prefWidth="150.0" text="Item price" />
-                     <TableColumn fx:id="menuItemDescCol" onEditCommit="#updateDescription" prefWidth="286.0" text="Description" />
+                     <TableColumn fx:id="menuItemDescCol" onEditCommit="#updateDescription" prefWidth="340.0" text="Description" />
 
                   </columns>
                </TableView>

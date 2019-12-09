@@ -146,14 +146,20 @@ public class UpdateInventory implements Initializable {
      */
     public void deleteItem() {
         InventoryItem item = trackTableView.getSelectionModel().getSelectedItem();
-        inventoryTable.deleteInventoryItem(item);
 
-        //Update the TableView after the item gets deleted
-        trackTableView.setItems(inventoryTable.loadTrackInventoryTable());
+        if (item == null) {
+            Alert noSelectedRowAlert = new Alert(Alert.AlertType.INFORMATION);
+            noSelectedRowAlert.setHeaderText("Please select a row to be deleted!");
+            noSelectedRowAlert.showAndWait();
+        } else {
+            inventoryTable.deleteInventoryItem(item);
+            //Update the TableView after the item gets deleted
+            trackTableView.setItems(inventoryTable.loadTrackInventoryTable());
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Item has been deleted successfully!");
-        alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Item has been deleted successfully!");
+            alert.showAndWait();
+        }
     }
 
     /**

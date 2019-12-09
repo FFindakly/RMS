@@ -51,11 +51,9 @@ public class InventoryCategoryTable implements InventoryCategoriesDAO {
         String query = "INSERT INTO " + Const.TABLE_INVENTORY_CATEGORIES +
                         "(" + Const.INVENTORY_USER_ID + ","  + Const.CATEGORY_NAME + ") VALUES ('" + Login.userID.get("ID") + "' , '" +
                         category.getName() + "')";
-        System.out.println(query);
         try {
             Statement addCategory = db.getConnection().createStatement();
             addCategory.execute(query);
-            System.out.println("A new category is inserted");
 
         } catch (SQLException e) {
             e.printStackTrace();

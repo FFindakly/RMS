@@ -127,13 +127,13 @@ public class CreateInventory implements Initializable {
             alert.showAndWait();
 
             item_name_TextField.getStyleClass().add("valid");
-            item_name_TextField.getStyleClass().add("valid");
+            item_name_TextField.setText("");
             measurement_unit_ComboBox.getStyleClass().add("valid");
             measurement_unit_ComboBox.getSelectionModel().clearSelection();
             quantity_TextField.getStyleClass().add("valid");
-            quantity_TextField.getStyleClass().add("valid");
+            quantity_TextField.setText("");
             critical_quantity_TextField.getStyleClass().add("valid");
-            critical_quantity_TextField.getStyleClass().add("valid");
+            critical_quantity_TextField.setText("");
             categories_ComboBox.getStyleClass().add("valid");
             categories_ComboBox.getSelectionModel().clearSelection();
             formIsValid = false;

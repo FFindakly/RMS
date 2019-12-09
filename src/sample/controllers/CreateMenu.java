@@ -136,16 +136,18 @@ public class CreateMenu implements Initializable {
             //Insert the new created menu item to database table
             menuItemsTable.createMenuItem(item);
             menuItemsComboBox.setItems(FXCollections.observableArrayList(menuItemsTable.getAllMenuItems()));
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Item has been updated successfully!");
+            alert.showAndWait();
             //Update the content of the menu items ComboBox
         }else{
-            add_new_item.setText("Please, enter the missing data!");
-            add_new_item.setFill(Paint.valueOf("red"));
-            add_new_item.setVisible(true);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("please enter the missing data");
+            alert.showAndWait();
+
         }
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Item has been updated successfully!");
-        alert.showAndWait();
+
 
     }
 
@@ -170,20 +172,20 @@ public class CreateMenu implements Initializable {
             Ingredient ingredientItem = new Ingredient(
                     ingredientComboBox.getSelectionModel().getSelectedItem().getItemName(),
                     quantityTextField.getText(),
-                    ingredientComboBox.getSelectionModel().getSelectedItem().getMeasurementUnit()
-            );
+                    ingredientComboBox.getSelectionModel().getSelectedItem().getMeasurementUnit());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Ingredient has been updated successfully!");
+            alert.showAndWait();
             ingredientsList.add(ingredientItem);
             ingredientsListTableView.setItems(ingredientsList);
             ingredientsListTableView.setEditable(false);
         }else{
-            add_ingredient.setText("Please, enter the missing data!");
-            add_ingredient.setFill(Paint.valueOf("red"));
-            add_ingredient.setVisible(true);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("please enter the missing data");
+            alert.showAndWait();
         }
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Ingredient has been updated successfully!");
-        alert.showAndWait();
+
 
     }
 

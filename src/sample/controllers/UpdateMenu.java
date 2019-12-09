@@ -48,6 +48,7 @@ public class UpdateMenu implements Initializable {
         menuItemPriceCol.setCellValueFactory(new PropertyValueFactory<MenuItem, Double>("price"));
         menuItemDescCol.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("itemDisc"));
 
+
         //Load the data in the table view
         updateMenuTableView.setItems(menuItemsTable.loadUpdateMenuItemsTableView());
 
@@ -115,13 +116,20 @@ public class UpdateMenu implements Initializable {
      */
     public void deleteItem() {
         MenuItem item = updateMenuTableView.getSelectionModel().getSelectedItem();
-        menuItemsTable.deleteMenuItem(item);
 
-        //Update the TableView after the item gets deleted
-        updateMenuTableView.setItems(menuItemsTable.loadUpdateMenuItemsTableView());
+        if (item == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Please select a row to be deleted!");
+            alert.showAndWait();
+        } else {
+            menuItemsTable.deleteMenuItem(item);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Item has been deleted successfully!");
-        alert.showAndWait();
+            //Update the TableView after the item gets deleted
+            updateMenuTableView.setItems(menuItemsTable.loadUpdateMenuItemsTableView());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Item has been deleted successfully!");
+            alert.showAndWait();
+        }
     }
 }

@@ -69,7 +69,7 @@ public class InventoyTable implements InventoryItemsDAO {
 
         try {
             db.getConnection().createStatement().execute(query);
-            System.out.println("New item has been inserted to inventory successfully!");
+            //System.out.println("New item has been inserted to inventory successfully!");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -84,7 +84,7 @@ public class InventoyTable implements InventoryItemsDAO {
 
         try {
             db.getConnection().createStatement().execute(query);
-            System.out.println("Item has been deleted from the inventory successfully!");
+            //System.out.println("Item has been deleted from the inventory successfully!");
         } catch (SQLException e) {
         }
     }
