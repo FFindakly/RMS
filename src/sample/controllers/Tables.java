@@ -39,7 +39,7 @@ public class Tables implements Initializable {
             buttonPane.setVgap(20);
             buttonPane.setPadding(new Insets(20));
             lblTableName = new Label("Table " + i);
-            lblTableName.setStyle("-fx-font-family:Arial; -fx-padding: 30px 0px 0px 0px; -fx-font-size: 22pt; -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-fill: #000000;  -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );");
+            lblTableName.setStyle("-fx-font-family:Arial; -fx-padding: 100px 0px 0px 0px; -fx-font-size: 20pt; -fx-font-weight: bold; -fx-text-fill: #202020; -fx-fill: #202020;  -fx-effect: dropshadow(three-pass-box , rgba(32,32,32,0.5) , 6, 0.0 , 0 , 2 );");
             btnTable = new Button();
             btnTable.setGraphic(lblTableName);
             btnTable.setMinWidth(150);

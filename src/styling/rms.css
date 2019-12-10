@@ -3,7 +3,11 @@
 }
 
 .tableButton{
-    -fx-background-image: url("table-bg.jpg");
+    -fx-background-image: url("tableBg.png");
+    -fx-background-color: #ffffff;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-cursor: hand;
 }
 
 .shadow{
