@@ -118,7 +118,7 @@ public class PlaceOrderTable implements PlaceOrderDAO {
 
     @Override
     public ArrayList<PlaceOrder> dessert() {
-        String cat = "Dessert";
+        String cat = "Desserts";
         String query = "SELECT " + Const.MENU_ITEM_ID + " , " + Const.MENU_ITEM_NAME + " , " + Const.MENU_ITEM_PRICE +  ", " + Const.MENU_ITEM_IMAGE + " FROM " + Const.TABLE_MENU_ITEMS + " WHERE " + Const.MENU_ITEM_CATEGORY + " = '"+ cat +"'";
         dessert = new ArrayList<>();
         try {

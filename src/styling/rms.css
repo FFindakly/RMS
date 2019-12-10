@@ -2,6 +2,13 @@
     -fx-background-image: url("background.jpg");
 }
 
+.tableButton{
+    -fx-background-image: url("table-bg.jpg");
+}
+
+.shadow{
+
+}
 .empty {
     -fx-background-color: rgba(255,0,0,0.3);
 }

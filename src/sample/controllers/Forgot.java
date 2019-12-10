@@ -25,7 +25,8 @@ public class Forgot implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        backToLogin.getStyleClass().add("buttons");
+        verify.getStyleClass().add("buttons");
         verify.setOnAction(e->{
             // Ask the user to enter his username and postal code, if they are correct let him to get change password screen.
             LoginTable login = new LoginTable();
@@ -43,7 +44,7 @@ public class Forgot implements Initializable {
 
         backToLogin.setOnAction(e->{
             try {
-                Main.toLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
+                Main.openLogin(FXMLLoader.load(getClass().getResource("../FXMLs/login.fxml")));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

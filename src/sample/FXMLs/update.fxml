@@ -11,7 +11,7 @@
    <center>
       <Pane prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="update" layoutX="450.0" layoutY="337.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #cccccc;" text="Update" />
+            <JFXButton fx:id="update" layoutX="450.0" layoutY="337.0" prefHeight="30.0" prefWidth="200.0"  text="Update" />
             <Label layoutX="250.0" layoutY="93.0" text="Update Password">
                <font>
                   <Font name="Arial Bold" size="24.0" />

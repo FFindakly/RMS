@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -29,18 +30,22 @@ public class Tables implements Initializable {
         AccountSettingsTable table = new AccountSettingsTable();
         int count = table.getCountOfTables(Login.userID.get("ID"));
         Button btnTable;
+        Label lblTableName;
+
 
         // Create a for loop to create button for each table
         for(int i = 1; i <= count; i++) {
             buttonPane.setHgap(27);
             buttonPane.setVgap(20);
             buttonPane.setPadding(new Insets(20));
-            btnTable = new Button(Integer.toString(i));
+            lblTableName = new Label("Table " + i);
+            lblTableName.setStyle("-fx-font-family:Arial; -fx-padding: 30px 0px 0px 0px; -fx-font-size: 22pt; -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-fill: #000000;  -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );");
+            btnTable = new Button();
+            btnTable.setGraphic(lblTableName);
             btnTable.setMinWidth(150);
             btnTable.setMinHeight(150);
             buttonPane.getChildren().add(btnTable);
             FlowPane.setMargin(btnTable, new Insets(10,0,0,0));
-            btnTable.setStyle("-fx-font-size: 25pt; -fx-font-family: Arial; -fx-font-weight: bold; -fx-background-color: #ffffff;");
             btnTable.setId(Integer.toString(i));
             int id = i;
             btnTable.setOnAction(event -> {
@@ -51,6 +56,7 @@ public class Tables implements Initializable {
                     e.printStackTrace();
                 }
             });
+            btnTable.getStyleClass().add("tableButton");
         }
 
     }

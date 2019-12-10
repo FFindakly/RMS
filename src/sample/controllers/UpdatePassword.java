@@ -26,6 +26,7 @@ public class UpdatePassword implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        update.getStyleClass().add("buttons");
         update.setOnAction(e->{
             boolean result = false;
             LoginTable login = new LoginTable();

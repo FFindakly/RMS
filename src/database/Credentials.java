@@ -13,9 +13,9 @@ public class Credentials {
 //    public static final String DB_HOST = SetUpDatabase.database.get("DB_HOST");
 
 
-    public static final String DB_HOST = "php.scweb.ca";
-    public static final String DB_NAME = "ysheekhdb";
-    public static final String DB_USERNAME = "ysheekh";
-    public static final String DB_PASSWORD = "0cptq0cptqw8mprw8mpr";
+    public static final String DB_HOST = "localhost:8889";
+    public static final String DB_NAME = "RMS";
+    public static final String DB_USERNAME = "root";
+    public static final String DB_PASSWORD = "root";
 
 }
